@@ -13,7 +13,7 @@ const About = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/validUser", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const About = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/deleteEducationOne", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deleteEducationOne", {
       method: "DELETE",
       headers: {
         "Content-type": "application/json",
@@ -71,7 +71,7 @@ const About = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/deleteExperience", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deleteExperience", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

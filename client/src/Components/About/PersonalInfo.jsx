@@ -50,7 +50,7 @@ const PersonalInfo = () => {
 
       const token = await localStorage.getItem("userDataToken");
 
-      const data = await fetch("http://localhost:4000/personalInfo", {
+      const data = await fetch("https://web-resume-sooraj-server.vercel.app/personalInfo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

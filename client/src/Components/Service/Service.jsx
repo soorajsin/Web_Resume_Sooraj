@@ -14,7 +14,7 @@ const Service = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/validUser", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const Service = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/deleteService", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deleteService", {
       method: "DELETE",
       headers: { "Content-type": "application/json", Authorization: token },
       body: JSON.stringify({ serviceId }),

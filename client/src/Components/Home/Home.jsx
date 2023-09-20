@@ -13,7 +13,7 @@ const Home = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/validUser", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
       method: "GET",
       headers: {
         "Content-Type": "Application/json",
@@ -41,7 +41,7 @@ const Home = () => {
   const deletePhoto = async (photoId, index) => {
     const token = await localStorage.getItem("userDataToken");
 
-    const data = await fetch("http://localhost:4000/deletePhoto", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deletePhoto", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

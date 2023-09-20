@@ -18,7 +18,7 @@ const Navbar = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/validUser", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
       method: "GET",
       headers: {
         "Content-Type": "Application/json",
@@ -55,7 +55,7 @@ const Navbar = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("http://localhost:4000/signOutToken", {
+    const data = await fetch("https://web-resume-sooraj-server.vercel.app/signOutToken", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
