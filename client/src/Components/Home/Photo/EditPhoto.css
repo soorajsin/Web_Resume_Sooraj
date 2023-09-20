@@ -1,0 +1,28 @@
+*{
+          margin: 0;
+          padding: 0;
+}
+.editPhoto{
+          margin-top: 100px;
+}
+.editPhoto .edit{
+          margin-left: 400px;
+}
+.editPhoto .edit h1{
+          color: rgb(196, 93, 93);
+}
+.editPhoto .edit .form{
+          margin-top: 20px;
+}
+.editPhoto .edit .form label{
+          font-size: 30px;
+}
+.editPhoto .edit .form input{
+          width: 400px;
+          font-size: 30px;
+          border-radius: 10px;
+          padding-left: 10px;
+}
+.editPhoto .save{
+          text-align: center;
+}

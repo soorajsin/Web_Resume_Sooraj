@@ -1,0 +1,199 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.about {
+          margin-left: 50px;
+}
+
+.about .left {
+          margin-left: 50px;
+}
+
+.about .left h3 {
+          margin-top: 170px;
+}
+
+.about .left h3 span {
+          color: red;
+          cursor: pointer;
+}
+
+.about .left p {
+          color: rgb(51, 42, 42);
+          font-size: 15px;
+}
+
+.about .right {
+          margin-left: 60%;
+          margin-top: 80px;
+}
+
+.about .right .skill {
+          margin-top: 20px;
+          margin-left: 20px;
+}
+
+.about .right .skill .addSkill .btn {
+          width: 400px;
+          font-size: 28px;
+}
+
+.about .right .skill .showSkill {
+          margin-bottom: 30px;
+          width: 300px;
+          /* background-color: aliceblue; */
+}
+
+.about .right .skill .showSkill .skillCSSHandle {
+          width: 400px;
+          background-color: aliceblue;
+          border-radius: 10px;
+          cursor: pointer;
+}
+
+.about .right .skill .showSkill .skillCSSHandle:hover {
+          background-color: #ff9a9e;
+}
+
+.about .right .skill .showSkill .skillCSSHandle i {
+          display: none;
+          margin-left: 330px;
+}
+
+.about .right .skill .showSkill .skillCSSHandle:hover i {
+          display: block;
+}
+
+.about .right .skill .showSkill .skillCSSHandle .handle {
+          margin-left: 10px;
+          font-size: 25px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+}
+
+
+.about .personalInfo {
+          margin-left: 50px;
+          margin-top: 100px;
+}
+
+.about .personalInfo .editInfo .btn {
+          font-size: 25px;
+}
+
+.about .personalInfo .showInfo {
+          margin-top: 20px;
+          margin-bottom: 30px;
+}
+
+.about .personalInfo .showInfo .showInfo-data p {
+          font-size: 23px;
+          cursor: pointer;
+}
+
+
+.about .education {
+          margin-left: 50px;
+          margin-bottom: 50px;
+}
+
+.about .education .education-part .edit-education {
+          margin-top: 30px;
+}
+
+.about .education .education-part .edit-education button {
+          width: 300px;
+          font-size: 27px;
+}
+
+.about .education .education-part .show-education {
+          margin-top: 50px;
+          margin-bottom: 50px;
+}
+
+.about .education .education-part .show-education .education-data {
+          width: 550px;
+          background-color: aliceblue;
+          border-radius: 10px;
+          margin-bottom: 30px;
+}
+
+.about .education .education-part .show-education .education-data p {
+          margin-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          font-size: 25px;
+}
+
+.about .education .education-part .show-education .education-data:hover {
+          background-color: #ff9a9e;
+}
+
+
+.about .education .education-part .show-education .education-data .deleteIcon {
+          margin-left: 450px;
+          padding-bottom: 20px;
+}
+
+.about .education .education-part .show-education .education-data .deleteIcon i {
+          font-size: 30px;
+          cursor: pointer;
+          display: none;
+}
+
+.about .education .education-part .show-education .education-data:hover i {
+          display: block;
+}
+
+
+
+.about .experience {
+          margin-left: 50px;
+}
+
+.about .experience .experience-content {
+          margin-left: 50%;
+          margin-top: 100px;
+          margin-bottom: 100px;
+}
+
+.about .experience .experience-content .edit-experience button {
+          width: 400px;
+          font-size: 30px;
+}
+
+.about .experience .experience-content .show-experience .show-data {
+          width: 500px;
+          background-color: aliceblue;
+          border-radius: 10px;
+          margin-bottom: 30px;
+          padding-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+}
+
+.about .experience .experience-content .show-experience .show-data p {
+          font-size: 30px;
+          cursor: pointer;
+}
+
+.about .experience .experience-content .show-experience .show-data:hover {
+          background-color: #ff9a9e;
+}
+
+.about .experience .experience-content .show-experience .show-data .icon {
+          margin-left: 430px;
+          font-size: 25px;
+}
+
+.about .experience .experience-content .show-experience .show-data .icon i {
+          padding-bottom: 20px;
+          cursor: pointer;
+          display: none;
+}
+
+.about .experience .experience-content .show-experience .show-data:hover i {
+          display: block;
+}

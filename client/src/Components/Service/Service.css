@@ -1,0 +1,81 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.service {
+          margin-top: 100px;
+          margin-left: 100px;
+          margin-right: 100px;
+}
+
+.service .box {
+          width: 250px;
+          height: 250px;
+          background-color: aqua;
+          border-radius: 10px;
+          text-align: center;
+          cursor: pointer;
+}
+
+.service .box i {
+          text-align: center;
+          margin-top: 25px;
+          font-size: 200px;
+}
+
+.service .show {
+          display: flex;
+          flex-wrap: wrap;
+}
+
+.service .show .data {
+          flex-wrap: wrap;
+          width: 250px;
+          margin-bottom: 30px;
+          margin-right: 30px;
+          /* height: 250px; */
+          border-radius: 10px;
+          background-color: aqua;
+}
+
+.service .show .data:hover {
+          background-color: #ff9a9e;
+}
+
+.service .show .data img {
+          width: 100px;
+          height: 100px;
+          margin-left: 80px;
+          margin-top: 10px;
+          border-radius: 50%;
+}
+
+.service .show .data h3 {
+          text-align: center;
+          margin-top: 15px;
+          font-size: 25px;
+}
+
+.service .show .data p {
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+}
+
+.service .show .data .deleteIcon {
+          margin-left: 200px;
+          padding-bottom: 20px;
+          cursor: pointer;
+}
+
+.service .show .data .deleteIcon i {
+          cursor: pointer;
+          font-size: 25px;
+          display: none;
+}
+
+.service .show .data:hover i {
+          display: block;
+}

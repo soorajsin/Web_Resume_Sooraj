@@ -1,0 +1,39 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.register {
+          margin-top: 140px;
+}
+
+.register h1 {
+          margin-left: 500px;
+          font-size: 30px;
+}
+
+.register .form {
+          margin-left: 500px;
+          margin-top: 20px;
+}
+
+.register .form label {
+          font-size: 25px;
+}
+
+.register .form input {
+          height: 40px;
+          width: 300px;
+          border-radius: 10px;
+          padding-left: 10px;
+          font-size: 25px;
+}
+
+.register .form button {
+          width: 300px;
+          font-size: 30px;
+}
+
+.register .form p {
+          font-size: 20px;
+}

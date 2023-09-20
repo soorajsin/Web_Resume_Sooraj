@@ -1,0 +1,22 @@
+*{
+          margin: 0;
+          padding: 0;
+}
+.skill{
+          margin: 50px 50px;
+}
+.skill .form{
+          margin-top: 50px;
+          margin-left: 100px;
+}
+.skill .form .inp{
+          margin-bottom: 40px;
+}
+.skill .saveSkill{
+          margin-top: 50px;
+          margin-left: 100px;
+}
+.skill .saveSkill .text-center .btn{
+          width: 300px;
+          font-size: 25px;
+}

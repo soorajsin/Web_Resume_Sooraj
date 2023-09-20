@@ -1,0 +1,18 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.error {
+          margin-top: 100px;
+          text-align: center;
+}
+
+.error img {
+          width: 500px;
+          height: 500px;
+}
+
+.error h1 {
+          color: rgb(190, 44, 44);
+}

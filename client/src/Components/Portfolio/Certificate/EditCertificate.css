@@ -1,0 +1,36 @@
+*{
+          margin: 0;
+          padding: 0;
+}
+.certificate{
+          margin-top: 100px;
+}
+.certificate .edit{
+          margin-left: 400px;
+}
+.certificate .edit h1{
+          color: rgb(209, 84, 84);
+}
+.certificate .edit .form{
+          margin-top: 20px;
+}
+.certificate .edit .form label{
+          font-size: 30px;
+}
+.certificate .edit .form input{
+          font-size: 30px;
+          width: 400px;
+          height: 40px;
+          padding-left: 10px;
+          border-radius: 10px;
+}
+.certificate .edit .form textarea{
+          font-size: 30px;
+          border-radius: 10px;
+          width: 400px;
+          padding-left: 10px;
+}
+.certificate .edit .form button{
+          width: 400px;
+          font-size: 30px;
+}

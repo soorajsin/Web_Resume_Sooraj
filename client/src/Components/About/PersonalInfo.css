@@ -1,0 +1,29 @@
+*{
+          margin: 0;
+          padding: 0;
+}
+.personalInfo{
+          margin-top: 100px;
+          margin-left: 500px;
+}
+.personalInfo .btn{
+          font-size: 30px;
+}
+.personalInfo .form{
+          margin-top: 20px;
+}
+.personalInfo .form label{
+          font-size: 25px;
+}
+.personalInfo .form input{
+          width: 300px;
+          height: 40px;
+          border-radius: 10px;
+          padding-left: 10px;
+          font-size: 30px;
+}
+.personalInfo .form button{
+          width: 300px;
+          margin-bottom: 50px;
+          font-size: 30px;
+}

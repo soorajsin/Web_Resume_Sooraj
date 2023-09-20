@@ -1,0 +1,41 @@
+* {
+          margin: 0;
+          padding: 0;
+}
+
+.updateSkill {
+          margin-top: 50px;
+          margin-left: 50px;
+}
+
+.updateSkill .showSkill {
+          margin-bottom: 30px;
+          width: 300px;
+}
+
+.updateSkill .showSkill .skillCSSHandle {
+          width: 300px;
+          border-radius: 10px;
+          cursor: pointer;
+}
+
+.updateSkill .showSkill .skillCSSHandle:hover {
+          background-color: #ff9a9e;
+}
+
+
+.updateSkill .showSkill .skillCSSHandle i {
+          display: none;
+          margin-left: 200px;
+}
+
+.updateSkill .showSkill .skillCSSHandle:hover i {
+          display: block;
+}
+
+.updateSkill  .showSkill .skillCSSHandle .handle {
+          margin-left: 10px;
+          font-size: 25px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+}
