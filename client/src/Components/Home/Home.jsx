@@ -24,16 +24,7 @@ const Home = () => {
       }
     );
 
-    try {
-      if (data.ok) {
-        // console.log("data is ok  ");
-      } else {
-        console.log("data is not ok   " + data.ok);
-      }
-    } catch (error) {
-      console.log("Navbar Fetch error" + error);
-    }
-
+   
     const res = await data.json();
     // console.log(res);
 
