@@ -24,7 +24,6 @@ const Home = () => {
       }
     );
 
-   
     const res = await data.json();
     // console.log(res);
 
@@ -78,6 +77,26 @@ const Home = () => {
           </h3>
         </div>
         <div className="tag">
+          <div className="paragraph">
+            <div className="show">
+              {userdata
+                ? userdata.getData.Paragraph.map((Paragraph, index) => (
+                    <React.Fragment key={index}>
+                      {index > 0 && <br />}
+                      {<div className="paragraphData">{"Paragraph"}</div>}
+                    </React.Fragment>
+                  ))
+                : "Loading"}
+            </div>
+            <div className="editParagraph">
+              <button
+                onClick={() => history("/editParagraph")}
+                className="btn btn-primary"
+              >
+                Paragraph Edit
+              </button>
+            </div>
+          </div>
           <p>I'm a website design, graphic design, and many more...</p>
         </div>
         <div className="tag">

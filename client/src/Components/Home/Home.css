@@ -85,3 +85,12 @@
           font-size: 30px;
           margin-bottom: 100px;
 }
+.home .tag .paragraph{
+          margin-bottom: 50px;
+}
+.home .tag .paragraph .show{
+          margin-bottom: 30px;
+}
+.home .tag .paragraph .edit button{
+          margin-left: 0px;
+}

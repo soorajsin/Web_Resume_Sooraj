@@ -88,6 +88,9 @@ const userSchema = new mongoose.Schema({
           photo: [{
                     name: String,
                     url: String
+          }],
+          Paragraph: [{
+                    content: String
           }]
 
 

@@ -1043,6 +1043,48 @@ router.post("/signOutToken", authentication, async (req, res) => {
 })
 
 
+//editParagraph
+router.post("/editParagraph", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              paragraph
+                    } = req.body;
+
+                    if (!paragraph) {
+                              res.status(422).json({
+                                        error: "please enter paragraph"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(201).json({
+                                                  error: "user not found"
+                                        })
+                              } else {
+                                        // console.log(user);
+
+                                        user.Paragraph.push(...paragraph);
+
+                                        const updatedUser = await user.save();
+                                        // console.log(updatedUser);
+
+                                        res.status(201).json({
+                                                  status: 205,
+                                                  message: "paragraph added successfully",
+                                                  updatedUser
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "internal server error not add paragraph"
+                    })
+          }
+})
+
 
 
 module.exports = router;
