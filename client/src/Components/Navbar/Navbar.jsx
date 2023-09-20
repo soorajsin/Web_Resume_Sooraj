@@ -18,13 +18,26 @@ const Navbar = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "Application/json",
-        Authorization: token,
-      },
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/validUser",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: token,
+        },
+      }
+    );
+
+    try {
+      if (data.ok) {
+        // console.log("data is ok  ");
+      } else {
+        console.log("data is not ok   " + data.ok);
+      }
+    } catch (error) {
+      console.log("Navbar Fetch error" + error);
+    }
 
     const res = await data.json();
     // console.log(res);
@@ -55,13 +68,16 @@ const Navbar = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/signOutToken", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/signOutToken",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    );
     const res = await data.json();
     // console.log(res);
 
@@ -173,7 +189,8 @@ const Navbar = () => {
               </Avatar>
               {userdata ? (
                 userdata && (
-                  <Menu id="manu"
+                  <Menu
+                    id="manu"
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
                     onClose={handleClose}

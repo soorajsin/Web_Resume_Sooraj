@@ -13,13 +13,26 @@ const Home = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "Application/json",
-        Authorization: token,
-      },
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/validUser",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "Application/json",
+          Authorization: token,
+        },
+      }
+    );
+
+    try {
+      if (data.ok) {
+        // console.log("data is ok  ");
+      } else {
+        console.log("data is not ok   " + data.ok);
+      }
+    } catch (error) {
+      console.log("Navbar Fetch error" + error);
+    }
 
     const res = await data.json();
     // console.log(res);
@@ -41,14 +54,17 @@ const Home = () => {
   const deletePhoto = async (photoId, index) => {
     const token = await localStorage.getItem("userDataToken");
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deletePhoto", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify({ photoId }),
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deletePhoto",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ photoId }),
+      }
+    );
 
     const res = await data.json();
     // console.log(res);
