@@ -77,6 +77,11 @@
 
 .portfolio .project .show .data:hover {
           background-color: rgb(245, 85, 85);
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
 
 .portfolio .project .show .data .deleteIcon {
@@ -159,6 +164,11 @@
 
 .portfolio .certificate .show .data:hover {
           background-color: rgb(245, 85, 85);
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
 
 .portfolio .certificate .show .data img {

@@ -41,16 +41,21 @@
 }
 
 .contact .edit .show .data {
-          width: 100px;
+          width: 200px;
           background-color: aqua;
           margin-right: 50px;
           border-radius: 10px;
           cursor: pointer;
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
 
 .contact .edit .show .data img {
-          width: 100%;
-          height: 60px;
+          width: 200px;
+          height: 150px;
           cursor: pointer;
           border-radius: 10px;
 }
@@ -60,10 +65,16 @@
           padding-bottom: 10px;
           padding-left: 10px;
           cursor: pointer;
+          display: none;
+}
+
+.contact .edit .show .data:hover h3 {
+          display: block;
 }
 
 .contact .edit .show .data:hover {
           background-color: rgb(194, 71, 71);
+
 }
 
 .contact .edit .show .data .deleteIcon {

@@ -4,7 +4,7 @@
 }
 
 .updateSkill {
-          margin-top: 50px;
+          margin-top: 70px;
           margin-left: 50px;
 }
 
@@ -33,9 +33,17 @@
           display: block;
 }
 
-.updateSkill  .showSkill .skillCSSHandle .handle {
+.updateSkill .showSkill .skillCSSHandle .handle {
           margin-left: 10px;
           font-size: 25px;
           margin-top: 10px;
           margin-bottom: 10px;
+}
+
+.updateSkill .showSkill .skillCSSHandle .handle {
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }

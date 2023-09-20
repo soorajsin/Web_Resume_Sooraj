@@ -62,6 +62,14 @@
           background-color: #ff9a9e;
 }
 
+.about .right .skill .showSkill .skillCSSHandle .handle {
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
+}
+
 .about .right .skill .showSkill .skillCSSHandle i {
           display: none;
           margin-left: 330px;
@@ -115,6 +123,11 @@
 .about .personalInfo .showInfo .showInfo-data p {
           font-size: 23px;
           cursor: pointer;
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
 
 
@@ -150,11 +163,24 @@
 }
 
 .about .education .education-part .show-education .education-data p {
+          width: 550px;
           margin-left: 20px;
           padding-top: 10px;
           padding-bottom: 10px;
           font-size: 25px;
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
+
+/* .about .education .education-part .show-education .education-data h6 {
+          font-size: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 20px;
+} */
 
 .about .education .education-part .show-education .education-data:hover {
           background-color: #ff9a9e;
@@ -216,6 +242,11 @@
           font-size: 30px;
           cursor: pointer;
           padding-right: 10px;
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
 
 .about .experience .experience-content .show-experience .show-data:hover {

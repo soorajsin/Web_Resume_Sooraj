@@ -41,6 +41,11 @@
           /* height: 250px; */
           border-radius: 10px;
           background-color: aqua;
+          flex-wrap: wrap;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 30px;
 }
 
 .service .show .data:hover {
