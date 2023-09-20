@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-        <AppBar>
+        <AppBar className="appbar">
           <Toolbar>
             <div className="tab">
               <button className="btn btn-primary">
@@ -173,7 +173,7 @@ const Navbar = () => {
               </Avatar>
               {userdata ? (
                 userdata && (
-                  <Menu
+                  <Menu id="manu"
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
