@@ -34,6 +34,11 @@
           font-size: 30px;
 }
 
+.register .form button:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
+}
+
 .register .form p {
           font-size: 20px;
 }

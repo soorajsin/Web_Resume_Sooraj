@@ -72,7 +72,6 @@ const Service = () => {
   return (
     <>
       <div className="service">
-        <div className="show"></div>
         <div className="show">
           {userdata
             ? userdata.getData.service.map((service, index) => (

@@ -17,6 +17,11 @@
           cursor: pointer;
 }
 
+.contact .contactEdit .box:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
 .contact .edit .contactEdit .box i {
           margin-top: 20px;
           font-size: 60px;

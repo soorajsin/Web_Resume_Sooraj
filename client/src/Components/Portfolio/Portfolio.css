@@ -26,6 +26,11 @@
           text-align: center;
 }
 
+.portfolio .project .add:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
 .portfolio .project .add .box i {
           cursor: pointer;
           text-align: center;
@@ -124,6 +129,11 @@
           text-align: center;
           border-radius: 10px;
           cursor: pointer;
+}
+
+.portfolio .certificate .add:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
 }
 
 .portfolio .certificate .add .box i {

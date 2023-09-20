@@ -1,45 +1,63 @@
-*{
+* {
           margin: 0;
           padding: 0;
 }
-.editContact{
+
+.editContact {
           margin-top: 100px;
 }
-.editContact .edit{
+
+.editContact .edit {
           margin-left: 50px;
 }
-.editContact .edit h1{
+
+.editContact .edit h1 {
           margin-left: 400px;
           color: rgb(173, 71, 71);
 }
-.editContact .edit .form{
+
+.editContact .edit .form {
           margin-left: 400px;
           margin-top: 20px;
 }
-.editContact .edit .form label{
+
+.editContact .edit .form label {
           font-size: 30px;
 }
-.editContact .edit .form input{
+
+.editContact .edit .form input {
           width: 400px;
           height: 40px;
           padding-left: 10px;
           border-radius: 10px;
           font-size: 30px;
 }
-.editContact .edit .form button{
+
+.editContact .edit .form button {
           width: 400px;
           font-size: 30px;
           margin-top: 30px;
           margin-bottom: 50px;
 }
-.editContact .edit .line{
+
+.editContact .edit .form button:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
+.editContact .edit .line {
           width: 400px;
           height: 2px;
           background-color: rgb(207, 66, 66);
           margin-left: 400px;
           margin-top: 50px;
 }
-.editContact .save{
+
+.editContact .save {
           text-align: center;
           margin-bottom: 100px;
+}
+.editContact .save:hover{
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
 }

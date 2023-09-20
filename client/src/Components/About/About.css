@@ -198,6 +198,10 @@
           transition: transform 0.3s ease;
 }
 
+.about .experience .experience-content .show-experience {
+          width: 500px;
+}
+
 .about .experience .experience-content .show-experience .show-data {
           width: 500px;
           background-color: aliceblue;
@@ -211,6 +215,7 @@
 .about .experience .experience-content .show-experience .show-data p {
           font-size: 30px;
           cursor: pointer;
+          padding-right: 10px;
 }
 
 .about .experience .experience-content .show-experience .show-data:hover {
