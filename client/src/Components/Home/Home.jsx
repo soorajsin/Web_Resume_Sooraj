@@ -78,16 +78,17 @@ const Home = () => {
         </div>
         <div className="tag">
           <div className="paragraph">
-            <div className="show">
+            {/* <div className="show">
               {userdata
-                ? userdata.getData.Paragraph.map((Paragraph, index) => (
-                    <React.Fragment key={index}>
+                ? userdata.getData.Paragraph.map((paragraph, index) => (
+                    <div key={index}>
                       {index > 0 && <br />}
-                      {<div className="paragraphData">{"Paragraph"}</div>}
-                    </React.Fragment>
+                      {paragraph}
+                    </div>
                   ))
                 : "Loading"}
-            </div>
+            </div> */}
+
             <div className="editParagraph">
               <button
                 onClick={() => history("/editParagraph")}

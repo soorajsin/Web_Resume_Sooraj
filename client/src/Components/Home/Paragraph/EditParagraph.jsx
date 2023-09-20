@@ -46,7 +46,7 @@ const EditParagraph = () => {
       //       console.log(res);
 
       if (res.status === 205) {
-        //         console.log(res);
+                console.log(res);
         history("/home");
       } else {
         console.log("not save paragraph");
