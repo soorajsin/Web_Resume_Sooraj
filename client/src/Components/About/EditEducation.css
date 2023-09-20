@@ -17,6 +17,11 @@
           margin-bottom: 30px;
 }
 
+.education .form button:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
 .education .form .sub-form {
           margin-top: 20px;
 }
@@ -55,4 +60,9 @@
           font-size: 35px;
           margin-bottom: 50px;
           margin-top: 50px;
+}
+
+.save button:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
 }

@@ -12,6 +12,11 @@
           cursor: pointer;
 }
 
+.home .tag button:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
 .home .tag button {
           font-size: 30px;
           width: 300px;
@@ -30,8 +35,18 @@
           margin-top: 50px;
 }
 
+.home .img .button button:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
 .home .img .show {
           margin-bottom: 10px;
+}
+
+.home .img .show .data:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
 }
 
 .home .img .data {

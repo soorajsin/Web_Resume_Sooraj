@@ -40,6 +40,11 @@
           font-size: 28px;
 }
 
+.about .right .skill .addSkill:hover {
+          transform: translateX(-10px);
+          transition: transform 0.3s ease;
+}
+
 .about .right .skill .showSkill {
           margin-bottom: 30px;
           width: 300px;
@@ -79,6 +84,11 @@
           margin-top: 100px;
 }
 
+.about .personalInfo .editInfo button:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
 .about .personalInfo .editInfo .btn {
           font-size: 25px;
 }
@@ -86,6 +96,20 @@
 .about .personalInfo .showInfo {
           margin-top: 20px;
           margin-bottom: 30px;
+}
+
+.about .personalInfo .showInfo .showInfo-data:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
+          background-color: #eb8e91;
+}
+
+.about .personalInfo .showInfo .showInfo-data {
+          width: 500px;
+          border-radius: 10px;
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
 }
 
 .about .personalInfo .showInfo .showInfo-data p {
@@ -101,6 +125,11 @@
 
 .about .education .education-part .edit-education {
           margin-top: 30px;
+}
+
+.about .education .education-part .edit-education:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
 }
 
 .about .education .education-part .edit-education button {
@@ -162,6 +191,11 @@
 .about .experience .experience-content .edit-experience button {
           width: 400px;
           font-size: 30px;
+}
+
+.about .experience .experience-content .edit-experience button:hover {
+          transform: translateX(-10px);
+          transition: transform 0.3s ease;
 }
 
 .about .experience .experience-content .show-experience .show-data {

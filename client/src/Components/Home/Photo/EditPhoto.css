@@ -1,28 +1,40 @@
-*{
+* {
           margin: 0;
           padding: 0;
 }
-.editPhoto{
+
+.editPhoto {
           margin-top: 100px;
 }
-.editPhoto .edit{
+
+.editPhoto .save button:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
+}
+
+.editPhoto .edit {
           margin-left: 400px;
 }
-.editPhoto .edit h1{
+
+.editPhoto .edit h1 {
           color: rgb(196, 93, 93);
 }
-.editPhoto .edit .form{
+
+.editPhoto .edit .form {
           margin-top: 20px;
 }
-.editPhoto .edit .form label{
+
+.editPhoto .edit .form label {
           font-size: 30px;
 }
-.editPhoto .edit .form input{
+
+.editPhoto .edit .form input {
           width: 400px;
           font-size: 30px;
           border-radius: 10px;
           padding-left: 10px;
 }
-.editPhoto .save{
+
+.editPhoto .save {
           text-align: center;
 }

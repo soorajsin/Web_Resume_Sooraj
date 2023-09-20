@@ -1,22 +1,37 @@
-*{
+* {
           margin: 0;
           padding: 0;
 }
-.skill{
+
+.skill {
           margin: 50px 50px;
 }
-.skill .form{
+
+.skill .form {
           margin-top: 50px;
           margin-left: 100px;
 }
-.skill .form .inp{
+
+.skill .form .inp {
           margin-bottom: 40px;
 }
-.skill .saveSkill{
+
+.skill .form .add button:hover {
+          transform: translateX(10px);
+          transition: transform 0.3s ease;
+}
+
+.skill .saveSkill {
           margin-top: 50px;
           margin-left: 100px;
 }
-.skill .saveSkill .text-center .btn{
+
+.skill .saveSkill .text-center .btn {
           width: 300px;
           font-size: 25px;
+}
+
+.skill .saveSkill .text-center button:hover {
+          transform: translateY(-5px);
+          transition: transform 0.3s ease;
 }
