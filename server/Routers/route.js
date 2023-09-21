@@ -1117,7 +1117,7 @@ router.delete("/paragraphDelete", authentication, async (req, res) => {
                                         } else {
                                                   // console.log(entryField);
 
-                                                  user.Paragraph = user.Paragraph.filter((Paragraph) => Paragraph._id.toString !== paragraphId);
+                                                  user.Paragraph = user.Paragraph.filter((Paragraph) => Paragraph._id.toString() !== paragraphId);
 
                                                   const updatedUser = await user.save();
                                                   // console.log(updatedUser);
