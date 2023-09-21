@@ -84,6 +84,7 @@ const Navbar = () => {
     if (res.status === 205) {
       // console.log(res);
       localStorage.removeItem("userDataToken");
+      // history("/login");
       history("/login");
     } else {
       console.log("not removed token");

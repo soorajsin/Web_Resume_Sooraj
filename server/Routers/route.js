@@ -4,7 +4,6 @@ const userdb = require("../Model/userSchema");
 const bcrypt = require("bcryptjs");
 const authentication = require("../Middleware/Authentication");
 
-
 router.post("/register", async (req, res) => {
           // console.log(req.body);
           try {
@@ -17,24 +16,24 @@ router.post("/register", async (req, res) => {
 
                     if (!name || !email || !password || !cpassword) {
                               return res.status(400).json({
-                                        msg: "Please enter all fields"
+                                        msg: "Please enter all fields",
                               });
                     } else {
                               const preUser = await userdb.findOne({
-                                        email
+                                        email,
                               });
 
                               if (preUser) {
                                         res.status(201).json({
                                                   status: 201,
-                                                  error: "User ALready Exist"
-                                        })
+                                                  error: "User ALready Exist",
+                                        });
                               } else {
                                         const userData = new userdb({
                                                   name,
                                                   email,
                                                   password,
-                                                  cpassword
+                                                  cpassword,
                                         });
 
                                         const saveData = await userData.save();
@@ -42,19 +41,16 @@ router.post("/register", async (req, res) => {
                                         res.status(201).json({
                                                   status: 202,
                                                   message: "User Registration done",
-                                                  userData: saveData
-                                        })
+                                                  userData: saveData,
+                                        });
                               }
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "User not register"
-                    })
+                              error: "User not register",
+                    });
           }
 });
-
-
 
 router.post("/login", async (req, res) => {
           // console.log(req.body);
@@ -68,28 +64,30 @@ router.post("/login", async (req, res) => {
                               throw Error("Enter Email and Password");
                     } else {
                               const preUser = await userdb.findOne({
-                                        email
+                                        email,
                               });
 
                               if (!preUser) {
                                         res.status(422).json({
                                                   status: 204,
-                                                  error: "Email Not Found"
-                                        })
+                                                  error: "Email Not Found",
+                                        });
                               } else {
-                                        const isMatchPassword = await bcrypt.compare(password, preUser.password);
+                                        const isMatchPassword = await bcrypt.compare(
+                                                  password,
+                                                  preUser.password
+                                        );
 
                                         if (!isMatchPassword) {
                                                   res.status(422).json({
                                                             status: 205,
-                                                            error: "Password Not Match"
-                                                  })
+                                                            error: "Password Not Match",
+                                                  });
                                         } else {
                                                   // console.log("done");
 
                                                   const token = await preUser.getSignedToken();
                                                   // console.log(token);
-
 
                                                   //generate cookie
                                                   res.cookie("auth_token", token, {
@@ -100,27 +98,23 @@ router.post("/login", async (req, res) => {
 
                                                   const result = {
                                                             preUser,
-                                                            token
+                                                            token,
                                                   };
-
 
                                                   res.status(200).json({
                                                             status: 203,
                                                             message: "Login Successful",
-                                                            result: result
+                                                            result: result,
                                                   });
                                         }
                               }
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "User not login"
-                    })
+                              error: "User not login",
+                    });
           }
 });
-
-
 
 //validation user
 router.get("/validUser", authentication, async (req, res) => {
@@ -132,18 +126,15 @@ router.get("/validUser", authentication, async (req, res) => {
                     res.status(201).json({
                               status: 205,
                               message: "User Authenticate",
-                              getData: req.getData
-                    })
-
+                              getData: req.getData,
+                    });
           } else {
                     // console.log("no");
                     res.status(422).json({
-                              error: "User data not found"
-                    })
+                              error: "User data not found",
+                    });
           }
 });
-
-
 
 //skill add in databse
 router.post("/skill", authentication, async (req, res) => {
@@ -158,8 +149,8 @@ router.post("/skill", authentication, async (req, res) => {
                     if (!skills || skills.length === "") {
                               return res.status(422).json({
                                         status: 201,
-                                        error: "Skill is empty"
-                              })
+                                        error: "Skill is empty",
+                              });
                     } else {
                               // console.log("find");
                               const user = req.getData;
@@ -177,17 +168,12 @@ router.post("/skill", authentication, async (req, res) => {
                                         user: updatedUser,
                               });
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "Skill not add in database"
-                    })
+                              error: "Skill not add in database",
+                    });
           }
 });
-
-
-
-
 
 // Define a route for deleting a skill
 router.delete("/deleteskill", authentication, async (req, res) => {
@@ -210,13 +196,10 @@ router.delete("/deleteskill", authentication, async (req, res) => {
                               // const check = user.skills;
                               // console.log(check);
 
-
                               user.skills.pull(skillId);
 
                               // Save the updated user data
                               const updatedUser = await user.save();
-
-
 
                               res.status(200).json({
                                         status: 200,
@@ -230,10 +213,6 @@ router.delete("/deleteskill", authentication, async (req, res) => {
                     });
           }
 });
-
-
-
-
 
 //personalInfo user
 router.post("/personalInfo", authentication, async (req, res) => {
@@ -255,8 +234,8 @@ router.post("/personalInfo", authentication, async (req, res) => {
 
                               if (!user) {
                                         return res.status(503).json({
-                                                  error: "Not Found User"
-                                        })
+                                                  error: "Not Found User",
+                                        });
                               } else {
                                         // console.log(user);
                                         //personalInfo
@@ -267,7 +246,7 @@ router.post("/personalInfo", authentication, async (req, res) => {
                                                   email,
                                                   course,
                                                   phone,
-                                                  city
+                                                  city,
                                         };
                                         // console.log(newPersonalInfo);
 
@@ -281,20 +260,17 @@ router.post("/personalInfo", authentication, async (req, res) => {
                                         res.status(202).json({
                                                   status: 205,
                                                   message: "Updated personalInfo Successfully!",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not personal Info found"
-                    })
+                              error: "Internal Server Error not personal Info found",
+                    });
                     console.log(error);
           }
 });
-
-
 
 //edit education
 router.post("/editEducation", authentication, async (req, res) => {
@@ -315,8 +291,8 @@ router.post("/editEducation", authentication, async (req, res) => {
 
                               if (!user) {
                                         res.status(422).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         // console.log(user);
 
@@ -330,23 +306,20 @@ router.post("/editEducation", authentication, async (req, res) => {
                                         const updatedUser = await user.save();
                                         // console.log(updatedUser);
 
-
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "Education Added Successfully",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Education detail not added"
-                    })
+                              error: "Education detail not added",
+                    });
                     console.log(error);
           }
 });
-
-
 
 router.delete("/deleteEducationOne", authentication, async (req, res) => {
           // console.log(req.body);
@@ -358,8 +331,8 @@ router.delete("/deleteEducationOne", authentication, async (req, res) => {
 
                     if (!educationId) {
                               res.status(422).json({
-                                        error: "education id not find"
-                              })
+                                        error: "education id not find",
+                              });
                     } else {
                               // console.log(educationId);
 
@@ -367,8 +340,8 @@ router.delete("/deleteEducationOne", authentication, async (req, res) => {
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         // console.log(user);
 
@@ -382,13 +355,10 @@ router.delete("/deleteEducationOne", authentication, async (req, res) => {
                                         if (!educationEntry) {
                                                   return res.status(422).send("No Education Found");
                                         } else {
-
-
                                                   // Remove the education entry from the user's data
                                                   user.education = user.education.filter(
                                                             (education) => education._id.toString() !== educationId
                                                   );
-
 
                                                   // Save the updated user data
                                                   const updatedUser = await user.save();
@@ -398,23 +368,17 @@ router.delete("/deleteEducationOne", authentication, async (req, res) => {
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: " Education Deleted Successfully",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
-
                               }
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not delete education"
-                    })
+                              error: "Internal Server Error not delete education",
+                    });
           }
-
 });
-
-
-
 
 //editExperience
 router.post("/editExperience", authentication, async (req, res) => {
@@ -426,15 +390,15 @@ router.post("/editExperience", authentication, async (req, res) => {
                     // console.log(experienceForms);
 
                     if (!experienceForms || experienceForms.length === 0) {
-                              throw new Error('Please enter your experience');
+                              throw new Error("Please enter your experience");
                     } else {
                               const user = req.getData;
                               // console.log(user);
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         user.experience.push(...experienceForms);
 
@@ -444,18 +408,16 @@ router.post("/editExperience", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: " Experience Updated Successfully ",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error Experience data not added"
-                    })
+                              error: "Internal Server Error Experience data not added",
+                    });
           }
 });
-
-
 
 //experience delete
 router.delete("/deleteExperience", authentication, async (req, res) => {
@@ -467,15 +429,15 @@ router.delete("/deleteExperience", authentication, async (req, res) => {
 
                     if (!experienceId) {
                               res.status(422).json({
-                                        error: "Experience id not found"
-                              })
+                                        error: "Experience id not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         // console.log(user);
 
@@ -488,7 +450,6 @@ router.delete("/deleteExperience", authentication, async (req, res) => {
                                         if (!experienceEntry) {
                                                   return res.status(403).send("Invalid Id");
                                         } else {
-
                                                   user.experience = user.experience.filter(
                                                             (experience) => experience._id.toString() !== experienceId
                                                   );
@@ -501,21 +462,17 @@ router.delete("/deleteExperience", authentication, async (req, res) => {
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "Experience Deleted successfully!",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error Not delete experience data"
-                    })
+                              error: "Internal Server Error Not delete experience data",
+                    });
           }
-})
-
-
-
+});
 
 //service add
 router.post("/editService", authentication, async (req, res) => {
@@ -526,14 +483,14 @@ router.post("/editService", authentication, async (req, res) => {
                     } = req.body;
 
                     if (!service) {
-                              return res.status(406).send('Please fill all fields');
+                              return res.status(406).send("Please fill all fields");
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "Not found user"
-                                        })
+                                                  error: "Not found user",
+                                        });
                               } else {
                                         // console.log(user);
 
@@ -545,18 +502,16 @@ router.post("/editService", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "Services Added Successfully!",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server error not add service  "
-                    })
+                              error: "Internal Server error not add service  ",
+                    });
           }
 });
-
-
 
 //delete service
 router.delete("/deleteService", authentication, async (req, res) => {
@@ -569,8 +524,8 @@ router.delete("/deleteService", authentication, async (req, res) => {
 
                     if (!serviceId) {
                               res.status(422).json({
-                                        error: "Service id not found"
-                              })
+                                        error: "Service id not found",
+                              });
                     } else {
                               const user = req.getData;
 
@@ -579,18 +534,20 @@ router.delete("/deleteService", authentication, async (req, res) => {
                               } else {
                                         // console.log(user);
 
-                                        const serviceEntry = user.service.find((service) =>
-                                                  service._id.toString() === serviceId
+                                        const serviceEntry = user.service.find(
+                                                  (service) => service._id.toString() === serviceId
                                         );
 
                                         // console.log(serviceEntry);
 
                                         if (!serviceEntry) {
-                                                  return res.status(409).json('service id not found');
+                                                  return res.status(409).json("service id not found");
                                         } else {
                                                   // console.log(serviceEntry);
 
-                                                  user.service = user.service.filter((service) => service._id.toString() !== serviceId);
+                                                  user.service = user.service.filter(
+                                                            (service) => service._id.toString() !== serviceId
+                                                  );
 
                                                   const updatedUser = await user.save();
                                                   // console.log(updatedUser);
@@ -598,20 +555,17 @@ router.delete("/deleteService", authentication, async (req, res) => {
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "service deleted successfully ",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
-
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server error not delete service"
-                    })
+                              error: "Internal Server error not delete service",
+                    });
           }
 });
-
-
 
 //edit project
 router.post("/editProject", authentication, async (req, res) => {
@@ -630,8 +584,8 @@ router.post("/editProject", authentication, async (req, res) => {
 
                               if (!user) {
                                         return res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         // console.log(user);
 
@@ -643,18 +597,16 @@ router.post("/editProject", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "project added sucessfully",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error Project not add"
-                    })
+                              error: "Internal Server Error Project not add",
+                    });
           }
-})
-
-
+});
 
 //delete project
 router.delete("/deleteProject", authentication, async (req, res) => {
@@ -667,28 +619,32 @@ router.delete("/deleteProject", authentication, async (req, res) => {
 
                     if (!projectId) {
                               res.status(422).json({
-                                        error: "Project id not found"
-                              })
+                                        error: "Project id not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         // console.log(user);
 
-                                        const entryProject = user.project.find((project) => project._id.toString() === projectId);
+                                        const entryProject = user.project.find(
+                                                  (project) => project._id.toString() === projectId
+                                        );
 
                                         if (!entryProject) {
                                                   res.status(422).json({
-                                                            error: "No entry for this project"
-                                                  })
+                                                            error: "No entry for this project",
+                                                  });
                                         } else {
                                                   // console.log(entryProject);
 
-                                                  user.project = user.project.filter((project) => project._id.toString() !== projectId);
+                                                  user.project = user.project.filter(
+                                                            (project) => project._id.toString() !== projectId
+                                                  );
 
                                                   const updatedUser = await user.save();
                                                   // console.log(updatedUser);
@@ -696,20 +652,17 @@ router.delete("/deleteProject", authentication, async (req, res) => {
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "project deleted successfully",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not delete project"
-                    })
+                              error: "Internal Server Error not delete project",
+                    });
           }
 });
-
-
-
 
 //edit certificate
 router.post("/editCertificate", authentication, async (req, res) => {
@@ -721,15 +674,15 @@ router.post("/editCertificate", authentication, async (req, res) => {
 
                     if (!certificate) {
                               res.status(422).json({
-                                        error: "Certificate not found"
-                              })
+                                        error: "Certificate not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         user.certificate.push(...certificate);
 
@@ -739,24 +692,21 @@ router.post("/editCertificate", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "Certificates added to the profile Successfully!",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal server error not add Certificate"
-                    })
+                              error: "Internal server error not add Certificate",
+                    });
           }
 });
-
-
 
 //delete certificate
 router.delete("/deleteCertificate", authentication, async (req, res) => {
           try {
                     // console.log(req.body);
-
 
                     const {
                               certificateId
@@ -764,24 +714,28 @@ router.delete("/deleteCertificate", authentication, async (req, res) => {
 
                     if (!certificateId) {
                               res.status(422).json({
-                                        error: "certificat id not found"
-                              })
+                                        error: "certificat id not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
-                                        const entryField = user.certificate.find((certificate) => certificate._id.toString() === certificateId);
+                                        const entryField = user.certificate.find(
+                                                  (certificate) => certificate._id.toString() === certificateId
+                                        );
 
                                         if (!entryField) {
                                                   res.status(422).json({
-                                                            error: "entry field not found"
-                                                  })
+                                                            error: "entry field not found",
+                                                  });
                                         } else {
-                                                  user.certificate = user.certificate.filter((certificate) => certificate._id.toString() !== certificateId);
+                                                  user.certificate = user.certificate.filter(
+                                                            (certificate) => certificate._id.toString() !== certificateId
+                                                  );
 
                                                   const updatedUser = await user.save();
                                                   // console.log(updatedUser);
@@ -789,19 +743,17 @@ router.delete("/deleteCertificate", authentication, async (req, res) => {
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "Certificate successfully delete",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server error not delete certificate"
-                    })
+                              error: "Internal Server error not delete certificate",
+                    });
           }
-})
-
-
+});
 
 //editContact
 router.post("/editContact", authentication, async (req, res) => {
@@ -814,15 +766,15 @@ router.post("/editContact", authentication, async (req, res) => {
 
                     if (!contact) {
                               res.status(422).json({
-                                        error: "Not found contact"
-                              })
+                                        error: "Not found contact",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
                                         user.contact.push(...contact);
 
@@ -832,17 +784,16 @@ router.post("/editContact", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "Contact added successfully done",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not add contact"
-                    })
+                              error: "Internal Server Error not add contact",
+                    });
           }
 });
-
 
 //deleteContact
 router.delete("/deleteContact", authentication, async (req, res) => {
@@ -855,45 +806,47 @@ router.delete("/deleteContact", authentication, async (req, res) => {
 
                     if (!contactId) {
                               res.status(422).json({
-                                        error: "Contect id not found"
-                              })
+                                        error: "Contect id not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "User not found"
-                                        })
+                                                  error: "User not found",
+                                        });
                               } else {
-                                        const entryField = user.contact.find((contact) => contact._id.toString() === contactId);
+                                        const entryField = user.contact.find(
+                                                  (contact) => contact._id.toString() === contactId
+                                        );
 
                                         if (!entryField) {
                                                   res.status(422).json({
-                                                            error: "entryField not found"
-                                                  })
+                                                            error: "entryField not found",
+                                                  });
                                         } else {
                                                   // console.log(entryField);
 
-                                                  user.contact = user.contact.filter((contact) => contact._id.toString() !== contactId);
+                                                  user.contact = user.contact.filter(
+                                                            (contact) => contact._id.toString() !== contactId
+                                                  );
 
                                                   const updatedUser = await user.save();
 
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "Contact delete successfully done",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not delete contact"
-                    })
+                              error: "Internal Server Error not delete contact",
+                    });
           }
 });
-
-
 
 // editPhoto
 router.post("/editPhoto", authentication, async (req, res) => {
@@ -906,15 +859,15 @@ router.post("/editPhoto", authentication, async (req, res) => {
 
                     if (!photo) {
                               res.status(422).json({
-                                        error: "Photo not found"
-                              })
+                                        error: "Photo not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
                                         user.photo.push(photo);
 
@@ -924,17 +877,16 @@ router.post("/editPhoto", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "Photo added successfully",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not add photo"
-                    })
+                              error: "Internal Server Error not add photo",
+                    });
           }
 });
-
 
 //deletePhoto
 router.delete("/deletePhoto", authentication, async (req, res) => {
@@ -947,43 +899,45 @@ router.delete("/deletePhoto", authentication, async (req, res) => {
 
                     if (!photoId) {
                               res.status(422).json({
-                                        error: "photo id not found"
-                              })
+                                        error: "photo id not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
-                                        const emptyFields = user.photo.find((photo) => photo._id.toString() === photoId);
+                                        const emptyFields = user.photo.find(
+                                                  (photo) => photo._id.toString() === photoId
+                                        );
 
                                         if (!emptyFields) {
                                                   res.status(422).json({
-                                                            error: "empty fields not found"
-                                                  })
+                                                            error: "empty fields not found",
+                                                  });
                                         } else {
-                                                  user.photo = user.photo.filter((photo) => photo._id.toString() !== photoId);
+                                                  user.photo = user.photo.filter(
+                                                            (photo) => photo._id.toString() !== photoId
+                                                  );
 
                                                   const updatedUser = await user.save();
 
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "photo delete successfully done",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal error not delete photo"
-                    })
+                              error: "Internal error not delete photo",
+                    });
           }
 });
-
-
 
 //signOutToken
 router.post("/signOutToken", authentication, async (req, res) => {
@@ -994,54 +948,33 @@ router.post("/signOutToken", authentication, async (req, res) => {
 
                     if (!user) {
                               res.status(201).json({
-                                        error: "user not found"
-                              })
+                                        error: "user not found",
+                              });
                     } else {
+                              // Get all tokens associated with the user
+                              const tokensToRemove = user.tokens.map((token) => token._id);
+                              // console.log(tokensToRemove);
 
 
-                              const tokenClient = user.tokens;
-                              // console.log(tokenClient);
+                              // Remove all tokens from the user's tokens array
+                              user.tokens = [];
 
-                              if (!tokenClient) {
-                                        res.status(422).json({
-                                                  error: "token not found"
-                                        })
-                              } else {
-                                        // console.log(tokenClient);
+                              // Save the updated user object to remove the tokens
+                              const updatedUser = await user.save();
 
-                                        const entryToken = user.tokens.find((tokens) => tokens._id.toString() !== tokenClient);
-                                        // console.log(entryToken);
+                              res.status(201).json({
+                                        status: 205,
+                                        message: "All tokens removed successfully",
+                                        updatedUser,
+                              });
 
-                                        if (!entryToken) {
-                                                  res.status(422).json({
-                                                            error: "not found token"
-                                                  })
-                                        } else {
-                                                  user.tokens = user.tokens.filter((tokens) => tokens._id.toString() !== tokenClient);
-                                                  // console.log(user);
-
-                                                  const updatedUser = await user.save();
-
-                                                  // console.log(updatedUser);
-
-                                                  res.status(201).json({
-                                                            status: 205,
-                                                            message: "token remove successfully dine",
-                                                            updatedUser
-                                                  });
-                                        }
-
-
-                              }
                     }
-
           } catch (error) {
                     res.status(422).json({
-                              error: "internal server error not sign out"
-                    })
+                              error: "internal server error not sign out",
+                    });
           }
-})
-
+});
 
 //editParagraph
 router.post("/editParagraph", authentication, async (req, res) => {
@@ -1054,15 +987,15 @@ router.post("/editParagraph", authentication, async (req, res) => {
 
                     if (!paragraph) {
                               res.status(422).json({
-                                        error: "please enter paragraph"
-                              })
+                                        error: "please enter paragraph",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
                                         // console.log(user);
 
@@ -1074,18 +1007,16 @@ router.post("/editParagraph", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "paragraph added successfully",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "internal server error not add paragraph"
-                    })
+                              error: "internal server error not add paragraph",
+                    });
           }
-})
-
-
+});
 
 //paragraphDelete
 router.delete("/paragraphDelete", authentication, async (req, res) => {
@@ -1098,26 +1029,30 @@ router.delete("/paragraphDelete", authentication, async (req, res) => {
 
                     if (!paragraphId) {
                               res.status(422).json({
-                                        error: "not found paragraph id"
-                              })
+                                        error: "not found paragraph id",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
-                                        const entryField = user.Paragraph.find((Paragraph) => Paragraph._id.toString() === paragraphId);
+                                        const entryField = user.Paragraph.find(
+                                                  (Paragraph) => Paragraph._id.toString() === paragraphId
+                                        );
 
                                         if (!entryField) {
                                                   res.status(422).json({
-                                                            error: "entry field not found"
-                                                  })
+                                                            error: "entry field not found",
+                                                  });
                                         } else {
                                                   // console.log(entryField);
 
-                                                  user.Paragraph = user.Paragraph.filter((Paragraph) => Paragraph._id.toString() !== paragraphId);
+                                                  user.Paragraph = user.Paragraph.filter(
+                                                            (Paragraph) => Paragraph._id.toString() !== paragraphId
+                                                  );
 
                                                   const updatedUser = await user.save();
                                                   // console.log(updatedUser);
@@ -1125,19 +1060,17 @@ router.delete("/paragraphDelete", authentication, async (req, res) => {
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "Paragraph successfully done",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server error not delete paragraph"
-                    })
+                              error: "Internal Server error not delete paragraph",
+                    });
           }
 });
-
-
 
 ///editHeadingSkill
 router.post("/editHeadingSkill", authentication, async (req, res) => {
@@ -1150,15 +1083,15 @@ router.post("/editHeadingSkill", authentication, async (req, res) => {
 
                     if (!heading) {
                               res.status(422).json({
-                                        error: "not found heading"
-                              })
+                                        error: "not found heading",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "not found user"
-                                        })
+                                                  error: "not found user",
+                                        });
                               } else {
                                         user.Heading.push(...heading);
 
@@ -1169,17 +1102,16 @@ router.post("/editHeadingSkill", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "heading successfully added done...",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal Server Error not add heading"
-                    })
+                              error: "Internal Server Error not add heading",
+                    });
           }
 });
-
 
 // //deleteHeading
 router.delete("/deleteHeading", authentication, async (req, res) => {
@@ -1192,45 +1124,47 @@ router.delete("/deleteHeading", authentication, async (req, res) => {
 
                     if (!headingId) {
                               res.status(422).json({
-                                        error: "Heading not found"
-                              })
+                                        error: "Heading not found",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
-                                        const entryField = user.Heading.find((Heading) => Heading._id.toString() === headingId);
+                                        const entryField = user.Heading.find(
+                                                  (Heading) => Heading._id.toString() === headingId
+                                        );
 
                                         if (!entryField) {
                                                   res.status(422).json({
-                                                            error: "not found entry field"
-                                                  })
+                                                            error: "not found entry field",
+                                                  });
                                         } else {
                                                   // console.log(entryField);
 
-                                                  user.Heading = user.Heading.filter((Heading) => Heading._id.toString() !== headingId);
+                                                  user.Heading = user.Heading.filter(
+                                                            (Heading) => Heading._id.toString() !== headingId
+                                                  );
 
                                                   const updatedUser = await user.save();
 
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "delete successfully done heading",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal server error not delete heading"
-                    })
+                              error: "Internal server error not delete heading",
+                    });
           }
 });
-
-
 
 ///editParagraphAbout
 router.post("/editParagraphAbout", authentication, async (req, res) => {
@@ -1243,15 +1177,15 @@ router.post("/editParagraphAbout", authentication, async (req, res) => {
 
                     if (!editPararaph) {
                               res.status(422).json({
-                                        error: "not found paragraph"
-                              })
+                                        error: "not found paragraph",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
                                         user.editPararaph.push(...editPararaph);
 
@@ -1262,17 +1196,16 @@ router.post("/editParagraphAbout", authentication, async (req, res) => {
                                         res.status(201).json({
                                                   status: 205,
                                                   message: "added paragraph",
-                                                  updatedUser
-                                        })
+                                                  updatedUser,
+                                        });
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "internal server error not add paragraph"
-                    })
+                              error: "internal server error not add paragraph",
+                    });
           }
 });
-
 
 ///deleteParagraphAbout
 router.delete("/deleteParagraphAbout", authentication, async (req, res) => {
@@ -1285,44 +1218,46 @@ router.delete("/deleteParagraphAbout", authentication, async (req, res) => {
 
                     if (!editParagraphId) {
                               res.status(422).json({
-                                        error: "not found editparagraph id"
-                              })
+                                        error: "not found editparagraph id",
+                              });
                     } else {
                               const user = req.getData;
 
                               if (!user) {
                                         res.status(201).json({
-                                                  error: "user not found"
-                                        })
+                                                  error: "user not found",
+                                        });
                               } else {
-                                        const entryField = user.editPararaph.find((editPararaph) => editPararaph._id.toString() === editParagraphId);
+                                        const entryField = user.editPararaph.find(
+                                                  (editPararaph) => editPararaph._id.toString() === editParagraphId
+                                        );
 
                                         if (!entryField) {
                                                   res.status(422).json({
-                                                            error: "not found entryfield"
-                                                  })
+                                                            error: "not found entryfield",
+                                                  });
                                         } else {
                                                   // console.log(entryField);
 
-                                                  user.editPararaph = user.editPararaph.filter((editPararaph) => editPararaph._id.toString() !== editParagraphId);
+                                                  user.editPararaph = user.editPararaph.filter(
+                                                            (editPararaph) => editPararaph._id.toString() !== editParagraphId
+                                                  );
 
                                                   const updatedUser = await user.save();
 
                                                   res.status(201).json({
                                                             status: 205,
                                                             message: "Successfully delete paragraph",
-                                                            updatedUser
-                                                  })
+                                                            updatedUser,
+                                                  });
                                         }
                               }
                     }
           } catch (error) {
                     res.status(422).json({
-                              error: "Internal server error not delete pargraph"
-                    })
+                              error: "Internal server error not delete pargraph",
+                    });
           }
-})
-
-
+});
 
 module.exports = router;

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./LoginRegister.css";
 
 const Register = () => {
+  const history = useNavigate();
+
   const [inpVal, setInpVal] = useState({
     name: "",
     email: "",
@@ -44,11 +46,14 @@ const Register = () => {
     } else {
       console.log("register");
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password, cpassword }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password, cpassword }),
+        }
+      );
 
       const res = await data.json();
       console.log(res);
@@ -58,7 +63,7 @@ const Register = () => {
       }
 
       if (res.status === 202) {
-        alert("Registered Successfully");
+        // alert("Registered Successfully");
         setInpVal({
           ...inpVal,
           name: "",
@@ -66,6 +71,7 @@ const Register = () => {
           password: "",
           cpassword: "",
         });
+        history("/login");
       }
     }
   };
