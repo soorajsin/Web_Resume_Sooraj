@@ -5,7 +5,7 @@ import { ContextNavigate } from "../ContextProvider/Context";
 
 const Home = () => {
   const { userdata, setUserData } = useContext(ContextNavigate);
-  // console.log(userdata.getData);
+  // console.log(userdata);
 
   const history = useNavigate();
 
@@ -67,6 +67,26 @@ const Home = () => {
     }
   };
 
+  const paragraphDelete = async (paragraphId, index) => {
+    const token = await localStorage.getItem("userDataToken");
+    // console.log(token);
+
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/paragraphDelete",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ paragraphId }),
+      }
+    );
+
+    const res = await data.json();
+    console.log(res);
+  };
+
   return (
     <>
       <div className="home">
@@ -78,16 +98,26 @@ const Home = () => {
         </div>
         <div className="tag">
           <div className="paragraph">
-            {/* <div className="show">
+            <div className="show">
               {userdata
                 ? userdata.getData.Paragraph.map((paragraph, index) => (
-                    <div key={index}>
+                    <div key={index} className="paragraphData">
                       {index > 0 && <br />}
-                      {paragraph}
+                      <div className="data">
+                        {paragraph.content}
+                        <div className="delete">
+                          <i
+                            onClick={() =>
+                              paragraphDelete(paragraph._id, index)
+                            }
+                            className="fa-sharp fa-solid fa-trash"
+                          ></i>
+                        </div>
+                      </div>
                     </div>
                   ))
                 : "Loading"}
-            </div> */}
+            </div>
 
             <div className="editParagraph">
               <button

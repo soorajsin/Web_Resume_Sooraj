@@ -85,12 +85,49 @@
           font-size: 30px;
           margin-bottom: 100px;
 }
-.home .tag .paragraph{
+
+.home .tag .paragraph {
           margin-bottom: 50px;
 }
-.home .tag .paragraph .show{
+
+.home .tag .paragraph .show {
           margin-bottom: 30px;
 }
-.home .tag .paragraph .edit button{
+
+.home .tag .paragraph .edit button {
           margin-left: 0px;
+}
+
+.home .tag .paragraph .show .paragraphData .data {
+          width: 700px;
+          border-radius: 10px;
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-right: 10px;
+          font-size: 20px;
+          cursor: pointer;
+          display: block;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          padding-right: 20px;
+}
+
+.home .tag .paragraph .show .paragraphData .data:hover {
+          background-color: rgb(209, 134, 134);
+}
+
+.home .tag .paragraph .show .paragraphData .data .delete {
+          margin-left: 600px;
+}
+
+.home .tag .paragraph .show .paragraphData .data .delete i {
+          padding-bottom: 20px;
+          padding-top: 20px;
+          font-size: 25px;
+          display: none;
+}
+
+.home .tag .paragraph .show .paragraphData .data:hover i {
+          display: block;
 }

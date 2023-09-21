@@ -1087,4 +1087,56 @@ router.post("/editParagraph", authentication, async (req, res) => {
 
 
 
+//paragraphDelete
+router.delete("/paragraphDelete", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              paragraphId
+                    } = req.body;
+
+                    if (!paragraphId) {
+                              res.status(422).json({
+                                        error: "not found paragraph id"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(201).json({
+                                                  error: "user not found"
+                                        })
+                              } else {
+                                        const entryField = user.Paragraph.find((Paragraph) => Paragraph._id.toString() === paragraphId);
+
+                                        if (!entryField) {
+                                                  res.status(422).json({
+                                                            error: "entry field not found"
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  user.Paragraph = user.Paragraph.filter((Paragraph) => Paragraph._id.toString !== paragraphId);
+
+                                                  const updatedUser = await user.save();
+                                                  // console.log(updatedUser);
+
+                                                  res.status(201).json({
+                                                            status:205, 
+                                                            message:"Paragraph successfully done",
+                                                            updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "Internal Server error not delete paragraph"
+                    })
+          }
+})
+
+
+
 module.exports = router;
