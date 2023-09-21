@@ -20,6 +20,33 @@
           cursor: pointer;
 }
 
+.about .left h3 .show .showData .data {
+          /* background-color:#eb8e91; */
+          width: 200px;
+          border-radius: 10px;
+          padding-left: 10px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          cursor: pointer;
+          word-wrap: break-word;
+}
+
+.about .left h3 .show .showData .data:hover {
+          background-color: #eb8e91;
+}
+
+.about .left h3 .show .showData .data .delete {
+          margin-left: 150px;
+}
+.about .left h3 .show .showData .data .delete i{
+          color: black;
+}
+
+.about .left .editHeading button {
+          width: 300px;
+          font-size: 25px;
+}
+
 .about .left p {
           color: rgb(51, 42, 42);
           font-size: 15px;

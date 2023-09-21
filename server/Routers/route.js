@@ -1123,8 +1123,8 @@ router.delete("/paragraphDelete", authentication, async (req, res) => {
                                                   // console.log(updatedUser);
 
                                                   res.status(201).json({
-                                                            status:205, 
-                                                            message:"Paragraph successfully done",
+                                                            status: 205,
+                                                            message: "Paragraph successfully done",
                                                             updatedUser
                                                   })
                                         }
@@ -1133,6 +1133,99 @@ router.delete("/paragraphDelete", authentication, async (req, res) => {
           } catch (error) {
                     res.status(422).json({
                               error: "Internal Server error not delete paragraph"
+                    })
+          }
+});
+
+
+
+///editHeadingSkill
+router.post("/editHeadingSkill", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);//heading
+
+                    const {
+                              heading
+                    } = req.body;
+
+                    if (!heading) {
+                              res.status(422).json({
+                                        error: "not found heading"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(201).json({
+                                                  error: "not found user"
+                                        })
+                              } else {
+                                        user.Heading.push(...heading);
+
+                                        const updatedUser = await user.save();
+
+                                        // console.log(updatedUser);
+
+                                        res.status(201).json({
+                                                  status: 205,
+                                                  message: "heading successfully added done...",
+                                                  updatedUser
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "Internal Server Error not add heading"
+                    })
+          }
+});
+
+
+// //deleteHeading
+router.delete("/deleteHeading", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              headingId
+                    } = req.body;
+
+                    if (!headingId) {
+                              res.status(422).json({
+                                        error: "Heading not found"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(201).json({
+                                                  error: "user not found"
+                                        })
+                              } else {
+                                        const entryField = user.Heading.find((Heading) => Heading._id.toString() === headingId);
+
+                                        if (!entryField) {
+                                                  res.status(422).json({
+                                                            error: "not found entry field"
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  user.Heading = user.Heading.filter((Heading) => Heading._id.toString() !== headingId);
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            status: 205,
+                                                            message: "delete successfully done heading",
+                                                            updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "Internal server error not delete heading"
                     })
           }
 })

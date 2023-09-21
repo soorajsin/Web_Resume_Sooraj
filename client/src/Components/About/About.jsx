@@ -13,13 +13,16 @@ const About = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/validUser",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    );
 
     if (data.ok) {
       console.log("fetch request failed: ", data.status, data.statusText);
@@ -46,14 +49,17 @@ const About = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deleteEducationOne", {
-      method: "DELETE",
-      headers: {
-        "Content-type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify({ educationId }),
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deleteEducationOne",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ educationId }),
+      }
+    );
 
     const res = await data.json();
     // console.log(res);
@@ -71,14 +77,17 @@ const About = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deleteExperience", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-      body: JSON.stringify({ experienceId }),
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deleteExperience",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ experienceId }),
+      }
+    );
 
     const res = await data.json();
     // console.log(res);
@@ -91,14 +100,65 @@ const About = () => {
     }
   };
 
+  const deleteHeading = async (headingId, index) => {
+    const token = await localStorage.getItem("userDataToken");
+
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deleteHeading",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ headingId }),
+      }
+    );
+
+    const res = await data.json();
+    // console.log(res);
+
+    if (res.status === 205) {
+      // console.log(res);
+      console.log("done");
+    } else {
+      console.log("not delete");
+    }
+  };
+
   return (
     <>
       <div className="about">
         <div className="left">
           <h3>
             I'm <span>{userdata ? userdata.getData.name : "Loading"}</span> and{" "}
-            <span>MERN Stact Developer</span>
+            <span className="show">
+              {userdata
+                ? userdata.getData.Heading.map((heading, index) => (
+                    <div key={index} className="showData">
+                      {index > 0 && <br />}
+                      <div className="data">
+                        {heading.headingSkill}
+                        <div className="delete">
+                          <i
+                            onClick={() => deleteHeading(heading._id, index)}
+                            className="fa-sharp fa-solid fa-trash"
+                          ></i>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                : "Loading"}
+            </span>
           </h3>
+          <div className="editHeading">
+            <button
+              onClick={() => history("/editHeadingSkill")}
+              className="btn btn-primary"
+            >
+              Add Heading Skill
+            </button>
+          </div>
           <p>
             Reliable and friendly individual who works hard to achieve his
             hoals. Adaptable quickly, and organized well. Interested in learning

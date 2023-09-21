@@ -19,6 +19,7 @@ import EditCertificate from "./Components/Portfolio/Certificate/EditCertificate"
 import EditContact from "./Components/Contact/ChangeContact/EditContact";
 import EditPhoto from "./Components/Home/Photo/EditPhoto";
 import EditParagraph from "./Components/Home/Paragraph/EditParagraph";
+import EditHeadingSkill from "./Components/About/HeadingSkill/EditHeadingSkill";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/editContact" element={<EditContact/>}/>
           <Route path="/editPhoto" element={<EditPhoto/>}/>
           <Route path="/editParagraph" element={<EditParagraph/>}/>
+          <Route path="/editHeadingSkill" element={<EditHeadingSkill/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -91,6 +91,9 @@ const userSchema = new mongoose.Schema({
           }],
           Paragraph: [{
                     content: String
+          }],
+          Heading: [{
+                    headingSkill: String
           }]
 
 
