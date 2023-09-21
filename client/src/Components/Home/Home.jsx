@@ -136,7 +136,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <p>I'm a website design, graphic design, and many more...</p>
+          {/* <p>I'm a website design, graphic design, and many more...</p> */}
         </div>
         <div className="tag">
           <button
