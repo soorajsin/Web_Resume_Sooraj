@@ -84,7 +84,15 @@ const Home = () => {
     );
 
     const res = await data.json();
-    console.log(res);
+    // console.log(res);
+
+    if (res.status === 205) {
+      // console.log(res);
+      console.log("done");
+    } else {
+      console.log("not delete paragraph");
+      history("*");
+    }
   };
 
   return (
