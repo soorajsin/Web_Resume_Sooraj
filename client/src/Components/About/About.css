@@ -38,7 +38,8 @@
 .about .left h3 .show .showData .data .delete {
           margin-left: 150px;
 }
-.about .left h3 .show .showData .data .delete i{
+
+.about .left h3 .show .showData .data .delete i {
           color: black;
 }
 
@@ -50,6 +51,49 @@
 .about .left p {
           color: rgb(51, 42, 42);
           font-size: 15px;
+}
+
+.about .left .paragraph {
+          margin-left: 0;
+}
+
+.about .left .paragraph .edit button {
+          font-size: 25px;
+          width: 300px;
+}
+
+.about .left .paragraph .show {
+          margin-bottom: 30px;
+}
+
+.about .left .paragraph .show .data {
+          /* background-color: #eb8e91; */
+          border-radius: 10px;
+          padding: 10px 10px 10px 10px;
+          margin-right: 100px;
+          word-wrap: break-word;
+          font-size: 18px;
+          cursor: pointer;
+}
+
+.about .left .paragraph .show .data:hover {
+          background-color: #eb8e91;
+}
+
+.about .left .paragraph .show .data .delete {
+          margin-left: 90%;
+}
+
+.about .left .paragraph .show .data .delete i {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          font-size: 25px;
+          cursor: pointer;
+          display: none;
+}
+
+.about .left .paragraph .show .data:hover i {
+          display: block;
 }
 
 .about .right {

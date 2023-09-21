@@ -20,6 +20,7 @@ import EditContact from "./Components/Contact/ChangeContact/EditContact";
 import EditPhoto from "./Components/Home/Photo/EditPhoto";
 import EditParagraph from "./Components/Home/Paragraph/EditParagraph";
 import EditHeadingSkill from "./Components/About/HeadingSkill/EditHeadingSkill";
+import EditParagraphAbout from "./Components/About/Paragraph/EditParagraphAbout";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/editPhoto" element={<EditPhoto/>}/>
           <Route path="/editParagraph" element={<EditParagraph/>}/>
           <Route path="/editHeadingSkill" element={<EditHeadingSkill/>}/>
+          <Route path="/editParagraphAbout" element={<EditParagraphAbout/>}/>
         </Routes>
       </BrowserRouter>
     </>

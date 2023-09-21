@@ -94,6 +94,9 @@ const userSchema = new mongoose.Schema({
           }],
           Heading: [{
                     headingSkill: String
+          }],
+          editPararaph: [{
+                    paragraph: String
           }]
 
 

@@ -1228,6 +1228,99 @@ router.delete("/deleteHeading", authentication, async (req, res) => {
                               error: "Internal server error not delete heading"
                     })
           }
+});
+
+
+
+///editParagraphAbout
+router.post("/editParagraphAbout", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              editPararaph
+                    } = req.body;
+
+                    if (!editPararaph) {
+                              res.status(422).json({
+                                        error: "not found paragraph"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(201).json({
+                                                  error: "user not found"
+                                        })
+                              } else {
+                                        user.editPararaph.push(...editPararaph);
+
+                                        const updatedUser = await user.save();
+
+                                        // console.log(updatedUser);
+
+                                        res.status(201).json({
+                                                  status: 205,
+                                                  message: "added paragraph",
+                                                  updatedUser
+                                        })
+                              }
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "internal server error not add paragraph"
+                    })
+          }
+});
+
+
+///deleteParagraphAbout
+router.delete("/deleteParagraphAbout", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+
+                    const {
+                              editParagraphId
+                    } = req.body;
+
+                    if (!editParagraphId) {
+                              res.status(422).json({
+                                        error: "not found editparagraph id"
+                              })
+                    } else {
+                              const user = req.getData;
+
+                              if (!user) {
+                                        res.status(201).json({
+                                                  error: "user not found"
+                                        })
+                              } else {
+                                        const entryField = user.editPararaph.find((editPararaph) => editPararaph._id.toString() === editParagraphId);
+
+                                        if (!entryField) {
+                                                  res.status(422).json({
+                                                            error: "not found entryfield"
+                                                  })
+                                        } else {
+                                                  // console.log(entryField);
+
+                                                  user.editPararaph = user.editPararaph.filter((editPararaph) => editPararaph._id.toString() !== editParagraphId);
+
+                                                  const updatedUser = await user.save();
+
+                                                  res.status(201).json({
+                                                            status: 205,
+                                                            message: "Successfully delete paragraph",
+                                                            updatedUser
+                                                  })
+                                        }
+                              }
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "Internal server error not delete pargraph"
+                    })
+          }
 })
 
 

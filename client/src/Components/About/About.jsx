@@ -126,6 +126,31 @@ const About = () => {
     }
   };
 
+  const deleteParagraph = async (editParagraphId, index) => {
+    const token = await localStorage.getItem("userDataToken");
+
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deleteParagraphAbout",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ editParagraphId }),
+      }
+    );
+
+    const res = await data.json();
+    // console.log(res);
+
+    if (res.status === 205) {
+      console.log(res);
+    } else {
+      console.log("not delete pargraph");
+    }
+  };
+
   return (
     <>
       <div className="about">
@@ -159,13 +184,36 @@ const About = () => {
               Add Heading Skill
             </button>
           </div>
-          <p>
-            Reliable and friendly individual who works hard to achieve his
-            hoals. Adaptable quickly, and organized well. Interested in learning
-            the latest web & software technologies quickly Able to work in teams
-            as well as individually. My future goal is to become a senior
-            full-stack developer
-          </p>
+          <div className="paragraph">
+            <div className="show">
+              {userdata
+                ? userdata.getData.editPararaph.map((editParagraph, index) => (
+                    <div key={index}>
+                      {index > 0 && <br />}
+                      <div className="data">
+                        {editParagraph.paragraph}
+                        <div className="delete">
+                          <i
+                            onClick={() =>
+                              deleteParagraph(editParagraph._id, index)
+                            }
+                            className="fa-sharp fa-solid fa-trash"
+                          ></i>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                : "Loading"}
+            </div>
+            <div className="edit">
+              <button
+                onClick={() => history("/editParagraphAbout")}
+                className="btn btn-primary"
+              >
+                Add Paragraph
+              </button>
+            </div>
+          </div>
         </div>
         <div className="personalInfo">
           <div className="showInfo">
