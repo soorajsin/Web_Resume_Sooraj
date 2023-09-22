@@ -4,6 +4,8 @@ const userdb = require("../Model/userSchema");
 const bcrypt = require("bcryptjs");
 const authentication = require("../Middleware/Authentication");
 
+
+
 router.post("/register", async (req, res) => {
           // console.log(req.body);
           try {
@@ -1259,5 +1261,47 @@ router.delete("/deleteParagraphAbout", authentication, async (req, res) => {
                     });
           }
 });
+
+
+
+
+
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+          service: "Gmail",
+          auth: {
+                    user: "soorajsingh7505@gmail.com",
+                    pass: "rdec@231"
+          }
+})
+
+//messageSend
+router.post("/messageSend", authentication, async (req, res) => {
+          try {
+                    // console.log(req.body);
+                    const {
+                              name,
+                              email,
+                              subject,
+                              description
+                    } = req.body;
+
+
+                    if (!name || !email || !subject || !description) {
+                              res.status(422).json({
+                                        error: "data not found"
+                              })
+                    } else {
+                              // console.log(req.body);
+
+
+                    }
+          } catch (error) {
+                    res.status(422).json({
+                              error: "Internal server error not send message"
+                    })
+          }
+})
 
 module.exports = router;
