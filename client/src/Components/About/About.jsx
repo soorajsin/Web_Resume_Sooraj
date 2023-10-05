@@ -297,7 +297,6 @@ const About = () => {
             <div className="edit-education">
               <button
                 onClick={() => history("/editEducation")}
-                className="btn btn-danger"
               >
                 Edit Education
               </button>
@@ -329,7 +328,6 @@ const About = () => {
             <div className="edit-experience">
               <button
                 onClick={() => history("/editExperience")}
-                className="btn btn-danger"
               >
                 Edit Experience
               </button>

@@ -289,14 +289,19 @@ body {
           margin-top: 30px;
 }
 
-.about .education .education-part .edit-education:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
-}
-
 .about .education .education-part .edit-education button {
           width: 300px;
-          font-size: 27px;
+          font-size: 30px;
+          transition: 0.3s;
+          border-radius: 10px;
+          background-color: #0d6efd;
+          border: none;
+
+}
+
+.about .education .education-part .edit-education button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .about .education .education-part .show-education {
@@ -306,9 +311,9 @@ body {
 
 .about .education .education-part .show-education .education-data {
           width: 550px;
-          background-color: aliceblue;
           border-radius: 10px;
           margin-bottom: 30px;
+          transition: 0.3s;
 }
 
 .about .education .education-part .show-education .education-data p {
@@ -324,15 +329,10 @@ body {
           padding-right: 30px;
 }
 
-/* .about .education .education-part .show-education .education-data h6 {
-          font-size: 20px;
-          display: flex;
-          flex-wrap: wrap;
-          margin-left: 20px;
-} */
-
 .about .education .education-part .show-education .education-data:hover {
-          background-color: #ff9a9e;
+          background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 
@@ -345,10 +345,14 @@ body {
           font-size: 30px;
           cursor: pointer;
           display: none;
+          transition: 0.3s;
 }
 
 .about .education .education-part .show-education .education-data:hover i {
           display: block;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: red;
 }
 
 
@@ -360,17 +364,21 @@ body {
 .about .experience .experience-content {
           margin-left: 50%;
           margin-top: 100px;
-          margin-bottom: 100px;
+          margin-bottom: 200px;
 }
 
 .about .experience .experience-content .edit-experience button {
           width: 400px;
           font-size: 30px;
+          border-radius: 10px;
+          background-color: #0d6efd;
+          border: none;
+          transition: 0.3s;
 }
 
 .about .experience .experience-content .edit-experience button:hover {
-          transform: translateX(-10px);
-          transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .about .experience .experience-content .show-experience {
@@ -379,12 +387,12 @@ body {
 
 .about .experience .experience-content .show-experience .show-data {
           width: 500px;
-          background-color: aliceblue;
           border-radius: 10px;
           margin-bottom: 30px;
           padding-left: 20px;
           padding-top: 10px;
           padding-bottom: 10px;
+          transition: 0.3s;
 }
 
 .about .experience .experience-content .show-experience .show-data p {
@@ -399,7 +407,9 @@ body {
 }
 
 .about .experience .experience-content .show-experience .show-data:hover {
-          background-color: #ff9a9e;
+          background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .about .experience .experience-content .show-experience .show-data .icon {
@@ -411,8 +421,12 @@ body {
           padding-bottom: 20px;
           cursor: pointer;
           display: none;
+          transition: 0.3s;
 }
 
 .about .experience .experience-content .show-experience .show-data:hover i {
           display: block;
+          color: red;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }

@@ -39,14 +39,17 @@ const Experience = () => {
       const token = await localStorage.getItem("userDataToken");
       //       console.log(token);
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/editExperience", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ experienceForms }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/editExperience",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ experienceForms }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -116,15 +119,11 @@ const Experience = () => {
           </div>
         ))}
         <div className="form">
-          <button onClick={addExperienceForm} className="btn btn-danger">
-            Add Experience
-          </button>
+          <button onClick={addExperienceForm}>Add Experience</button>
         </div>
-      </div>
-      <div className="saveExperinece">
-        <button onClick={saveExperienceData} className="btn btn-success">
-          Save
-        </button>
+        <div className="saveExperinece">
+          <button onClick={saveExperienceData}>Save</button>
+        </div>
       </div>
     </>
   );

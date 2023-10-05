@@ -5,15 +5,35 @@
 
 .experience {
           margin-top: 100px;
-          margin-left: 400px;
+          margin-left: 300px;
+          transition: 0.3s;
+          width: 700px;
+          background-color: #fff;
+          border-radius: 10px;
+          margin-bottom: 100px;
+}
+
+.experience:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .experience h1 {
           color: rgb(219, 56, 56);
+          margin-left: 100px;
+          padding-top: 50px;
+          padding-bottom: 50px;
+          transition: 0.3s;
+}
+
+.experience h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
 
 .experience .form {
           margin-top: 20px;
+          margin-left: 100px;
 }
 
 .experience .form label {
@@ -21,44 +41,60 @@
 }
 
 .experience .form input {
-          width: 400px;
+          width: 450px;
           height: 40px;
           border-radius: 10px;
           font-size: 30px;
           padding-left: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
+}
+
+.experience .form input:focus {
+          background-color: #fff;
 }
 
 .experience .form textarea {
-          width: 400px;
+          width: 450px;
           border-radius: 10px;
           font-size: 30px;
           padding-left: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
+}
+
+.experience .form textarea:focus {
+          background-color: #fff;
 }
 
 .experience .form button {
-          width: 400px;
+          width: 450px;
           font-size: 30px;
           margin-top: 50px;
           margin-bottom: 50px;
+          border-radius: 10px;
+          background-color: #1976d2;
+          border: none;
 }
 
 .experience .form button:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
-.saveExperinece {
-          text-align: center;
-}
-
-.saveExperinece button {
-          width: 600px;
+.experience .saveExperinece button {
+          width: 450px;
           font-size: 30px;
           margin-bottom: 100px;
           margin-top: 50px;
+          margin-left: 100px;
+          border-radius: 10px;
+          border: none;
+          background-color: #198754;
+          transition: 0.3s;
 }
 
-.saveExperinece button:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
+.experience .saveExperinece button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
