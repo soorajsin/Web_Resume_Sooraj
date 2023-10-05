@@ -85,8 +85,8 @@ const EditPhoto = () => {
             />
           </div>
         </div>
-        <div className="save">
-          <button onClick={savePhotoData} className="btn btn-success">
+        <div className="saveData">
+          <button onClick={savePhotoData}>
             Save
           </button>
         </div>

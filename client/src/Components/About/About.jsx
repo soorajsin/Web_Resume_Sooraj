@@ -179,12 +179,12 @@ const About = () => {
           <div className="editHeading">
             <button
               onClick={() => history("/editHeadingSkill")}
-              className="btn btn-primary"
+              // className="btn btn-primary"
             >
               Add Heading Skill
             </button>
           </div>
-          <div className="paragraph">
+          <div className="paragraphAbout">
             <div className="show">
               {userdata
                 ? userdata.getData.editPararaph.map((editParagraph, index) => (
@@ -208,7 +208,6 @@ const About = () => {
             <div className="edit">
               <button
                 onClick={() => history("/editParagraphAbout")}
-                className="btn btn-primary"
               >
                 Add Paragraph
               </button>
@@ -236,7 +235,6 @@ const About = () => {
           <div className="editInfo">
             <button
               onClick={() => history("/personalInfo")}
-              className="btn btn-primary"
             >
               Edit Personal Information
             </button>

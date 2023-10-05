@@ -10,16 +10,42 @@
 
 .home .tag {
           cursor: pointer;
+          margin-bottom: 50px;
+}
+
+.home .tag h3 {
+          cursor: pointer;
+          transition: 0.3s;
+          width: 1000px;
+          word-wrap: break-word;
+          flex-wrap: wrap;
+          border-radius: 10px;
+          padding-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+}
+
+.home .tag h3:hover {
+          transform: scale(1.07);
+          box-shadow: 0 0 10px;
+          background-color: #fff;
 }
 
 .home .tag button:hover {
           transform: translateX(10px);
           transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .home .tag button {
           font-size: 30px;
           width: 300px;
+          transition: 0.3s;
+          border-radius: 10px;
+          border: none;
+          background-color: #0d6efd;
+          margin-bottom: 20px;
 }
 
 .home .tag span {
@@ -31,18 +57,66 @@
           font-size: 18px;
 }
 
+.home .tag .paragraphData .show {
+          margin-bottom: 30px;
+}
+
+.home .tag .paragraphData .show .paragraphDataItem .data {
+          border-radius: 10px;
+          padding-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          width: 1000px;
+          transition: 0.3s;
+          font-size: 25px;
+}
+
+.home .tag .paragraphData .show .paragraphDataItem .data:hover {
+          background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.home .tag .paragraphData .show .paragraphDataItem .data .delete i {
+          margin-left: 800px;
+          font-size: 25px;
+          transition: 0.3;
+          display: none;
+}
+
+.home .tag .paragraphData .show .paragraphDataItem .data:hover i {
+          display: block;
+}
+
+.home .tag .paragraphData .show .paragraphDataItem .data .delete i:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: red;
+}
+
 .home .img {
           margin-top: 50px;
+}
+
+.home .img .button button {
+          transition: 0.3s;
+          border-radius: 10px;
+          border: none;
+          background-color: #0d6efd;
 }
 
 .home .img .button button:hover {
           transform: translateX(10px);
           transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .home .img .show {
           margin-bottom: 10px;
+          transition: 0.3s;
 }
+
 
 .home .img .show .data:hover {
           transform: translateY(-5px);
@@ -58,6 +132,13 @@
           width: 300px;
           margin-right: 50px;
           margin-bottom: 50px;
+          transition: 0.3s;
+}
+
+.home .img .data .data-sub:hover {
+          transform: scale(1.03);
+          box-shadow: 0 0 10px;
+          border-radius: 10px;
 }
 
 .home .img .data .data-sub img {
@@ -74,10 +155,14 @@
           font-size: 30px;
           cursor: pointer;
           display: none;
+          transition: 0.3s;
 }
 
 .home .img .data .data-sub:hover i {
           display: block;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(243, 15, 15);
 }
 
 .home .img .button button {
@@ -111,10 +196,13 @@
           word-wrap: break-word;
           white-space: pre-wrap;
           padding-right: 20px;
+          transition: 0.3s;
 }
 
 .home .tag .paragraph .show .paragraphData .data:hover {
-          background-color: rgb(209, 134, 134);
+          background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .home .tag .paragraph .show .paragraphData .data .delete {
@@ -126,8 +214,13 @@
           padding-top: 20px;
           font-size: 25px;
           display: none;
+          transition: 0.3s;
 }
 
 .home .tag .paragraph .show .paragraphData .data:hover i {
           display: block;
+          font-size: 30px;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(230, 33, 33);
 }

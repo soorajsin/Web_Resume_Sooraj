@@ -3,21 +3,40 @@
           padding: 0;
 }
 
-.editPhoto {
-          margin-top: 100px;
+body {
+          background-color: #f5f5f5;
 }
 
-.editPhoto .save button:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
+.editPhoto {
+          margin-top: 100px;
+          background-color: #fff;
+          width: 700px;
+          border-radius: 10px;
+          margin-left: 300px;
+          margin-bottom: 50px;
+          transition: 0.3s;
+}
+
+.editPhoto:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .editPhoto .edit {
-          margin-left: 400px;
+          margin-left: 100px;
+          margin-top: 30px;
 }
 
 .editPhoto .edit h1 {
           color: rgb(196, 93, 93);
+          padding-top: 30px;
+          padding-bottom: 30px;
+          transition: 0.3s;
+}
+
+.editPhoto .edit h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
 
 .editPhoto .edit .form {
@@ -29,12 +48,32 @@
 }
 
 .editPhoto .edit .form input {
-          width: 400px;
+          width: 450px;
           font-size: 30px;
           border-radius: 10px;
           padding-left: 10px;
+          background-color: #f5f5f5;
+          border-top: none;
 }
 
-.editPhoto .save {
-          text-align: center;
+.editPhoto .edit .form input:focus {
+          background-color: #fff;
+}
+
+.editPhoto .saveData button {
+          width: 450px;
+          margin-left: 100px;
+          border-radius: 10px;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          height: 45px;
+          border: none;
+          background-color: #198754;
+          font-size: 30px;
+          transition: 0.3s;
+}
+
+.editPhoto .saveData button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }

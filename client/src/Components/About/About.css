@@ -3,6 +3,10 @@
           padding: 0;
 }
 
+body {
+          background-color: #f5f5f5;
+}
+
 .about {
           margin-left: 50px;
 }
@@ -13,6 +17,20 @@
 
 .about .left h3 {
           margin-top: 170px;
+          transition: 0.3s;
+          width: 1010px;
+          border-radius: 10px;
+          padding-left: 20px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          flex-wrap: wrap;
+          word-wrap: break-word;
+}
+
+.about .left h3:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 10px;
+          background-color: #fff;
 }
 
 .about .left h3 span {
@@ -22,7 +40,7 @@
 
 .about .left h3 .show .showData .data {
           /* background-color:#eb8e91; */
-          width: 200px;
+          width: 900px;
           border-radius: 10px;
           padding-left: 10px;
           padding-top: 10px;
@@ -32,20 +50,42 @@
 }
 
 .about .left h3 .show .showData .data:hover {
-          background-color: #eb8e91;
+          background-color: #f5f5f5;
 }
 
 .about .left h3 .show .showData .data .delete {
-          margin-left: 150px;
+          margin-left: 800px;
 }
 
 .about .left h3 .show .showData .data .delete i {
           color: black;
+          display: none;
+          transition: 0.3s;
+}
+
+.about .left h3 .show .showData .data .delete i:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: red;
+}
+
+.about .left h3 .show .showData .data:hover i {
+          display: block;
 }
 
 .about .left .editHeading button {
           width: 300px;
-          font-size: 25px;
+          font-size: 30px;
+          margin-top: 20px;
+          border-radius: 10px;
+          border: none;
+          background-color: #0d6efd;
+          transition: 0.3s;
+}
+
+.about .left .editHeading button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .about .left p {
@@ -53,20 +93,32 @@
           font-size: 15px;
 }
 
-.about .left .paragraph {
+.about .left .paragraphAbout {
           margin-left: 0;
+          margin-top: 50px;
+          margin-bottom: 50px;
 }
 
-.about .left .paragraph .edit button {
-          font-size: 25px;
+.about .left .paragraphAbout .edit button {
+          font-size: 30px;
           width: 300px;
+          margin-top: 20px;
+          border-radius: 10px;
+          border: none;
+          background-color: #1976d2;
+          transition: 0.3s;
 }
 
-.about .left .paragraph .show {
+.about .left .paragraphAbout .edit button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.about .left .paragraphAbout .show {
           margin-bottom: 30px;
 }
 
-.about .left .paragraph .show .data {
+.about .left .paragraphAbout .show .data {
           /* background-color: #eb8e91; */
           border-radius: 10px;
           padding: 10px 10px 10px 10px;
@@ -74,26 +126,34 @@
           word-wrap: break-word;
           font-size: 18px;
           cursor: pointer;
+          transition: 0.3s;
+          width: 1000px;
 }
 
-.about .left .paragraph .show .data:hover {
-          background-color: #eb8e91;
+.about .left .paragraphAbout .show .data:hover {
+          background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
-.about .left .paragraph .show .data .delete {
-          margin-left: 90%;
+.about .left .paragraphAbout .show .data .delete {
+          margin-left: 900px;
 }
 
-.about .left .paragraph .show .data .delete i {
+.about .left .paragraphAbout .show .data .delete i {
           padding-top: 20px;
           padding-bottom: 20px;
-          font-size: 25px;
+          font-size: 30px;
           cursor: pointer;
           display: none;
+          transition: 0.3s;
 }
 
-.about .left .paragraph .show .data:hover i {
+.about .left .paragraphAbout .show .data:hover i {
           display: block;
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: red;
 }
 
 .about .right {
@@ -163,9 +223,24 @@
           margin-top: 100px;
 }
 
+.about .personalInfo .editInfo button {
+          height: 45px;
+          border-radius: 10px;
+          font-size: 30px;
+          text-align: center;
+          padding-left: 20px;
+          padding-right: 20px;
+          border: none;
+          background-color: #0d6efd;
+          transition: 0.3s;
+          margin-top: 20px;
+          margin-bottom: 50px;
+}
+
 .about .personalInfo .editInfo button:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+          font-size: 33px;
 }
 
 .about .personalInfo .editInfo .btn {
@@ -180,7 +255,9 @@
 .about .personalInfo .showInfo .showInfo-data:hover {
           transform: translateY(-5px);
           transition: transform 0.3s ease;
-          background-color: #eb8e91;
+          background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .about .personalInfo .showInfo .showInfo-data {
@@ -189,6 +266,7 @@
           padding-left: 10px;
           padding-top: 10px;
           padding-bottom: 10px;
+          transition: 0.3s;
 }
 
 .about .personalInfo .showInfo .showInfo-data p {

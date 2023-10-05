@@ -105,11 +105,11 @@ const Home = () => {
           </h3>
         </div>
         <div className="tag">
-          <div className="paragraph">
+          <div className="paragraphData">
             <div className="show">
               {userdata
                 ? userdata.getData.Paragraph.map((paragraph, index) => (
-                    <div key={index} className="paragraphData">
+                    <div key={index} className="paragraphDataItem">
                       {index > 0 && <br />}
                       <div className="data">
                         {paragraph.content}
@@ -130,7 +130,7 @@ const Home = () => {
             <div className="editParagraph">
               <button
                 onClick={() => history("/editParagraph")}
-                className="btn btn-primary"
+                // className="btn btn-primary"
               >
                 Paragraph Edit
               </button>
@@ -141,7 +141,7 @@ const Home = () => {
         <div className="tag">
           <button
             onClick={() => history("/contact")}
-            className="btn btn-danger"
+            // className="btn btn-danger"
           >
             Contact
           </button>
@@ -169,7 +169,7 @@ const Home = () => {
           <div className="button">
             <button
               onClick={() => history("/editPhoto")}
-              className="btn btn-primary"
+              // className="btn btn-primary"
             >
               Set Profile Photo
             </button>

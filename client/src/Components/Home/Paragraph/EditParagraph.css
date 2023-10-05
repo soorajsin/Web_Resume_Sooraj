@@ -1,28 +1,91 @@
-*{
+* {
           margin: 0;
           padding: 0;
 }
-.paragraph{
+
+body {
+          background-color: #f5f5f5;
+}
+
+.paragraph {
           margin-top: 100px;
-          margin-left: 50px;
+          margin-left: 300px;
+          background-color: #fff;
+          width: 700px;
+          border-radius: 10px;
+          margin-bottom: 30px;
+          transition: 0.3s;
+          margin-bottom: 50px;
 }
-.paragraph h1{
-          margin-left: 400px;
+
+.paragraph:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.paragraph h1 {
+          margin-left: 100px;
           color: rgb(197, 89, 89);
+          padding-top: 30px;
+          margin-bottom: 30px;
+          transition: 0.3s;
 }
-.paragraph .form{
-          margin-left: 400px;
+
+.paragraph h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
-.paragraph .form label{
+
+.paragraph .form {
+          margin-left: 100px;
+}
+
+.paragraph .form label {
           font-size: 30px;
 }
-.paragraph .form textarea{
+
+.paragraph .form textarea {
           width: 500px;
           border-radius: 10px;
           padding-left: 10px;
           font-size: 30px;
+          border-top: none;
+          margin-bottom: 50px;
+          background-color: #f5f5f5;
 }
-.paragraph .form button{
+
+.paragraph .form textarea:focus {
+          background-color: #fff;
+}
+
+.paragraph .form button {
           width: 500px;
           font-size: 30px;
+          border-radius: 10px;
+          border: none;
+          background-color: #0d6efd;
+          transition: 0.3s;
+          cursor: pointer;
+}
+
+.paragraph .form button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.paragraph .saved button {
+          margin-left: 100px;
+          width: 500px;
+          margin-top: 70px;
+          margin-bottom: 50px;
+          font-size: 35px;
+          border-radius: 10px;
+          border: none;
+          background-color: #198754;
+          transition: 0.3s;
+}
+
+.paragraph .saved button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }

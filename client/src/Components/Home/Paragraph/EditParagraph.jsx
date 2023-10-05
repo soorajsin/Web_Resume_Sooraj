@@ -82,13 +82,13 @@ const EditParagraph = () => {
           ))}
           <br />
           <div className="form">
-            <button onClick={addParagraph} className="btn btn-primary">
+            <button onClick={addParagraph}>
               Add Paragraph
             </button>
           </div>
         </div>
-        <div className="save">
-          <button onClick={saveParagraph} className="btn btn-success">
+        <div className="saved">
+          <button onClick={saveParagraph}>
             Save
           </button>
         </div>
