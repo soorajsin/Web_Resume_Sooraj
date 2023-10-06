@@ -79,7 +79,7 @@ const Register = () => {
   return (
     <>
       <div className="register">
-        <h1 className="btn btn-danger">Welcome to Register</h1>
+        <h1>Welcome to Register</h1>
         <br />
         <div className="form">
           <label htmlFor="name">Name</label>
@@ -130,14 +130,15 @@ const Register = () => {
         </div>
         <br />
         <div className="form">
-          <button onClick={registerUser} className="btn btn-primary">
-            Register
-          </button>
+          <button onClick={registerUser}>Register</button>
         </div>
         <br />
         <div className="form">
           <p>
-            Your Already Account? <NavLink to={"/login"}>Login</NavLink>
+            Your Already Account?{" "}
+            <NavLink to={"/login"} className={"login"}>
+              Login
+            </NavLink>
           </p>
         </div>
       </div>

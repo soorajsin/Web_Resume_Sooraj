@@ -42,14 +42,17 @@ const EditCertificate = () => {
       const token = await localStorage.getItem("userDataToken");
       //       console.log(token);
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/editCertificate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ certificate }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/editCertificate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ certificate }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -66,7 +69,7 @@ const EditCertificate = () => {
 
   return (
     <>
-      <div className="certificate">
+      <div id="certificate">
         <div className="edit">
           <h1>Welcome to Edit Certificate</h1>
           <br />
@@ -138,13 +141,11 @@ const EditCertificate = () => {
           ))}
           <br />
           <div className="form">
-            <button onClick={addCertificate} className="btn btn-primary">
-              Add Certificate
-            </button>
+            <button onClick={addCertificate}>Add Certificate</button>
           </div>
         </div>
         <div className="save">
-          <button onClick={saveCertificate} className="btn btn-success">
+          <button onClick={saveCertificate}>
             Save
           </button>
         </div>

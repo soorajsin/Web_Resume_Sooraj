@@ -37,14 +37,17 @@ const EditContact = () => {
       const token = await localStorage.getItem("userDataToken");
       //       console.log(token);
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/editContact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ contact }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/editContact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ contact }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -116,13 +119,11 @@ const EditContact = () => {
           ))}
           <br />
           <div className="form">
-            <button onClick={addContact} className="btn btn-primary">
-              Add Contact
-            </button>
+            <button onClick={addContact}>Add Contact</button>
           </div>
         </div>
         <div className="save">
-          <button onClick={saveContact} className="btn btn-success">
+          <button onClick={saveContact}>
             Save
           </button>
         </div>

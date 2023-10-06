@@ -3,10 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./LoginRegister.css";
 
 const Register = () => {
-
-  const history=useNavigate();
-
-
+  const history = useNavigate();
 
   const [inpVal, setInpVal] = useState({
     email: "",
@@ -39,11 +36,14 @@ const Register = () => {
     } else {
       console.log("login");
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const res = await data.json();
       console.log(res);
@@ -72,7 +72,7 @@ const Register = () => {
   return (
     <>
       <div className="register">
-        <h1 className="btn btn-danger"> Welcome to Login</h1>
+        <h1> Welcome to Login</h1>
         <br />
         <div className="form">
           <label htmlFor="email">Email</label>
@@ -99,14 +99,15 @@ const Register = () => {
         </div>
         <br />
         <div className="form">
-          <button onClick={registerUser} className="btn btn-primary">
-            Login
-          </button>
+          <button onClick={registerUser}>Login</button>
         </div>
         <br />
         <div className="form">
           <p>
-            Your Already Account? <NavLink to={"/"}>Register</NavLink>
+            Your Already Account?{" "}
+            <NavLink to={"/"} className={"login"}>
+              Register
+            </NavLink>
           </p>
         </div>
       </div>

@@ -219,7 +219,7 @@ const Contact = () => {
             ></textarea>
           </div>
           <div className="form">
-            <button onClick={sendMessageOnEmail} className="btn btn-danger">
+            <button onClick={sendMessageOnEmail}>
               Send Message
             </button>
           </div>

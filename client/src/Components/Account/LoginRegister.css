@@ -3,18 +3,43 @@
           padding: 0;
 }
 
+body {
+          background-color: #f5f5f5;
+}
+
 .register {
           margin-top: 140px;
+          margin-left: 300px;
+          margin-bottom: 100px;
+          width: 700px;
+          background-color: #fff;
+          border-radius: 10px;
+          transition: 0.3s;
+}
+
+.register:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .register h1 {
-          margin-left: 500px;
+          margin-left: 150px;
+          padding-top: 50px;
+          padding-bottom: 50px;
           font-size: 30px;
+          color: rgb(221, 79, 79);
+          word-spacing: 55px;
+          cursor: pointer;
+}
+
+.register h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
 
 .register .form {
-          margin-left: 500px;
-          margin-top: 20px;
+          margin-left: 150px;
+          margin-bottom: 20px;
 }
 
 .register .form label {
@@ -23,22 +48,52 @@
 
 .register .form input {
           height: 40px;
-          width: 300px;
+          width: 400px;
           border-radius: 10px;
           padding-left: 10px;
           font-size: 25px;
+          border-top: none;
+          background-color: #f5f5f5;
+          cursor: pointer;
+}
+
+.register .form input:focus {
+          background-color: #fff;
 }
 
 .register .form button {
-          width: 300px;
+          width: 400px;
           font-size: 30px;
+          border: none;
+          border-radius: 10px;
+          background-color: #0d6efd;
+          margin-top: 30px;
+          transition: 0.3s;
+          cursor: pointer;
 }
 
 .register .form button:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .register .form p {
           font-size: 20px;
+          padding-bottom: 50px;
+}
+
+.register .form p .login {
+          font-size: 23px;
+          padding-left: 5px;
+          transition: 0.3s;
+          cursor: pointer;
+          text-decoration: none;
+}
+
+.register .form p .login:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(214, 91, 91);
+          font-size: 25px;
+          text-decoration: underline;
 }
