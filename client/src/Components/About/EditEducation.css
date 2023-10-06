@@ -3,66 +3,107 @@
           padding: 0;
 }
 
-.education {
+body {
+          background-color: #f5f5f5;
+}
+
+#education {
           margin-top: 100px;
-          margin-left: 450px;
+          margin-left: 300px;
+          width: 700px;
+          background-color: #fff;
+          border-radius: 10px;
+          transition: 0.3s;
+          margin-bottom: 100px;
 }
 
-.education h1 {
-          font-size: 30px;
+#education:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+#education h1 {
+          font-size: 38px;
+          padding-top: 50px;
+          margin-left: 150px;
           margin-bottom: 50px;
+          color: rgb(214, 50, 50);
+          transition: 0.3s;
 }
 
-.education .form {
+#education h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+}
+
+#education #form {
           margin-bottom: 30px;
+          margin-left: 150px;
 }
 
-.education .form button:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
-}
-
-.education .form .sub-form {
+#education #form .sub-form {
           margin-top: 20px;
 }
 
-.education .form .sub-form label {
+#education .form .sub-form label {
           font-size: 30px;
 }
 
-.education .form .sub-form input {
+#education .form .sub-form input {
           width: 400px;
           height: 40px;
           border-radius: 10px;
           font-size: 30px;
           padding-left: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
 }
 
-.education .form .sub-form textarea {
+#education .form .sub-form input:focus {
+          background-color: #fff;
+}
+
+#education .form .sub-form textarea {
           width: 400px;
           border-radius: 10px;
           font-size: 30px;
           padding-left: 10px;
+          background-color: #f5f5f5;
+          border-top: none;
 }
 
-.education .form button {
+#education .form .sub-form textarea:focus {
+          background-color: #fff;
+}
+
+#education #form button {
           width: 400px;
           font-size: 30px;
-          margin-bottom: 50px;
-}
-
-.save {
-          text-align: center;
-}
-
-.save button {
-          width: 600px;
-          font-size: 35px;
-          margin-bottom: 50px;
+          border-radius: 10px;
+          border: none;
+          background-color: #0d6efd;
+          transition: 0.3s;
           margin-top: 50px;
 }
 
-.save button:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
+#education #form button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+#education .save button {
+          width: 400px;
+          font-size: 40px;
+          margin-bottom: 100px;
+          margin-top: 50px;
+          border-radius: 10px;
+          margin-left: 150px;
+          background-color: #198754;
+          border: none;
+          transition: 0.3s;
+}
+
+#education .save button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }

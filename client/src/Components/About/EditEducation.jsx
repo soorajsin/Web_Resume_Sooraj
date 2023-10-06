@@ -37,14 +37,17 @@ const EditEducation = () => {
 
       const token = await localStorage.getItem("userDataToken");
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/editEducation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ educationForms }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/editEducation",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ educationForms }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -62,10 +65,10 @@ const EditEducation = () => {
 
   return (
     <>
-      <div className="education">
-        <h1 className="btn btn-danger">Welcome to Education </h1>
+      <div id="education">
+        <h1>Welcome to Education </h1>
         <br />
-        <div className="form">
+        <div id="form">
           {educationForms.map((form, index) => (
             <div className="form" key={index}>
               <div className="sub-form">
@@ -119,16 +122,12 @@ const EditEducation = () => {
             </div>
           ))}
         </div>
-        <div className="form">
-          <button onClick={addEducationForm} className="btn btn-primary">
-            Add Education Form
-          </button>
+        <div id="form">
+          <button onClick={addEducationForm}>Add Education Form</button>
         </div>
-      </div>
-      <div className="save">
-        <button onClick={saveEducationData} className=" btn btn-success">
-          Save
-        </button>
+        <div className="save">
+          <button onClick={saveEducationData}>Save</button>
+        </div>
       </div>
     </>
   );

@@ -34,14 +34,17 @@ const EditService = () => {
       const token = await localStorage.getItem("userDataToken");
       //     console.log(token);
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/editService", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ service }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/editService",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ service }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -59,7 +62,7 @@ const EditService = () => {
   return (
     <>
       <div className="editService">
-        <h1>Edit Service</h1>
+        <h1>Welcome to Edit Service</h1>
         <br />
         {service.map((subForm, index) => (
           <div key={index}>
@@ -113,16 +116,12 @@ const EditService = () => {
         ))}
         <br />
         <div className="form">
-          <button onClick={addService} className="btn btn-primary">
-            Add Service
-          </button>
+          <button onClick={addService}>Add Service</button>
         </div>
         <br />
-      </div>
-      <div className="saveService">
-        <button onClick={saveServiceData} className="btn btn-success">
-          Save
-        </button>
+        <div className="saveService">
+          <button onClick={saveServiceData}>Save</button>
+        </div>
       </div>
     </>
   );

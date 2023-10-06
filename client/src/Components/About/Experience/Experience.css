@@ -3,7 +3,7 @@
           padding: 0;
 }
 
-.experience {
+#experience {
           margin-top: 100px;
           margin-left: 300px;
           transition: 0.3s;
@@ -13,12 +13,12 @@
           margin-bottom: 100px;
 }
 
-.experience:hover {
+#experience:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.experience h1 {
+#experience h1 {
           color: rgb(219, 56, 56);
           margin-left: 100px;
           padding-top: 50px;
@@ -26,21 +26,21 @@
           transition: 0.3s;
 }
 
-.experience h1:hover {
+#experience h1:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
 
-.experience .form {
+#experience .form {
           margin-top: 20px;
           margin-left: 100px;
 }
 
-.experience .form label {
+#experience .form label {
           font-size: 30px;
 }
 
-.experience .form input {
+#experience .form input {
           width: 450px;
           height: 40px;
           border-radius: 10px;
@@ -50,11 +50,11 @@
           background-color: #f5f5f5;
 }
 
-.experience .form input:focus {
+#experience .form input:focus {
           background-color: #fff;
 }
 
-.experience .form textarea {
+#experience .form textarea {
           width: 450px;
           border-radius: 10px;
           font-size: 30px;
@@ -63,11 +63,11 @@
           background-color: #f5f5f5;
 }
 
-.experience .form textarea:focus {
+#experience .form textarea:focus {
           background-color: #fff;
 }
 
-.experience .form button {
+#experience .form button {
           width: 450px;
           font-size: 30px;
           margin-top: 50px;
@@ -77,12 +77,12 @@
           border: none;
 }
 
-.experience .form button:hover {
+#experience .form button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.experience .saveExperinece button {
+#experience .saveExperinece button {
           width: 450px;
           font-size: 30px;
           margin-bottom: 100px;
@@ -94,7 +94,7 @@
           transition: 0.3s;
 }
 
-.experience .saveExperinece button:hover {
+#experience .saveExperinece button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }

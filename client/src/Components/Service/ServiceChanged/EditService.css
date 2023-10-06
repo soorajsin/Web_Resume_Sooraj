@@ -3,17 +3,40 @@
           padding: 0;
 }
 
+body {
+          background-color: #f5f5f5;
+}
+
 .editService {
           margin-top: 100px;
-          margin-left: 200px;
+          margin-left: 300px;
+          margin-bottom: 100px;
+          width: 700px;
+          background-color: #fff;
+          border-radius: 10px;
+          transition: 0.3s;
+}
+
+.editService:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .editService h1 {
+          padding-top: 50px;
+          padding-left: 100px;
           color: rgb(219, 92, 92);
+          transition: 0.3s;
+}
+
+.editService h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
 
 .editService .form {
           margin-top: 20px;
+          margin-left: 100px;
 }
 
 .editService .form label {
@@ -22,41 +45,56 @@
 
 .editService .form input {
           font-size: 30px;
-          width: 500px;
+          width: 440px;
           height: 40px;
           border-radius: 10px;
           padding-left: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
+}
+
+.editService .form input:focus {
+          background-color: #fff;
 }
 
 .editService .form textarea {
-          width: 500px;
+          width: 440px;
           border-radius: 10px;
           padding-left: 10px;
           font-size: 30px;
+          border-top: none;
+          background-color: #f5f5f5;
+}
+
+.editService .form textarea:focus {
+          background-color: #fff;
 }
 
 .editService .form button {
-          width: 500px;
+          width: 440px;
           font-size: 30px;
           margin-bottom: 50px;
+          border: none;
+          border-radius: 10px;
+          background-color: #0d6efd;
 }
 
 .editService .form button:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
-.saveService {
-          text-align: center;
-}
-
-.saveService button {
-          width: 700px;
-          font-size: 30px;
+.editService .saveService button {
+          width: 440px;
+          font-size: 35px;
           margin-bottom: 100px;
+          margin-left: 100px;
+          background-color: #198754;
+          border: none;
+          border-radius: 10px;
 }
 
 .saveService button:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }

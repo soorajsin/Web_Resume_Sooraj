@@ -66,7 +66,7 @@ const Experience = () => {
 
   return (
     <>
-      <div className="experience">
+      <div id="experience">
         <h1>Welcome to Experience </h1>
         <br />
         {experienceForms.map((subform, index) => (

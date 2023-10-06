@@ -3,6 +3,10 @@
           padding: 0;
 }
 
+body {
+          background-color: #f5f5f5;
+}
+
 .portfolio {
           margin-top: 100px;
           margin-left: 100px;
@@ -11,6 +15,12 @@
 .portfolio .project h1 {
           color: rgb(211, 62, 62);
           text-decoration: underline;
+          transition: 0.3s;
+}
+
+.portfolio .project h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
 
 .portfolio .project .add {
@@ -20,15 +30,16 @@
 .portfolio .project .add .box {
           width: 300px;
           height: 300px;
-          background-color: rgb(81, 218, 218);
+          background-color: #fff;
           border-radius: 10px;
           cursor: pointer;
           text-align: center;
+          transition: 0.3s;
 }
 
-.portfolio .project .add:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
+.portfolio .project .add .box:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .portfolio .project .add .box i {
@@ -36,6 +47,14 @@
           text-align: center;
           font-size: 200px;
           margin-top: 50px;
+          transition: 0.3s;
+}
+
+.portfolio .project .add .box:hover i {
+          color: rgb(230, 80, 80);
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          font-size: 210px;
 }
 
 .portfolio .project .show {
@@ -47,19 +66,33 @@
 
 .portfolio .project .show .data {
           width: 300px;
-          background-color: rgb(31, 240, 240);
+          background-color: #f5bea3;
           border-radius: 10px;
           padding-bottom: 10px;
           margin-bottom: 50px;
           margin-right: 50px;
           cursor: pointer;
+          transition: 0.3s;
+}
+
+.portfolio .project .show .data:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .portfolio .project .show .data img {
-          width: 100%;
+          width: 300px;
           height: 200px;
           border-radius: 10px;
+          border-radius: 10px;
           cursor: pointer;
+          transition: 0.3s;
+}
+
+.portfolio .project .show .data img:hover {
+          transform: scale(1.2);
+          box-shadow: 0 0 10px;
+          border: 1px solid rgb(197, 100, 100);
 }
 
 .portfolio .project .show .data h2 {
@@ -67,16 +100,32 @@
           padding-top: 20px;
           padding-bottom: 20px;
           cursor: pointer;
+          transition: 0.3s;
+}
+
+.portfolio .project .show .data h2:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(233, 72, 72);
 }
 
 .portfolio .project .show .data h3 {
           padding-left: 20px;
           padding-bottom: 20px;
           cursor: pointer;
+          transition: 0.3s;
 }
 
+
+.portfolio .project .show .data h3:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: rgb(233, 72, 72);
+}
+
+
 .portfolio .project .show .data:hover {
-          background-color: rgb(245, 85, 85);
+          background-color: #fff;
           flex-wrap: wrap;
           display: block;
           word-wrap: break-word;
@@ -87,16 +136,25 @@
 .portfolio .project .show .data .deleteIcon {
           margin-left: 250px;
           padding-bottom: 20px;
+          transition: 0.3s;
 }
 
 .portfolio .project .show .data .deleteIcon i {
           font-size: 25px;
           cursor: pointer;
           display: none;
+          transition: 0.3s;
 }
 
 .portfolio .project .show .data:hover i {
           display: block;
+}
+
+.portfolio .project .show .data .deleteIcon i:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: red;
+          font-size: 30px;
 }
 
 .portfolio .project .show .data p {

@@ -45,14 +45,17 @@ const EditProject = () => {
       const token = await localStorage.getItem("userDataToken");
       //       console.log(token);
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/editProject", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ project }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/editProject",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({ project }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -69,7 +72,7 @@ const EditProject = () => {
 
   return (
     <>
-      <div className="editProject">
+      <div id="editProject">
         <div className="edit">
           <h1>Welcome to Edit Project</h1>
           <br />
@@ -154,13 +157,13 @@ const EditProject = () => {
           ))}
           <br />
           <div className="form">
-            <button onClick={addProject} className="btn btn-primary">
+            <button onClick={addProject}>
               Add Project
             </button>
           </div>
         </div>
         <div className="save">
-          <button onClick={saveProject} className="btn btn-success">
+          <button onClick={saveProject}>
             Save
           </button>
         </div>

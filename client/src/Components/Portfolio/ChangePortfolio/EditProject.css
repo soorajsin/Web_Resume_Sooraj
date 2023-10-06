@@ -3,48 +3,105 @@
           padding: 0;
 }
 
-.editProject {
+body {
+          background-color: #f5f5f5;
+}
+
+#editProject {
           margin-top: 100px;
-          margin-left: 50px;
+          margin-left: 300px;
+          margin-bottom: 100px;
+          width: 700px;
+          background-color: #fff;
+          transition: 0.3s;
+          border-radius: 10px;
 }
 
-.editProject .edit {
-          margin-left: 400px;
+#editProject:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
-.editProject .edit h1 {
-          color: rgb(204, 53, 53);
+#editProject .edit {
+          margin-left: 100px;
 }
 
-.editProject .edit .form {
+#editProject .edit h1 {
+          color: rgb(221, 92, 92);
+          padding-top: 50px;
+          padding-bottom: 50px;
+          transition: 0.3s;
+          cursor: pointer;
+}
+
+#editProject .edit h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+}
+
+#editProject .edit .form {
           margin-top: 20px;
 }
 
-.editProject .edit .form label {
+#editProject .edit .form label {
           font-size: 30px;
 }
 
-.editProject .edit .form input {
-          width: 400px;
+#editProject .edit .form input {
+          width: 440px;
           height: 40px;
           padding-left: 10px;
           font-size: 30px;
           border-radius: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
 }
-.editProject .edit .form textarea{
-          width: 400px;
+
+#editProject .edit .form input:focus {
+          background-color: #fff;
+}
+
+#editProject .edit .form textarea {
+          width: 440px;
           padding-left: 10px;
           font-size: 30px;
           border-radius: 10px;
+          border-top: none;
+          background-color: #f5f5f5;
 }
 
-.editProject .edit .form button {
-          width: 400px;
+#editProject .edit .form textarea:focus {
+          background-color: #fff;
+}
+
+#editProject .edit .form button {
+          width: 440px;
           font-size: 30px;
+          border: none;
+          border-radius: 10px;
+          background-color: #0d6efd;
+          transition: 0.3s;
 }
 
-.editProject .save button {
+#editProject .edit .form button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+#editProject .save button {
           text-align: center;
           font-size: 30px;
-          width: 600px;
+          width: 440px;
+          border: none;
+          border-radius: 10px;
+          background-color: #198754;
+          margin-left: 100px;
+          margin-bottom: 50px;
+          margin-top: 50px;
+          transition: 0.3s;
+}
+
+#editProject .save button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
