@@ -3,18 +3,48 @@
           padding: 0;
 }
 
+.navbar {
+          width: 100%;
+}
+
 .navbar .appbar {
           background-color: #0d6efd;
 }
 
 .navbar .tab {
-          margin-left: 60px;
+          margin-left: 80px;
+          transition: 0.3s;
+          position: relative;
+}
+
+.navbar .tab.active {
+          transform: scale(1.1);
+          text-shadow: 0 0 10px;
 }
 
 .navbar .tab:hover {
-          transform: translateY(-4px);
-          transition: transform 0.3s ease;
+          transform: scale(1.1);
+          text-shadow: 0 0 10px;
 }
+
+.navbar .tab.active::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: rgb(238, 58, 58);
+          transition: width 0.3s;
+}
+
+.navbar .tab.active:hover::before {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          text-decoration: underline 2px solid red;
+          width: 100%;
+}
+
 
 .navbar .avatar {
           margin-left: 200px;
@@ -46,4 +76,56 @@
           .navbar .tab {
                     display: none;
           }
+}
+
+.navbar .avatar .avatarManu {
+          display: none;
+          position: absolute;
+          background-color: #fff;
+          color: black;
+          width: 300px;
+          top: 50px;
+          right: 10px;
+          cursor: pointer;
+          border-radius: 10px;
+}
+
+.navbar .avatar .avatarManu .item {
+          font-size: 25px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+}
+
+.navbar .avatar .avatarManu .item:hover {
+          color: rgb(241, 71, 71);
+}
+
+.navbar .avatar:hover .avatarManu {
+          display: block;
+}
+
+.navbar .avatar .loginAvatarManu {
+          display: none;
+          position: absolute;
+          background-color: #fff;
+          color: black;
+          width: 300px;
+          top: 50px;
+          right: 10px;
+          cursor: pointer;
+          border-radius: 10px;
+}
+
+.navbar .avatar .loginAvatarManu .item {
+          font-size: 25px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+}
+
+.navbar .avatar .loginAvatarManu .item:hover {
+          color: rgb(241, 71, 71);
+}
+
+.navbar .avatar:hover .loginAvatarManu {
+          display: block;
 }
