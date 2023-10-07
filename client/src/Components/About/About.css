@@ -29,7 +29,6 @@ body {
 
 .about .container .left h3 {
           transition: 0.3s;
-          width: 1010px;
           border-radius: 10px;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -49,7 +48,7 @@ body {
 }
 
 .about .container .left h3 .show .showData .data {
-          width: 900px;
+          width: 1100px;
           border-radius: 10px;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -62,7 +61,7 @@ body {
 }
 
 .about .container .left h3 .show .showData .data .delete {
-          margin-left: 800px;
+          margin-left: 90%;
 }
 
 .about .container .left h3 .show .showData .data .delete i {
@@ -133,7 +132,7 @@ body {
           font-size: 18px;
           cursor: pointer;
           transition: 0.3s;
-          width: 1000px;
+          width: 1100px;
 }
 
 .about .container .left .paragraphAbout .show .data:hover {
@@ -143,7 +142,7 @@ body {
 }
 
 .about .container .left .paragraphAbout .show .data .delete {
-          margin-left: 900px;
+          margin-left: 90%;
 }
 
 .about .container .left .paragraphAbout .show .data .delete i {
@@ -164,17 +163,12 @@ body {
 
 .about .container .right {
           margin-left: 50%;
-          margin-top: 80px;
-          background-color: #0d6efd;
+          margin-bottom: 100px;
+          margin-top: 100px;
           border-radius: 10px;
 }
 
-.about .container .right .skill {
-          margin-top: 20px;
-          margin-left: 20px;
-}
-
-.about .container .right .skill button {
+.about .container .right .skill .addSkill button {
           width: 400px;
           border-radius: 10px;
           border: none;
@@ -184,12 +178,12 @@ body {
           transition: 0.3s;
 }
 
-.about .container .right .skill button:hover {
+.about .container .right .skill .addSkill button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .container .right .skill button .addskillButton {
+.about .container .right .skill .addSkill button .addskillButton {
           font-size: 30px;
           color: black;
           text-decoration: none;
@@ -197,11 +191,11 @@ body {
 
 .about .container .right .skill .showSkill {
           margin-bottom: 30px;
-          width: 400px;
+          width: 539px;
 }
 
 .about .container .right .skill .showSkill .skillCSSHandle {
-          width: 400px;
+          width: 539px;
           border-radius: 10px;
           cursor: pointer;
           padding-top: 10px;
@@ -223,11 +217,12 @@ body {
           word-wrap: break-word;
           white-space: pre-wrap;
           padding-right: 30px;
+          width: 539px;
 }
 
 .about .container .right .skill .showSkill .skillCSSHandle i {
           display: none;
-          margin-left: 330px;
+          margin-left: 80%;
           transition: 0.3s;
 }
 
@@ -242,7 +237,6 @@ body {
 }
 
 .about .container .right .skill .showSkill .skillCSSHandle .handle {
-          margin-left: 10px;
           font-size: 25px;
           margin-top: 10px;
           margin-bottom: 10px;
@@ -292,7 +286,7 @@ body {
 }
 
 .about .container .personalInfo .showInfo .showInfo-data {
-          width: 500px;
+          width: 600px;
           border-radius: 10px;
           padding-left: 10px;
           padding-top: 10px;
@@ -340,7 +334,7 @@ body {
 }
 
 .about .container .education .education-part .show-education .education-data {
-          width: 550px;
+          width: 600px;
           border-radius: 10px;
           margin-bottom: 30px;
           transition: 0.3s;
@@ -388,13 +382,8 @@ body {
 
 
 .about .container .experience {
-          margin-left: 50px;
-}
-
-.about .container .experience .experience-content {
           margin-left: 50%;
           margin-top: 100px;
-          margin-bottom: 200px;
 }
 
 .about .container .experience .experience-content .edit-experience button {
@@ -412,11 +401,11 @@ body {
 }
 
 .about .container .experience .experience-content .show-experience {
-          width: 500px;
+          width: 600px;
 }
 
 .about .container .experience .experience-content .show-experience .show-data {
-          width: 500px;
+          width: 600px;
           border-radius: 10px;
           margin-bottom: 30px;
           padding-left: 20px;

@@ -4,30 +4,47 @@
 }
 
 .navbar {
-          width: 100%;
+          background-color: black;
 }
 
 .navbar .appbar {
-          background-color: #0d6efd;
+          background-color: #fff;
+          background-color: #1976d2;
+          height: 62px;
+          width: 100%;
 }
 
-.navbar .tab {
+.navbar .appbar .containerNavbar {
+          max-width: 1300px;
+          margin: 0 auto;
+          background-color: red;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+}
+
+.navbar .appbar .containerNavbar .tab:first-child {
+          margin-left: 0;
+}
+
+.navbar .appbar .containerNavbar .tab:not(:first-child) {
           margin-left: 80px;
           transition: 0.3s;
           position: relative;
 }
 
-.navbar .tab.active {
+.navbar .appbar .containerNavbar .tab.active {
           transform: scale(1.1);
           text-shadow: 0 0 10px;
 }
 
-.navbar .tab:hover {
+.navbar .appbar .containerNavbar .tab:hover {
           transform: scale(1.1);
           text-shadow: 0 0 10px;
 }
 
-.navbar .tab.active::before {
+.navbar .appbar .containerNavbar .tab.active::before {
           content: "";
           position: absolute;
           width: 100%;
@@ -38,7 +55,7 @@
           transition: width 0.3s;
 }
 
-.navbar .tab.active:hover::before {
+.navbar .appbar .containerNavbar .tab.active:hover::before {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           text-decoration: underline 2px solid red;
@@ -46,11 +63,11 @@
 }
 
 
-.navbar .avatar {
+.navbar .appbar .containerNavbar .avatar {
           margin-left: 200px;
 }
 
-.navbar .avatar .avatar-main {
+.navbar .appbar .containerNavbar .avatar .avatar-main {
           background-color: blue;
           color: #fff;
           font-size: 30px;
