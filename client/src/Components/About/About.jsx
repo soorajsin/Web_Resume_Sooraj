@@ -151,6 +151,35 @@ const About = () => {
     }
   };
 
+  const deleteSkillData = async (skillId) => {
+    const token = await localStorage.getItem("userDataToken");
+    // console.log(token);
+
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deleteskill",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({ skillId }),
+      }
+    );
+    //     console.log(data);
+    const res = await data.json();
+    //     console.log(res);
+
+    if (res.status === 200) {
+      // console.log(res);
+      // history("/about");
+    } else {
+      // Handle errors, e.g., skill not found or server error
+      console.error("Failed to delete skill");
+      history("*");
+    }
+  };
+
   return (
     <>
       <div className="about">
@@ -206,9 +235,7 @@ const About = () => {
                 : "Loading"}
             </div>
             <div className="edit">
-              <button
-                onClick={() => history("/editParagraphAbout")}
-              >
+              <button onClick={() => history("/editParagraphAbout")}>
                 Add Paragraph
               </button>
             </div>
@@ -233,9 +260,7 @@ const About = () => {
             )}
           </div>
           <div className="editInfo">
-            <button
-              onClick={() => history("/personalInfo")}
-            >
+            <button onClick={() => history("/personalInfo")}>
               Edit Personal Information
             </button>
           </div>
@@ -251,10 +276,8 @@ const About = () => {
                         <div className="handle">
                           {skill}{" "}
                           <i
-                            className="fa-solid fa-pen-to-square"
-                            onClick={() => {
-                              history("/updateSkill");
-                            }}
+                            className="fa-solid fa-trash"
+                            onClick={() => deleteSkillData(skill)}
                           ></i>
                         </div>
                       </div>
@@ -263,11 +286,8 @@ const About = () => {
                 : "Loading"}
             </div>
             <div className="addSkill">
-              <button className="btn btn-primary">
-                <NavLink
-                  to={"/skill"}
-                  style={{ color: "#fff", textDecoration: "none" }}
-                >
+              <button>
+                <NavLink to={"/skill"} className={"addskillButton"}>
                   Add Skill
                 </NavLink>
               </button>
@@ -295,9 +315,7 @@ const About = () => {
                 : "Loading"}
             </div>
             <div className="edit-education">
-              <button
-                onClick={() => history("/editEducation")}
-              >
+              <button onClick={() => history("/editEducation")}>
                 Edit Education
               </button>
             </div>
@@ -326,9 +344,7 @@ const About = () => {
                 : "Loading"}
             </div>
             <div className="edit-experience">
-              <button
-                onClick={() => history("/editExperience")}
-              >
+              <button onClick={() => history("/editExperience")}>
                 Edit Experience
               </button>
             </div>
