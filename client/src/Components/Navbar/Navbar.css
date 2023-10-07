@@ -15,7 +15,7 @@
 }
 
 .navbar .appbar .containerNavbar {
-          max-width: 1300px;
+          max-width: 1200px;
           margin: 0 auto;
           /* background-color: red; */
           overflow: hidden;
@@ -41,7 +41,7 @@
 }
 
 .navbar .appbar .containerNavbar .tab:not(:first-child) {
-          margin-left: 80px;
+          margin-left: 60px;
           transition: 0.3s;
           position: relative;
 }
