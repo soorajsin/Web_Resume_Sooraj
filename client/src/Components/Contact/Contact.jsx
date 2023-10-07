@@ -132,96 +132,96 @@ const Contact = () => {
   return (
     <>
       <div className="contact">
-        <div className="edit">
-          <div className="show">
-            {userdata
-              ? userdata.getData.contact.map((contact, index) => (
-                  <div key={index} className="data">
-                    <a href={contact.contactURL}>
-                      <img src={contact.contactImgURL} alt={contact.name} />
-                    </a>
-                    <h3>{contact.name}</h3>
-                    <div className="deleteIcon">
-                      <i
-                        onClick={() => {
-                          deleteContact(contact._id, index);
-                        }}
-                        className="fa-solid fa-trash"
-                      ></i>
+        <div className="container">
+          <div className="edit">
+            <div className="show">
+              {userdata
+                ? userdata.getData.contact.map((contact, index) => (
+                    <div key={index} className="data">
+                      <a href={contact.contactURL}>
+                        <img src={contact.contactImgURL} alt={contact.name} />
+                      </a>
+                      <h3>{contact.name}</h3>
+                      <div className="deleteIcon">
+                        <i
+                          onClick={() => {
+                            deleteContact(contact._id, index);
+                          }}
+                          className="fa-solid fa-trash"
+                        ></i>
+                      </div>
                     </div>
-                  </div>
-                ))
-              : "Loading"}
-          </div>
-          <div className="contactEdit">
-            <div
-              className="box"
-              onClick={() => {
-                history("/editContact");
-              }}
-            >
-              <i className="fa-regular fa-plus"></i>
+                  ))
+                : "Loading"}
+            </div>
+            <div className="contactEdit">
+              <div
+                className="box"
+                onClick={() => {
+                  history("/editContact");
+                }}
+              >
+                <i className="fa-regular fa-plus"></i>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="anyQuestion">
-          <h1>Welcome to Contact </h1>
-          <p>
-            <b>Ask any Question ?</b>
-          </p>
-          <br />
-          <div className="form">
-            <label htmlFor="name">Name</label>
+          <div className="anyQuestion">
+            <h1>Welcome to Contact </h1>
+            <p>
+              <b>Ask any Question ?</b>
+            </p>
             <br />
-            <input
-              type="text"
-              placeholder="Enter your full name..."
-              name="name"
-              value={message.name}
-              onChange={messageChangeValue}
-            />
-          </div>
-          <br />
-          <div className="form">
-            <label htmlFor="email">Email</label>
+            <div className="form">
+              <label htmlFor="name">Name</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter your full name..."
+                name="name"
+                value={message.name}
+                onChange={messageChangeValue}
+              />
+            </div>
             <br />
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              name="email"
-              value={message.email}
-              onChange={messageChangeValue}
-            />
-          </div>
-          <br />
-          <div className="form">
-            <label htmlFor="subject">Subject</label>
+            <div className="form">
+              <label htmlFor="email">Email</label>
+              <br />
+              <input
+                type="email"
+                placeholder="Enter your email..."
+                name="email"
+                value={message.email}
+                onChange={messageChangeValue}
+              />
+            </div>
             <br />
-            <input
-              type="text"
-              placeholder="Enter your subject..."
-              name="subject"
-              value={message.subject}
-              onChange={messageChangeValue}
-            />
-          </div>
-          <br />
-          <div className="form">
-            <label htmlFor="description">Description</label>
+            <div className="form">
+              <label htmlFor="subject">Subject</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Enter your subject..."
+                name="subject"
+                value={message.subject}
+                onChange={messageChangeValue}
+              />
+            </div>
             <br />
-            <textarea
-              cols="50"
-              rows="2"
-              placeholder="Enter your description..."
-              name="description"
-              value={message.description}
-              onChange={messageChangeValue}
-            ></textarea>
-          </div>
-          <div className="form">
-            <button onClick={sendMessageOnEmail}>
-              Send Message
-            </button>
+            <div className="form">
+              <label htmlFor="description">Description</label>
+              <br />
+              <textarea
+                cols="50"
+                rows="2"
+                placeholder="Enter your description..."
+                name="description"
+                value={message.description}
+                onChange={messageChangeValue}
+              ></textarea>
+            </div>
+            <div className="form">
+              <button onClick={sendMessageOnEmail}>Send Message</button>
+            </div>
           </div>
         </div>
       </div>

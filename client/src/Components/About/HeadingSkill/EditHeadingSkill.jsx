@@ -81,7 +81,7 @@ const EditHeadingSkill = () => {
             </button>
           </div>
         </div>
-        <div className="save">
+        <div className="saveHeadingSkilldata">
           <button onClick={saveHeadingSkill} className="btn btn-success">
             Save
           </button>

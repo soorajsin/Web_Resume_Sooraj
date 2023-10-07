@@ -50,21 +50,24 @@ const PersonalInfo = () => {
 
       const token = await localStorage.getItem("userDataToken");
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/personalInfo", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({
-          birthday,
-          age,
-          email,
-          course,
-          phone,
-          city,
-        }),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/personalInfo",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify({
+            birthday,
+            age,
+            email,
+            course,
+            phone,
+            city,
+          }),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -82,8 +85,8 @@ const PersonalInfo = () => {
 
   return (
     <>
-      <div className="personalInfo" style={{ marginTop: "100px" }}>
-        <h1 className="btn btn-danger">Welcome to Personal Information</h1>
+      <div className="personalInfoData" style={{ marginTop: "100px" }}>
+        <h1 className="text text-danger">Welcome to Personal Information</h1>
         <br />
         <div className="form">
           <label htmlFor="birthday">Brithday</label>

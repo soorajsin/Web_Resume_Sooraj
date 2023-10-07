@@ -15,6 +15,7 @@ body {
           background-color: #fff;
           border-radius: 10px;
           transition: 0.3s;
+          margin: 100px auto;
 }
 
 .register:hover {

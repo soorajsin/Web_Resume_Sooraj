@@ -14,13 +14,16 @@ const Service = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/validUser", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: token,
-      },
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/validUser",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: token,
+        },
+      }
+    );
 
     // if (!data.ok) {
     //   // Handle non-successful response (e.g., status code other than 200)
@@ -47,11 +50,14 @@ const Service = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch("https://web-resume-sooraj-server.vercel.app/deleteService", {
-      method: "DELETE",
-      headers: { "Content-type": "application/json", Authorization: token },
-      body: JSON.stringify({ serviceId }),
-    });
+    const data = await fetch(
+      "https://web-resume-sooraj-server.vercel.app/deleteService",
+      {
+        method: "DELETE",
+        headers: { "Content-type": "application/json", Authorization: token },
+        body: JSON.stringify({ serviceId }),
+      }
+    );
 
     if (data.ok) {
       console.log("Failed to fetch", data.status);
@@ -72,26 +78,28 @@ const Service = () => {
   return (
     <>
       <div className="service">
-        <div className="show">
-          {userdata
-            ? userdata.getData.service.map((service, index) => (
-                <div key={index} className="data">
-                  <img src={service.url} alt={service.name} />
-                  <h3>{service.name}</h3>
-                  <p>{service.description}</p>
-                  <div className="deleteIcon">
-                    <i
-                      onClick={() => deleteService(service._id, index)}
-                      className="fa-sharp fa-solid fa-trash"
-                    ></i>
+        <div className="container">
+          <div className="show">
+            {userdata
+              ? userdata.getData.service.map((service, index) => (
+                  <div key={index} className="data">
+                    <img src={service.url} alt={service.name} />
+                    <h3>{service.name}</h3>
+                    <p>{service.description}</p>
+                    <div className="deleteIcon">
+                      <i
+                        onClick={() => deleteService(service._id, index)}
+                        className="fa-sharp fa-solid fa-trash"
+                      ></i>
+                    </div>
                   </div>
-                </div>
-              ))
-            : "Loading"}
-        </div>
-        <div className="edit">
-          <div className="box" onClick={() => history("/editService")}>
-            <i className="fa-solid fa-plus"></i>
+                ))
+              : "Loading"}
+          </div>
+          <div className="edit">
+            <div className="box" onClick={() => history("/editService")}>
+              <i className="fa-solid fa-plus"></i>
+            </div>
           </div>
         </div>
       </div>

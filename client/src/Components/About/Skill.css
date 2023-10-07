@@ -3,35 +3,82 @@
           padding: 0;
 }
 
-.skill {
-          margin: 50px 50px;
+body {
+          background-color: #f5f5f5;
 }
 
-.skill .form {
-          margin-top: 50px;
-          margin-left: 100px;
+.skillDataAdd {
+          margin: 100px auto;
+          width: 700px;
+          background-color: #fff;
+          border-radius: 10px;
+          transition: 0.3s;
 }
 
-.skill .form .inp {
+.skillDataAdd:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.skillDataAdd h1 {
+          padding-top: 50px;
+          padding-bottom: 50px;
+          padding-left: 200px;
+          transition: 0.3s;
+          cursor: pointer;
+}
+
+.skillDataAdd h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+}
+
+.skillDataAdd .form {
+          margin-left: 200px;
+}
+
+.skillDataAdd .form .inp {
           margin-bottom: 40px;
 }
 
-.skill .form .add button:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
+.skillDataAdd .form .inp input {
+          width: 310px;
+          height: 40px;
+          font-size: 30px;
+          border-radius: 10px;
+          padding-left: 10px;
+          background-color: #f5f5f5;
+          border-top: none;
+}
+
+.skillDataAdd .form .inp input:focus {
+          background-color: #fff;
+}
+
+.skillDataAdd .form .add button {
+          width: 310px;
+          font-size: 30px;
+          transition: 0.3s;
+}
+
+.skillDataAdd .form .add button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
 .skill .saveSkill {
           margin-top: 50px;
-          margin-left: 100px;
 }
 
-.skill .saveSkill .text-center .btn {
-          width: 300px;
-          font-size: 25px;
+.skillDataAdd .saveSkill .text-center .btn {
+          width: 310px;
+          font-size: 35px;
+          margin-bottom: 50px;
+          transition: 0.3s;
+          margin-top: 50px;
 }
 
-.skill .saveSkill .text-center button:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
+.skillDataAdd .saveSkill .text-center button:hover {
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }

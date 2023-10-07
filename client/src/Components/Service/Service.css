@@ -8,13 +8,26 @@ body {
 }
 
 .service {
-          margin-top: 100px;
-          margin-left: 100px;
-          margin-right: 100px;
-          margin-bottom: 100px;
+          /* background-color: red; */
+          max-width: 1300px;
+          margin: 0 auto;
+          padding: 20px;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 30px;
 }
 
-.service .box {
+.service .container {
+          padding-top: 50px;
+          padding-right: 50px;
+          max-width: 1200px;
+          margin: 0 auto;
+          /* background-color: black; */
+          margin-top: 50px;
+          padding: 10px;
+}
+
+.service .container .box {
           width: 250px;
           height: 250px;
           background-color: #fff;
@@ -24,30 +37,30 @@ body {
           transition: 0.3s;
 }
 
-.service .box:hover {
+.service .container .box:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.service .box i {
+.service .container .box i {
           text-align: center;
           margin-top: 25px;
           font-size: 200px;
           transition: 0.3s;
 }
 
-.service .box:hover {
+.service .container .box:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: #ff7474;
 }
 
-.service .show {
+.service .container .show {
           display: flex;
           flex-wrap: wrap;
 }
 
-.service .show .data {
+.service .container .show .data {
           flex-wrap: wrap;
           width: 250px;
           margin-bottom: 30px;
@@ -63,13 +76,13 @@ body {
           transition: 0.3s;
 }
 
-.service .show .data:hover {
+.service .container .show .data:hover {
           background-color: #fff;
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.service .show .data img {
+.service .container .show .data img {
           width: 100px;
           height: 100px;
           margin-left: 80px;
@@ -78,30 +91,30 @@ body {
           transition: 0.3s;
 }
 
-.service .show .data:hover img {
+.service .container .show .data:hover img {
           border: 1px solid rgb(216, 80, 80);
 }
 
-.service .show .data img:hover {
+.service .container .show .data img:hover {
           transform: scale(2.06);
           box-shadow: 0 0 10px;
 }
 
-.service .show .data h3 {
+.service .container .show .data h3 {
           text-align: center;
           margin-top: 15px;
           font-size: 25px;
           transition: 0.3s;
 }
 
-.service .show .data h3:hover {
+.service .container .show .data h3:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: #ff7474;
           font-size: 30px;
 }
 
-.service .show .data p {
+.service .container .show .data p {
           padding-left: 10px;
           padding-right: 10px;
           padding-top: 10px;
@@ -109,26 +122,26 @@ body {
 }
 
 
-.service .show .data .deleteIcon {
+.service .container .show .data .deleteIcon {
           margin-left: 200px;
           padding-bottom: 20px;
           cursor: pointer;
           transition: 0.3s;
 }
 
-.service .show .data .deleteIcon:hover {
+.service .container .show .data .deleteIcon:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: red;
           font-size: 30px;
 }
 
-.service .show .data .deleteIcon i {
+.service .container .show .data .deleteIcon i {
           cursor: pointer;
           font-size: 25px;
           display: none;
 }
 
-.service .show .data:hover i {
+.service .container .show .data:hover i {
           display: block;
 }

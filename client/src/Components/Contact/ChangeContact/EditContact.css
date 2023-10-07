@@ -15,6 +15,7 @@ body {
           border-radius: 10px;
           margin-bottom: 100px;
           transition: 0.3s;
+          margin: 100px auto;
 }
 
 .editContact:hover {

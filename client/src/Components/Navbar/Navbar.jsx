@@ -99,9 +99,7 @@ const Navbar = () => {
           <Toolbar>
             <div className="containerNavbar">
               <div className="tab">
-                <a href="/home">
-                  j<img src="img" alt="img" />
-                </a>
+                <a href="/home">S</a>
               </div>
               <div
                 className={`tab ${activeTab === "home" ? "active" : ""}`}

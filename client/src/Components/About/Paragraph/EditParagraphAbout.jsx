@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./EditParagraph.css";
 
 const EditParagraphAbout = () => {
   const history = useNavigate();
@@ -52,9 +53,9 @@ const EditParagraphAbout = () => {
 
   return (
     <>
-      <div className="paragraph">
+      <div className="paragraphData">
         <div className="main">
-          <h1>Welcome to Edit Paragraph</h1>
+          <h1 className="text text-danger">Welcome to Edit Paragraph</h1>
           <br />
           {editPararaph.map((subForm, index) => (
             <div key={index}>

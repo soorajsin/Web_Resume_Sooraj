@@ -32,14 +32,17 @@ const Skill = () => {
         skills: skills.filter((skill) => skill.trim() !== ""), // Remove empty skills
       };
 
-      const data = await fetch("https://web-resume-sooraj-server.vercel.app/skill", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify(removeEmpty),
-      });
+      const data = await fetch(
+        "https://web-resume-sooraj-server.vercel.app/skill",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: token,
+          },
+          body: JSON.stringify(removeEmpty),
+        }
+      );
 
       const res = await data.json();
       //       console.log(res);
@@ -57,21 +60,12 @@ const Skill = () => {
 
   return (
     <>
-      <div className="skill">
-        <h1 className="text-center text-danger">Welcome to Skill</h1>
+      <div className="skillDataAdd">
+        <h1 className=" text-danger">Welcome to Skill</h1>
         <div className="form">
           {skills.map((skill, index) => (
             <div className="inp" key={index}>
               <input
-                style={{
-                  borderRadius: "10px",
-                  height: "45px",
-                  paddingLeft: "10px",
-                  width: "300px",
-                  fontSize: "26px",
-                  paddingTop: "10px",
-                  paddingBottom: "10px",
-                }}
                 type="text"
                 value={skill}
                 onChange={(e) => handleSkillChange(index, e.target.value)}
@@ -80,11 +74,7 @@ const Skill = () => {
             </div>
           ))}
           <div className="add">
-            <button
-              onClick={addSkillInput}
-              className="btn btn-primary"
-              style={{ width: "300px", fontSize: "26px" }}
-            >
+            <button onClick={addSkillInput} className="btn btn-primary">
               Add Skill
             </button>
           </div>

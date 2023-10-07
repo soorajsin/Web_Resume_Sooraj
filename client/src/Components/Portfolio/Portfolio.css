@@ -8,26 +8,41 @@ body {
 }
 
 .portfolio {
-          margin-top: 100px;
-          margin-left: 100px;
+          /* background-color: red; */
+          max-width: 1300px;
+          margin: 0 auto;
+          padding: 20px;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 30px;
 }
 
-.portfolio .project h1 {
+.portfolio .container {
+          padding-top: 50px;
+          padding-right: 50px;
+          max-width: 1200px;
+          margin: 0 auto;
+          /* background-color: black; */
+          margin-top: 50px;
+          padding: 10px;
+}
+
+.portfolio .container .project h1 {
           color: rgb(211, 62, 62);
           text-decoration: underline;
           transition: 0.3s;
 }
 
-.portfolio .project h1:hover {
+.portfolio .container .project h1:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
 
-.portfolio .project .add {
+.portfolio .container .project .add {
           margin-top: 50px;
 }
 
-.portfolio .project .add .box {
+.portfolio .container .project .add .box {
           width: 300px;
           height: 300px;
           background-color: #fff;
@@ -37,12 +52,12 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .project .add .box:hover {
+.portfolio .container .project .add .box:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.portfolio .project .add .box i {
+.portfolio .container .project .add .box i {
           cursor: pointer;
           text-align: center;
           font-size: 200px;
@@ -50,21 +65,21 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .project .add .box:hover i {
+.portfolio .container .project .add .box:hover i {
           color: rgb(230, 80, 80);
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           font-size: 210px;
 }
 
-.portfolio .project .show {
+.portfolio .container .project .show {
           margin-bottom: 50px;
           margin-top: 50px;
           display: flex;
           flex-wrap: wrap;
 }
 
-.portfolio .project .show .data {
+.portfolio .container .project .show .data {
           width: 300px;
           background-color: #f5bea3;
           border-radius: 10px;
@@ -75,12 +90,12 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .project .show .data:hover {
+.portfolio .container .project .show .data:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.portfolio .project .show .data img {
+.portfolio .container .project .show .data img {
           width: 300px;
           height: 200px;
           border-radius: 10px;
@@ -89,13 +104,13 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .project .show .data img:hover {
+.portfolio .container .project .show .data img:hover {
           transform: scale(1.2);
           box-shadow: 0 0 10px;
           border: 1px solid rgb(197, 100, 100);
 }
 
-.portfolio .project .show .data h2 {
+.portfolio .container .project .show .data h2 {
           padding-left: 10px;
           padding-top: 20px;
           padding-bottom: 20px;
@@ -103,13 +118,13 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .project .show .data h2:hover {
+.portfolio .container .project .show .data h2:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: rgb(233, 72, 72);
 }
 
-.portfolio .project .show .data h3 {
+.portfolio .container .project .show .data h3 {
           padding-left: 20px;
           padding-bottom: 20px;
           cursor: pointer;
@@ -117,14 +132,14 @@ body {
 }
 
 
-.portfolio .project .show .data h3:hover {
+.portfolio .container .project .show .data h3:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: rgb(233, 72, 72);
 }
 
 
-.portfolio .project .show .data:hover {
+.portfolio .container .project .show .data:hover {
           background-color: #fff;
           flex-wrap: wrap;
           display: block;
@@ -133,31 +148,31 @@ body {
           padding-right: 30px;
 }
 
-.portfolio .project .show .data .deleteIcon {
+.portfolio .container .project .show .data .deleteIcon {
           margin-left: 250px;
           padding-bottom: 20px;
           transition: 0.3s;
 }
 
-.portfolio .project .show .data .deleteIcon i {
+.portfolio .container .project .show .data .deleteIcon i {
           font-size: 25px;
           cursor: pointer;
           display: none;
           transition: 0.3s;
 }
 
-.portfolio .project .show .data:hover i {
+.portfolio .container .project .show .data:hover i {
           display: block;
 }
 
-.portfolio .project .show .data .deleteIcon i:hover {
+.portfolio .container .project .show .data .deleteIcon i:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: red;
           font-size: 30px;
 }
 
-.portfolio .project .show .data p {
+.portfolio .container .project .show .data p {
           font-size: 23px;
           padding-left: 10px;
           padding-right: 10px;
@@ -165,7 +180,7 @@ body {
           display: none;
 }
 
-.portfolio .project .show .data:hover p {
+.portfolio .container .project .show .data:hover p {
           display: block;
 }
 
@@ -175,24 +190,24 @@ body {
 
 
 /* certificate */
-.portfolio .certificate {
+.portfolio .container .certificate {
           margin-top: 200px;
           margin-bottom: 200px;
 }
 
-.portfolio .certificate h1 {
+.portfolio .container .certificate h1 {
           color: rgb(192, 53, 53);
           text-decoration: underline;
           transition: 0.3s;
 }
 
-.portfolio .certificate h1:hover {
+.portfolio .container .certificate h1:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
 
 
-.portfolio .certificate .add .box {
+.portfolio .container .certificate .add .box {
           width: 300px;
           height: 300px;
           background-color: #fff;
@@ -202,31 +217,31 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .certificate .add .box:hover {
+.portfolio .container .certificate .add .box:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.portfolio .certificate .add .box i {
+.portfolio .container .certificate .add .box i {
           font-size: 200px;
           margin-top: 50px;
           transition: 0.3s;
 }
 
-.portfolio .certificate .add .box:hover i {
+.portfolio .container .certificate .add .box:hover i {
           color: rgb(235, 84, 84);
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
 
-.portfolio .certificate .show {
+.portfolio .container .certificate .show {
           margin-top: 50px;
           margin-bottom: 50px;
           display: flex;
           flex-wrap: wrap;
 }
 
-.portfolio .certificate .show .data {
+.portfolio .container .certificate .show .data {
           width: 300px;
           background-color: #f5bea3;
           border-radius: 10px;
@@ -236,7 +251,7 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .certificate .show .data:hover {
+.portfolio .container .certificate .show .data:hover {
           background-color: #fff;
           flex-wrap: wrap;
           display: block;
@@ -247,7 +262,7 @@ body {
           box-shadow: 0 0 10px;
 }
 
-.portfolio .certificate .show .data img {
+.portfolio .container .certificate .show .data img {
           width: 300px;
           border-radius: 10px;
           height: 200px;
@@ -255,26 +270,26 @@ body {
           transition: 0.3s;
 }
 
-.portfolio .certificate .show .data img:hover {
+.portfolio .container .certificate .show .data img:hover {
           transform: scale(1.2);
           box-shadow: 0 0 10px;
           border: 1px solid rgb(219, 95, 95);
 }
 
-.portfolio .certificate .show .data h3 {
+.portfolio .container .certificate .show .data h3 {
           padding-left: 10px;
           padding-top: 20px;
           padding-bottom: 20px;
           transition: 0.3s;
 }
 
-.portfolio .certificate .show .data h3:hover {
+.portfolio .container .certificate .show .data h3:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: rgb(228, 77, 77);
 }
 
-.portfolio .certificate .show .data p {
+.portfolio .container .certificate .show .data p {
           font-size: 23px;
           padding-left: 10px;
           padding-right: 10px;
@@ -282,22 +297,22 @@ body {
           display: none;
 }
 
-.portfolio .certificate .show .data:hover p {
+.portfolio .container .certificate .show .data:hover p {
           display: block;
 }
 
-.portfolio .certificate .show .data .deleteIcon {
+.portfolio .container .certificate .show .data .deleteIcon {
           margin-left: 250px;
 }
 
-.portfolio .certificate .show .data .deleteIcon i {
+.portfolio .container .certificate .show .data .deleteIcon i {
           padding-bottom: 30px;
           font-size: 25px;
           cursor: pointer;
           transition: 0.3s;
 }
 
-.portfolio .certificate .show .data .deleteIcon i:hover {
+.portfolio .container .certificate .show .data .deleteIcon i:hover {
           color: #ff4d4f;
           transform: scale(1.06);
           text-shadow: 0 0 10px;

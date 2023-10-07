@@ -8,7 +8,7 @@ body {
 }
 
 .about {
-          background-color: red;
+          /* background-color: red; */
           max-width: 1300px;
           margin: 0 auto;
           padding: 20px;
@@ -22,7 +22,7 @@ body {
           padding-right: 50px;
           max-width: 1200px;
           margin: 0 auto;
-          background-color: black;
+          /* background-color: black; */
           margin-top: 50px;
           padding: 10px;
 }

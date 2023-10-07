@@ -3,9 +3,28 @@
           padding: 0;
 }
 
+body {
+          background-color: #f5f5f5;
+}
+
 .home {
-          margin-top: 200px;
-          margin-left: 100px;
+          /* background-color: red; */
+          max-width: 1300px;
+          margin: 0 auto;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 30px;
+}
+
+.home .container {
+          padding-top: 50px;
+          padding-right: 50px;
+          max-width: 1200px;
+          margin: 0 auto;
+          /* background-color: black; */
+          margin-top: 50px;
+          padding: 10px;
+          margin-bottom: 50px;
 }
 
 .home .tag {
@@ -20,7 +39,6 @@
           word-wrap: break-word;
           flex-wrap: wrap;
           border-radius: 10px;
-          padding-left: 20px;
           padding-top: 10px;
           padding-bottom: 10px;
 }
@@ -32,8 +50,6 @@
 }
 
 .home .tag button:hover {
-          transform: translateX(10px);
-          transition: transform 0.3s ease;
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
@@ -57,11 +73,15 @@
           font-size: 18px;
 }
 
-.home .tag .paragraphData .show {
+.home .tag .paragraphDataId {
+          margin-left: 0px;
+}
+
+.home .tag .paragraphDataId .showData {
           margin-bottom: 30px;
 }
 
-.home .tag .paragraphData .show .paragraphDataItem .data {
+.home .tag .paragraphDataId .showData .paragraphDataItem .dataId {
           border-radius: 10px;
           padding-left: 20px;
           padding-top: 10px;
@@ -71,27 +91,28 @@
           font-size: 25px;
 }
 
-.home .tag .paragraphData .show .paragraphDataItem .data:hover {
+.home .tag .paragraphDataId .showData .paragraphDataItem .dataId:hover {
           background-color: #fff;
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.home .tag .paragraphData .show .paragraphDataItem .data .delete i {
+.home .tag .paragraphDataId .showData .paragraphDataItem .dataId .delete i {
           margin-left: 800px;
           font-size: 25px;
           transition: 0.3;
           display: none;
+          transition: 0.3s;
 }
 
-.home .tag .paragraphData .show .paragraphDataItem .data:hover i {
-          display: block;
-}
-
-.home .tag .paragraphData .show .paragraphDataItem .data .delete i:hover {
+.home .tag .paragraphDataId .showData .paragraphDataItem .dataId .delete i:hover {
+          color: red;
           transform: scale(1.06);
           text-shadow: 0 0 10px;
-          color: red;
+}
+
+.home .tag .paragraphDataId .showData .paragraphDataItem .dataId:hover i {
+          display: block;
 }
 
 .home .img {

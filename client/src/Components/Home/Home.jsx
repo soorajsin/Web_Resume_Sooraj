@@ -98,81 +98,83 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <div className="tag">
-          <h3>
-            Hello, My name is{" "}
-            <span>{userdata ? userdata.getData.name : "Loading"}</span>
-          </h3>
-        </div>
-        <div className="tag">
-          <div className="paragraphData">
+        <div className="container">
+          <div className="tag">
+            <h3>
+              Hello, My name is{" "}
+              <span>{userdata ? userdata.getData.name : "Loading"}</span>
+            </h3>
+          </div>
+          <div className="tag">
+            <div className="paragraphDataId">
+              <div className="showData">
+                {userdata
+                  ? userdata.getData.Paragraph.map((paragraph, index) => (
+                      <div key={index} className="paragraphDataItem">
+                        {index > 0 && <br />}
+                        <div className="dataId">
+                          {paragraph.content}
+                          <div className="delete">
+                            <i
+                              onClick={() =>
+                                paragraphDelete(paragraph._id, index)
+                              }
+                              className="fa-sharp fa-solid fa-trash"
+                            ></i>
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  : "Loading"}
+              </div>
+
+              <div className="editParagraph">
+                <button
+                  onClick={() => history("/editParagraph")}
+                  // className="btn btn-primary"
+                >
+                  Paragraph Edit
+                </button>
+              </div>
+            </div>
+            {/* <p>I'm a website design, graphic design, and many more...</p> */}
+          </div>
+          <div className="tag">
+            <button
+              onClick={() => history("/contact")}
+              // className="btn btn-danger"
+            >
+              Contact
+            </button>
+          </div>
+          <div className="img">
             <div className="show">
-              {userdata
-                ? userdata.getData.Paragraph.map((paragraph, index) => (
-                    <div key={index} className="paragraphDataItem">
-                      {index > 0 && <br />}
-                      <div className="data">
-                        {paragraph.content}
-                        <div className="delete">
+              <div className="data">
+                {userdata
+                  ? userdata.getData.photo.map((photo, index) => (
+                      <div key={index} className="data-sub">
+                        <img src={photo.url} alt={photo.name} />
+                        <div className="deleteIcon">
                           <i
-                            onClick={() =>
-                              paragraphDelete(paragraph._id, index)
-                            }
+                            onClick={() => deletePhoto(photo._id, index)}
                             className="fa-sharp fa-solid fa-trash"
                           ></i>
                         </div>
                       </div>
-                    </div>
-                  ))
-                : "Loading"}
+                    ))
+                  : "Loading"}
+              </div>
             </div>
-
-            <div className="editParagraph">
+          </div>
+          <div className="img">
+            <div className="button">
               <button
-                onClick={() => history("/editParagraph")}
+                onClick={() => history("/editPhoto")}
                 // className="btn btn-primary"
               >
-                Paragraph Edit
+                Set Profile Photo
               </button>
             </div>
-          </div>
-          {/* <p>I'm a website design, graphic design, and many more...</p> */}
-        </div>
-        <div className="tag">
-          <button
-            onClick={() => history("/contact")}
-            // className="btn btn-danger"
-          >
-            Contact
-          </button>
-        </div>
-        <div className="img">
-          <div className="show">
-            <div className="data">
-              {userdata
-                ? userdata.getData.photo.map((photo, index) => (
-                    <div key={index} className="data-sub">
-                      <img src={photo.url} alt={photo.name} />
-                      <div className="deleteIcon">
-                        <i
-                          onClick={() => deletePhoto(photo._id, index)}
-                          className="fa-sharp fa-solid fa-trash"
-                        ></i>
-                      </div>
-                    </div>
-                  ))
-                : "Loading"}
-            </div>
-          </div>
-        </div>
-        <div className="img">
-          <div className="button">
-            <button
-              onClick={() => history("/editPhoto")}
-              // className="btn btn-primary"
-            >
-              Set Profile Photo
-            </button>
           </div>
         </div>
       </div>

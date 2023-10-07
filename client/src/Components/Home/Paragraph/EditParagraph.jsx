@@ -57,7 +57,7 @@ const EditParagraph = () => {
 
   return (
     <>
-      <div className="paragraph">
+      <div className="paragraphId">
         <div className="main">
           <h1>Welcome to Edit Paragraph</h1>
           <br />
