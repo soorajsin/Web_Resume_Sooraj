@@ -169,6 +169,12 @@ body {
           padding-top: 50px;
           padding-left: 100px;
           word-spacing: 40px;
+          transition: 0.3s;
+}
+
+.contact .container .anyQuestion:hover h1 {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
 
 .contact .container .anyQuestion p {
@@ -190,7 +196,7 @@ body {
 .contact .container .anyQuestion .form input {
           font-size: 30px;
           border-radius: 10px;
-          width: 450px;
+          width: 470px;
           padding-left: 10px;
           border-top: none;
           background-color: #f5f5f5;
@@ -203,7 +209,7 @@ body {
 .contact .container .anyQuestion .form textarea {
           font-size: 30px;
           border-radius: 10px;
-          width: 450px;
+          width: 470px;
           padding-left: 10px;
           border-top: none;
           background-color: #f5f5f5;
@@ -214,7 +220,7 @@ body {
 }
 
 .contact .container .anyQuestion .form button {
-          width: 450px;
+          width: 470px;
           font-size: 35px;
           margin-bottom: 50px;
           margin-top: 50px;

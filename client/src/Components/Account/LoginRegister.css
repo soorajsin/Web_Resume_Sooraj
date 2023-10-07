@@ -33,7 +33,7 @@ body {
           cursor: pointer;
 }
 
-.register h1:hover {
+.register:hover h1 {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
@@ -49,7 +49,7 @@ body {
 
 .register .form input {
           height: 40px;
-          width: 400px;
+          width: 410px;
           border-radius: 10px;
           padding-left: 10px;
           font-size: 25px;
@@ -63,7 +63,7 @@ body {
 }
 
 .register .form button {
-          width: 400px;
+          width: 410px;
           font-size: 30px;
           border: none;
           border-radius: 10px;

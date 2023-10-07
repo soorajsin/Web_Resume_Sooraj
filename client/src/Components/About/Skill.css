@@ -28,7 +28,7 @@ body {
           cursor: pointer;
 }
 
-.skillDataAdd h1:hover {
+.skillDataAdd:hover h1 {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .skillDataAdd .form .inp input {
-          width: 310px;
+          width: 330px;
           height: 40px;
           font-size: 30px;
           border-radius: 10px;
@@ -56,7 +56,7 @@ body {
 }
 
 .skillDataAdd .form .add button {
-          width: 310px;
+          width: 330px;
           font-size: 30px;
           transition: 0.3s;
 }
@@ -66,19 +66,18 @@ body {
           box-shadow: 0 0 10px;
 }
 
-.skill .saveSkill {
-          margin-top: 50px;
-}
 
-.skillDataAdd .saveSkill .text-center .btn {
-          width: 310px;
+
+.skillDataAdd .saveSkill button {
+          width: 330px;
           font-size: 35px;
           margin-bottom: 50px;
           transition: 0.3s;
           margin-top: 50px;
+          margin-left: 200px;
 }
 
-.skillDataAdd .saveSkill .text-center button:hover {
+.skillDataAdd .saveSkill button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }

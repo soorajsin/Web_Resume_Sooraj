@@ -32,7 +32,7 @@ body {
           transition: 0.3s;
 }
 
-.paragraphId h1:hover {
+.paragraphId:hover h1{
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
@@ -46,7 +46,7 @@ body {
 }
 
 .paragraphId .form textarea {
-          width: 500px;
+          width: 520px;
           border-radius: 10px;
           padding-left: 10px;
           font-size: 30px;
@@ -60,7 +60,7 @@ body {
 }
 
 .paragraphId .form button {
-          width: 500px;
+          width: 520px;
           font-size: 30px;
           border-radius: 10px;
           border: none;
@@ -76,7 +76,7 @@ body {
 
 .paragraphId .saved button {
           margin-left: 100px;
-          width: 500px;
+          width: 520px;
           margin-top: 70px;
           margin-bottom: 50px;
           font-size: 35px;

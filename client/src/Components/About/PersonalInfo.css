@@ -27,7 +27,7 @@ body {
           transition: 0.3s;
 }
 
-.personalInfoData h1:hover {
+.personalInfoData:hover h1{
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .personalInfoData .form input {
-          width: 610px;
+          width: 630px;
           height: 40px;
           border-radius: 10px;
           padding-left: 10px;
@@ -56,7 +56,7 @@ body {
 }
 
 .personalInfoData .form button {
-          width: 610px;
+          width: 630px;
           margin-bottom: 50px;
           font-size: 35px;
           transition: 0.3s;

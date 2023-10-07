@@ -31,7 +31,7 @@ body {
           cursor: pointer;
 }
 
-.paragraphData .main h1:hover {
+.paragraphData:hover h1 {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
@@ -45,7 +45,7 @@ body {
 }
 
 .paragraphData .main .form textarea {
-          width: 520px;
+          width: 540px;
           font-size: 30px;
           border-top: none;
           padding-left: 10px;
@@ -53,7 +53,7 @@ body {
 }
 
 .paragraphData .main .form button {
-          width: 520px;
+          width: 540px;
           font-size: 30px;
           transition: 0.3s;
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .paragraphData .save button {
-          width: 520px;
+          width: 540px;
           margin-left: 100px;
           font-size: 35px;
           margin-bottom: 50px;

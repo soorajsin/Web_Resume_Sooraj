@@ -61,7 +61,7 @@ const Skill = () => {
   return (
     <>
       <div className="skillDataAdd">
-        <h1 className=" text-danger">Welcome to Skill</h1>
+        <h1 className="text text-danger">Welcome to Skill</h1>
         <div className="form">
           {skills.map((skill, index) => (
             <div className="inp" key={index}>
@@ -80,7 +80,7 @@ const Skill = () => {
           </div>
         </div>
         <div className="saveSkill ">
-          <div className="text-center">
+          <div>
             <button
               onClick={saveAllSkillInDatabase}
               className="btn btn-success"

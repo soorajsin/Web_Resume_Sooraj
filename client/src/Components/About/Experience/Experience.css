@@ -27,7 +27,7 @@
           transition: 0.3s;
 }
 
-#experience h1:hover {
+#experience:hover h1 {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
@@ -42,7 +42,7 @@
 }
 
 #experience .form input {
-          width: 450px;
+          width: 470px;
           height: 40px;
           border-radius: 10px;
           font-size: 30px;
@@ -56,7 +56,7 @@
 }
 
 #experience .form textarea {
-          width: 450px;
+          width: 470px;
           border-radius: 10px;
           font-size: 30px;
           padding-left: 10px;
@@ -69,7 +69,7 @@
 }
 
 #experience .form button {
-          width: 450px;
+          width: 470px;
           font-size: 30px;
           margin-top: 50px;
           margin-bottom: 50px;
@@ -84,7 +84,7 @@
 }
 
 #experience .saveExperinece button {
-          width: 450px;
+          width: 470px;
           font-size: 30px;
           margin-bottom: 100px;
           margin-top: 50px;
