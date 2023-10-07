@@ -27,6 +27,10 @@ body {
           padding: 10px;
 }
 
+.contact .container .edit {
+          margin-bottom: 150px;
+}
+
 .contact .container .edit .contactEdit .box {
           width: 100px;
           height: 100px;
