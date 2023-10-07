@@ -9,7 +9,7 @@ import "./Navbar.css";
 import { ContextNavigate } from "../ContextProvider/Context";
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTab] = useState("");
 
   const history = useNavigate();
   const { userdata, setUserData } = useContext(ContextNavigate);

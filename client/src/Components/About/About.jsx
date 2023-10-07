@@ -183,170 +183,180 @@ const About = () => {
   return (
     <>
       <div className="about">
-        <div className="left">
-          <h3>
-            I'm <span>{userdata ? userdata.getData.name : "Loading"}</span> and{" "}
-            <span className="show">
-              {userdata
-                ? userdata.getData.Heading.map((heading, index) => (
-                    <div key={index} className="showData">
-                      {index > 0 && <br />}
-                      <div className="data">
-                        {heading.headingSkill}
-                        <div className="delete">
-                          <i
-                            onClick={() => deleteHeading(heading._id, index)}
-                            className="fa-sharp fa-solid fa-trash"
-                          ></i>
+        <div className="container">
+          <div className="left">
+            <h3>
+              I'm <span>{userdata ? userdata.getData.name : "Loading"}</span>{" "}
+              and{" "}
+              <span className="show">
+                {userdata
+                  ? userdata.getData.Heading.map((heading, index) => (
+                      <div key={index} className="showData">
+                        {index > 0 && <br />}
+                        <div className="data">
+                          {heading.headingSkill}
+                          <div className="delete">
+                            <i
+                              onClick={() => deleteHeading(heading._id, index)}
+                              className="fa-sharp fa-solid fa-trash"
+                            ></i>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))
-                : "Loading"}
-            </span>
-          </h3>
-          <div className="editHeading">
-            <button
-              onClick={() => history("/editHeadingSkill")}
-              // className="btn btn-primary"
-            >
-              Add Heading Skill
-            </button>
+                    ))
+                  : "Loading"}
+              </span>
+            </h3>
+            <div className="editHeading">
+              <button
+                onClick={() => history("/editHeadingSkill")}
+                // className="btn btn-primary"
+              >
+                Add Heading Skill
+              </button>
+            </div>
+            <div className="paragraphAbout">
+              <div className="show">
+                {userdata
+                  ? userdata.getData.editPararaph.map(
+                      (editParagraph, index) => (
+                        <div key={index}>
+                          {index > 0 && <br />}
+                          <div className="data">
+                            {editParagraph.paragraph}
+                            <div className="delete">
+                              <i
+                                onClick={() =>
+                                  deleteParagraph(editParagraph._id, index)
+                                }
+                                className="fa-sharp fa-solid fa-trash"
+                              ></i>
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    )
+                  : "Loading"}
+              </div>
+              <div className="edit">
+                <button onClick={() => history("/editParagraphAbout")}>
+                  Add Paragraph
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="paragraphAbout">
-            <div className="show">
-              {userdata
-                ? userdata.getData.editPararaph.map((editParagraph, index) => (
-                    <div key={index}>
-                      {index > 0 && <br />}
-                      <div className="data">
-                        {editParagraph.paragraph}
-                        <div className="delete">
+
+          <div className="personalInfo">
+            <div className="showInfo">
+              {userdata &&
+              userdata.getData &&
+              userdata.getData.personalInfo &&
+              userdata.getData.personalInfo[0] ? (
+                <div className="showInfo-data">
+                  <p>Birthday: {userdata.getData.personalInfo[0].birthday}</p>
+                  <p>Age: {userdata.getData.personalInfo[0].age}</p>
+                  <p>Email: {userdata.getData.personalInfo[0].email}</p>
+                  <p>Course: {userdata.getData.personalInfo[0].course}</p>
+                  <p>Phone: {userdata.getData.personalInfo[0].phone}</p>
+                  <p>City: {userdata.getData.personalInfo[0].city}</p>
+                </div>
+              ) : (
+                "Loading"
+              )}
+            </div>
+            <div className="editInfo">
+              <button onClick={() => history("/personalInfo")}>
+                Edit Personal Information
+              </button>
+            </div>
+          </div>
+
+          <div className="right">
+            <div className="skill">
+              <div className="showSkill">
+                {userdata
+                  ? userdata.getData.skills.map((skill, index) => (
+                      <React.Fragment key={index}>
+                        {index > 0 && <br />}{" "}
+                        {/* Add line break if index > 0 */}
+                        <div className="skillCSSHandle">
+                          <div className="handle">
+                            {skill}{" "}
+                            <i
+                              className="fa-solid fa-trash"
+                              onClick={() => deleteSkillData(skill)}
+                            ></i>
+                          </div>
+                        </div>
+                      </React.Fragment>
+                    ))
+                  : "Loading"}
+              </div>
+              <div className="addSkill">
+                <button>
+                  <NavLink to={"/skill"} className={"addskillButton"}>
+                    Add Skill
+                  </NavLink>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="education">
+            <div className="education-part">
+              <div className="show-education">
+                {userdata
+                  ? userdata.getData.education.map((education, index) => (
+                      <div key={index} className="education-data">
+                        <p>Duration: {education.duration}</p>
+                        <p>Course: {education.course}</p>
+                        <p>Description: {education.description}</p>
+                        <div className="deleteIcon">
                           <i
                             onClick={() =>
-                              deleteParagraph(editParagraph._id, index)
+                              deleteEducation(education._id, index)
                             }
                             className="fa-sharp fa-solid fa-trash"
                           ></i>
                         </div>
                       </div>
-                    </div>
-                  ))
-                : "Loading"}
-            </div>
-            <div className="edit">
-              <button onClick={() => history("/editParagraphAbout")}>
-                Add Paragraph
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="personalInfo">
-          <div className="showInfo">
-            {userdata &&
-            userdata.getData &&
-            userdata.getData.personalInfo &&
-            userdata.getData.personalInfo[0] ? (
-              <div className="showInfo-data">
-                <p>Birthday: {userdata.getData.personalInfo[0].birthday}</p>
-                <p>Age: {userdata.getData.personalInfo[0].age}</p>
-                <p>Email: {userdata.getData.personalInfo[0].email}</p>
-                <p>Course: {userdata.getData.personalInfo[0].course}</p>
-                <p>Phone: {userdata.getData.personalInfo[0].phone}</p>
-                <p>City: {userdata.getData.personalInfo[0].city}</p>
+                    ))
+                  : "Loading"}
               </div>
-            ) : (
-              "Loading"
-            )}
+              <div className="edit-education">
+                <button onClick={() => history("/editEducation")}>
+                  Edit Education
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="editInfo">
-            <button onClick={() => history("/personalInfo")}>
-              Edit Personal Information
-            </button>
-          </div>
-        </div>
-        <div className="right">
-          <div className="skill">
-            <div className="showSkill">
-              {userdata
-                ? userdata.getData.skills.map((skill, index) => (
-                    <React.Fragment key={index}>
-                      {index > 0 && <br />} {/* Add line break if index > 0 */}
-                      <div className="skillCSSHandle">
-                        <div className="handle">
-                          {skill}{" "}
+          
+          <div className="experience">
+            <div className="experience-content">
+              <div className="show-experience">
+                {userdata
+                  ? userdata.getData.experience.map((experience, index) => (
+                      <div key={index} className="show-data">
+                        <p>Duration: {experience.duration}</p>
+                        <p>Department: {experience.department}</p>
+                        <p>Describtion: {experience.description}</p>
+                        <div className="icon">
                           <i
-                            className="fa-solid fa-trash"
-                            onClick={() => deleteSkillData(skill)}
+                            onClick={() =>
+                              deleteExperience(experience._id, index)
+                            }
+                            className="fa-sharp fa-solid fa-trash"
                           ></i>
                         </div>
                       </div>
-                    </React.Fragment>
-                  ))
-                : "Loading"}
-            </div>
-            <div className="addSkill">
-              <button>
-                <NavLink to={"/skill"} className={"addskillButton"}>
-                  Add Skill
-                </NavLink>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="education">
-          <div className="education-part">
-            <div className="show-education">
-              {userdata
-                ? userdata.getData.education.map((education, index) => (
-                    <div key={index} className="education-data">
-                      <p>Duration: {education.duration}</p>
-                      <p>Course: {education.course}</p>
-                      <p>Description: {education.description}</p>
-                      <div className="deleteIcon">
-                        <i
-                          onClick={() => deleteEducation(education._id, index)}
-                          className="fa-sharp fa-solid fa-trash"
-                        ></i>
-                      </div>
-                    </div>
-                  ))
-                : "Loading"}
-            </div>
-            <div className="edit-education">
-              <button onClick={() => history("/editEducation")}>
-                Edit Education
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="experience">
-          <div className="experience-content">
-            <div className="show-experience">
-              {userdata
-                ? userdata.getData.experience.map((experience, index) => (
-                    <div key={index} className="show-data">
-                      <p>Duration: {experience.duration}</p>
-                      <p>Department: {experience.department}</p>
-                      <p>Describtion: {experience.description}</p>
-                      <div className="icon">
-                        <i
-                          onClick={() =>
-                            deleteExperience(experience._id, index)
-                          }
-                          className="fa-sharp fa-solid fa-trash"
-                        ></i>
-                      </div>
-                    </div>
-                  ))
-                : "Loading"}
-            </div>
-            <div className="edit-experience">
-              <button onClick={() => history("/editExperience")}>
-                Edit Experience
-              </button>
+                    ))
+                  : "Loading"}
+              </div>
+              <div className="edit-experience">
+                <button onClick={() => history("/editExperience")}>
+                  Edit Experience
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -8,72 +8,80 @@ body {
 }
 
 .about {
-          margin-left: 50px;
+          background-color: red;
+          max-width: 1300px;
+          margin: 0 auto;
+          padding: 20px;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 30px;
 }
 
-.about .left {
-          margin-left: 50px;
+.about .container {
+          padding-top: 50px;
+          padding-right: 50px;
+          max-width: 1200px;
+          margin: 0 auto;
+          background-color: black;
+          margin-top: 50px;
+          padding: 10px;
 }
 
-.about .left h3 {
-          margin-top: 170px;
+.about .container .left h3 {
           transition: 0.3s;
           width: 1010px;
           border-radius: 10px;
-          padding-left: 20px;
           padding-top: 10px;
           padding-bottom: 10px;
           flex-wrap: wrap;
           word-wrap: break-word;
 }
 
-.about .left h3:hover {
+.about .container .left h3:hover {
           transform: scale(1.05);
           box-shadow: 0 0 10px;
           background-color: #fff;
 }
 
-.about .left h3 span {
+.about .container .left h3 span {
           color: red;
           cursor: pointer;
 }
 
-.about .left h3 .show .showData .data {
-          /* background-color:#eb8e91; */
+.about .container .left h3 .show .showData .data {
           width: 900px;
           border-radius: 10px;
-          padding-left: 10px;
           padding-top: 10px;
           padding-bottom: 10px;
           cursor: pointer;
           word-wrap: break-word;
 }
 
-.about .left h3 .show .showData .data:hover {
+.about .container .left h3 .show .showData .data:hover {
           background-color: #f5f5f5;
 }
 
-.about .left h3 .show .showData .data .delete {
+.about .container .left h3 .show .showData .data .delete {
           margin-left: 800px;
 }
 
-.about .left h3 .show .showData .data .delete i {
+.about .container .left h3 .show .showData .data .delete i {
           color: black;
           display: none;
           transition: 0.3s;
 }
 
-.about .left h3 .show .showData .data .delete i:hover {
+.about .container .left h3 .show .showData .data .delete i:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: red;
 }
 
-.about .left h3 .show .showData .data:hover i {
+.about .container .left h3 .show .showData .data:hover i {
           display: block;
 }
 
-.about .left .editHeading button {
+.about .container .left .editHeading button {
           width: 300px;
           font-size: 30px;
           margin-top: 20px;
@@ -83,23 +91,22 @@ body {
           transition: 0.3s;
 }
 
-.about .left .editHeading button:hover {
+.about .container .left .editHeading button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .left p {
+.about .container .left p {
           color: rgb(51, 42, 42);
           font-size: 15px;
 }
 
-.about .left .paragraphAbout {
-          margin-left: 0;
+.about .container .left .paragraphAbout {
           margin-top: 50px;
           margin-bottom: 50px;
 }
 
-.about .left .paragraphAbout .edit button {
+.about .container .left .paragraphAbout .edit button {
           font-size: 30px;
           width: 300px;
           margin-top: 20px;
@@ -109,17 +116,16 @@ body {
           transition: 0.3s;
 }
 
-.about .left .paragraphAbout .edit button:hover {
+.about .container .left .paragraphAbout .edit button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .left .paragraphAbout .show {
+.about .container .left .paragraphAbout .show {
           margin-bottom: 30px;
 }
 
-.about .left .paragraphAbout .show .data {
-          /* background-color: #eb8e91; */
+.about .container .left .paragraphAbout .show .data {
           border-radius: 10px;
           padding: 10px 10px 10px 10px;
           margin-right: 100px;
@@ -130,17 +136,17 @@ body {
           width: 1000px;
 }
 
-.about .left .paragraphAbout .show .data:hover {
+.about .container .left .paragraphAbout .show .data:hover {
           background-color: #fff;
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .left .paragraphAbout .show .data .delete {
+.about .container .left .paragraphAbout .show .data .delete {
           margin-left: 900px;
 }
 
-.about .left .paragraphAbout .show .data .delete i {
+.about .container .left .paragraphAbout .show .data .delete i {
           padding-top: 20px;
           padding-bottom: 20px;
           font-size: 30px;
@@ -149,24 +155,26 @@ body {
           transition: 0.3s;
 }
 
-.about .left .paragraphAbout .show .data:hover i {
+.about .container .left .paragraphAbout .show .data:hover i {
           display: block;
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           color: red;
 }
 
-.about .right {
-          margin-left: 60%;
+.about .container .right {
+          margin-left: 50%;
           margin-top: 80px;
+          background-color: #0d6efd;
+          border-radius: 10px;
 }
 
-.about .right .skill {
+.about .container .right .skill {
           margin-top: 20px;
           margin-left: 20px;
 }
 
-.about .right .skill button {
+.about .container .right .skill button {
           width: 400px;
           border-radius: 10px;
           border: none;
@@ -176,37 +184,40 @@ body {
           transition: 0.3s;
 }
 
-.about .right .skill button:hover {
+.about .container .right .skill button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .right .skill button .addskillButton {
+.about .container .right .skill button .addskillButton {
           font-size: 30px;
           color: black;
           text-decoration: none;
 }
 
-.about .right .skill .showSkill {
+.about .container .right .skill .showSkill {
           margin-bottom: 30px;
-          width: 300px;
+          width: 400px;
 }
 
-.about .right .skill .showSkill .skillCSSHandle {
+.about .container .right .skill .showSkill .skillCSSHandle {
           width: 400px;
-          background-color: red;
           border-radius: 10px;
           cursor: pointer;
           padding-top: 10px;
           padding-left: 20px;
           padding-bottom: 10px;
+          transition: 0.3s;
+          margin-bottom: 30px;
 }
 
-.about .right .skill .showSkill .skillCSSHandle:hover {
+.about .container .right .skill .showSkill .skillCSSHandle:hover {
           background-color: #fff;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
 }
 
-.about .right .skill .showSkill .skillCSSHandle .handle {
+.about .container .right .skill .showSkill .skillCSSHandle .handle {
           flex-wrap: wrap;
           display: block;
           word-wrap: break-word;
@@ -214,16 +225,23 @@ body {
           padding-right: 30px;
 }
 
-.about .right .skill .showSkill .skillCSSHandle i {
+.about .container .right .skill .showSkill .skillCSSHandle i {
           display: none;
           margin-left: 330px;
+          transition: 0.3s;
 }
 
-.about .right .skill .showSkill .skillCSSHandle:hover i {
+.about .container .right .skill .showSkill .skillCSSHandle i:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
+          color: red;
+}
+
+.about .container .right .skill .showSkill .skillCSSHandle:hover i {
           display: block;
 }
 
-.about .right .skill .showSkill .skillCSSHandle .handle {
+.about .container .right .skill .showSkill .skillCSSHandle .handle {
           margin-left: 10px;
           font-size: 25px;
           margin-top: 10px;
@@ -231,12 +249,12 @@ body {
 }
 
 
-.about .personalInfo {
-          margin-left: 50px;
+.about .container .personalInfo {
+          margin-left: 0px;
           margin-top: 100px;
 }
 
-.about .personalInfo .editInfo button {
+.about .container .personalInfo .editInfo button {
           height: 45px;
           border-radius: 10px;
           font-size: 30px;
@@ -250,22 +268,22 @@ body {
           margin-bottom: 50px;
 }
 
-.about .personalInfo .editInfo button:hover {
+.about .container .personalInfo .editInfo button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
           font-size: 33px;
 }
 
-.about .personalInfo .editInfo .btn {
+.about .container .personalInfo .editInfo .btn {
           font-size: 25px;
 }
 
-.about .personalInfo .showInfo {
+.about .container .personalInfo .showInfo {
           margin-top: 20px;
           margin-bottom: 30px;
 }
 
-.about .personalInfo .showInfo .showInfo-data:hover {
+.about .container .personalInfo .showInfo .showInfo-data:hover {
           transform: translateY(-5px);
           transition: transform 0.3s ease;
           background-color: #fff;
@@ -273,7 +291,7 @@ body {
           box-shadow: 0 0 10px;
 }
 
-.about .personalInfo .showInfo .showInfo-data {
+.about .container .personalInfo .showInfo .showInfo-data {
           width: 500px;
           border-radius: 10px;
           padding-left: 10px;
@@ -282,7 +300,7 @@ body {
           transition: 0.3s;
 }
 
-.about .personalInfo .showInfo .showInfo-data p {
+.about .container .personalInfo .showInfo .showInfo-data p {
           font-size: 23px;
           cursor: pointer;
           flex-wrap: wrap;
@@ -293,16 +311,15 @@ body {
 }
 
 
-.about .education {
-          margin-left: 50px;
+.about .container .education {
           margin-bottom: 50px;
 }
 
-.about .education .education-part .edit-education {
+.about .container .education .education-part .edit-education {
           margin-top: 30px;
 }
 
-.about .education .education-part .edit-education button {
+.about .container .education .education-part .edit-education button {
           width: 300px;
           font-size: 30px;
           transition: 0.3s;
@@ -312,24 +329,24 @@ body {
 
 }
 
-.about .education .education-part .edit-education button:hover {
+.about .container .education .education-part .edit-education button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .education .education-part .show-education {
+.about .container .education .education-part .show-education {
           margin-top: 50px;
           margin-bottom: 50px;
 }
 
-.about .education .education-part .show-education .education-data {
+.about .container .education .education-part .show-education .education-data {
           width: 550px;
           border-radius: 10px;
           margin-bottom: 30px;
           transition: 0.3s;
 }
 
-.about .education .education-part .show-education .education-data p {
+.about .container .education .education-part .show-education .education-data p {
           width: 550px;
           margin-left: 20px;
           padding-top: 10px;
@@ -342,26 +359,26 @@ body {
           padding-right: 30px;
 }
 
-.about .education .education-part .show-education .education-data:hover {
+.about .container .education .education-part .show-education .education-data:hover {
           background-color: #fff;
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
 
-.about .education .education-part .show-education .education-data .deleteIcon {
+.about .container .education .education-part .show-education .education-data .deleteIcon {
           margin-left: 450px;
           padding-bottom: 20px;
 }
 
-.about .education .education-part .show-education .education-data .deleteIcon i {
+.about .container .education .education-part .show-education .education-data .deleteIcon i {
           font-size: 30px;
           cursor: pointer;
           display: none;
           transition: 0.3s;
 }
 
-.about .education .education-part .show-education .education-data:hover i {
+.about .container .education .education-part .show-education .education-data:hover i {
           display: block;
           transform: scale(1.06);
           text-shadow: 0 0 10px;
@@ -370,17 +387,17 @@ body {
 
 
 
-.about .experience {
+.about .container .experience {
           margin-left: 50px;
 }
 
-.about .experience .experience-content {
+.about .container .experience .experience-content {
           margin-left: 50%;
           margin-top: 100px;
           margin-bottom: 200px;
 }
 
-.about .experience .experience-content .edit-experience button {
+.about .container .experience .experience-content .edit-experience button {
           width: 400px;
           font-size: 30px;
           border-radius: 10px;
@@ -389,16 +406,16 @@ body {
           transition: 0.3s;
 }
 
-.about .experience .experience-content .edit-experience button:hover {
+.about .container .experience .experience-content .edit-experience button:hover {
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .experience .experience-content .show-experience {
+.about .container .experience .experience-content .show-experience {
           width: 500px;
 }
 
-.about .experience .experience-content .show-experience .show-data {
+.about .container .experience .experience-content .show-experience .show-data {
           width: 500px;
           border-radius: 10px;
           margin-bottom: 30px;
@@ -408,7 +425,7 @@ body {
           transition: 0.3s;
 }
 
-.about .experience .experience-content .show-experience .show-data p {
+.about .container .experience .experience-content .show-experience .show-data p {
           font-size: 30px;
           cursor: pointer;
           padding-right: 10px;
@@ -419,25 +436,25 @@ body {
           padding-right: 30px;
 }
 
-.about .experience .experience-content .show-experience .show-data:hover {
+.about .container .experience .experience-content .show-experience .show-data:hover {
           background-color: #fff;
           transform: scale(1.06);
           box-shadow: 0 0 10px;
 }
 
-.about .experience .experience-content .show-experience .show-data .icon {
+.about .container .experience .experience-content .show-experience .show-data .icon {
           margin-left: 430px;
           font-size: 25px;
 }
 
-.about .experience .experience-content .show-experience .show-data .icon i {
+.about .container .experience .experience-content .show-experience .show-data .icon i {
           padding-bottom: 20px;
           cursor: pointer;
           display: none;
           transition: 0.3s;
 }
 
-.about .experience .experience-content .show-experience .show-data:hover i {
+.about .container .experience .experience-content .show-experience .show-data:hover i {
           display: block;
           color: red;
           transform: scale(1.06);
