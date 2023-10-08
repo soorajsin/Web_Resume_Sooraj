@@ -334,7 +334,7 @@ body {
 }
 
 .about .container .education .education-part .show-education .education-data {
-          width: 50%;
+          width: 600px;
           border-radius: 10px;
           margin-bottom: 30px;
           transition: 0.3s;
@@ -361,7 +361,7 @@ body {
 
 
 .about .container .education .education-part .show-education .education-data .deleteIcon {
-          margin-left: 450px;
+          margin-left: 85%;
           padding-bottom: 20px;
 }
 
