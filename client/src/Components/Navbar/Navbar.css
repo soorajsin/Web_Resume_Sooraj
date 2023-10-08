@@ -163,7 +163,7 @@
 
 
 /* media */
-@media (max-width:1099px) {
+@media (max-width:1050px) {
           .navbar .appbar .containerNavbar .tab:not(:first-child) {
                     margin-left: 50px;
                     transition: 0.3s;
