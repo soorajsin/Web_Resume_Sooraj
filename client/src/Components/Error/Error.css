@@ -4,15 +4,23 @@
 }
 
 .error {
-          margin-top: 100px;
+          margin-top: 90px;
           text-align: center;
 }
 
 .error img {
           width: 500px;
+          border-radius: 10px;
           height: 500px;
 }
 
 .error h1 {
           color: rgb(190, 44, 44);
+          transition: 0.3s;
+          cursor: pointer;
+}
+
+.error h1:hover {
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
 }
