@@ -169,4 +169,8 @@
                     transition: 0.3s;
                     position: relative;
           }
+
+          .navbar .appbar .containerNavbar .avatar {
+                    margin-left: 100px;
+          }
 }
