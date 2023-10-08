@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Avatar from "@mui/material/Avatar";
 import { NavLink, useNavigate } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
+import SoorajLogo from "./Sooraj-logo.png";
 
 import "./Navbar.css";
 import { ContextNavigate } from "../ContextProvider/Context";
@@ -99,7 +100,9 @@ const Navbar = () => {
           <Toolbar>
             <div className="containerNavbar">
               <div className="tab">
-                <a href="/home">S</a>
+                <a href="/home">
+                  <img src={SoorajLogo} alt="logo" />
+                </a>
               </div>
               <div
                 className={`tab ${activeTab === "home" ? "active" : ""}`}

@@ -35,7 +35,7 @@ body {
 .home .tag h3 {
           cursor: pointer;
           transition: 0.3s;
-          width: 1000px;
+          width: 95%;
           word-wrap: break-word;
           flex-wrap: wrap;
           border-radius: 10px;
@@ -62,6 +62,10 @@ body {
           border: none;
           background-color: #0d6efd;
           margin-bottom: 20px;
+}
+
+.home .tag button:hover {
+          color: #fff;
 }
 
 .home .tag span {
@@ -98,7 +102,7 @@ body {
 }
 
 .home .tag .paragraphDataId .showData .paragraphDataItem .dataId .delete i {
-          margin-left: 800px;
+          margin-left: 85%;
           font-size: 25px;
           transition: 0.3;
           display: none;
@@ -139,11 +143,6 @@ body {
 }
 
 
-.home .img .show .data:hover {
-          transform: translateY(-5px);
-          transition: transform 0.3s ease;
-}
-
 .home .img .data {
           display: flex;
           flex-wrap: wrap;
@@ -170,6 +169,8 @@ body {
 
 .home .img .data .data-sub .deleteIcon {
           margin-left: 250px;
+          padding-top: 10px;
+          padding-bottom: 10px;
 }
 
 .home .img .data .data-sub .deleteIcon i {
@@ -205,7 +206,7 @@ body {
 }
 
 .home .tag .paragraph .show .paragraphData .data {
-          width: 700px;
+          width: 95%;
           border-radius: 10px;
           padding-left: 10px;
           padding-top: 10px;
@@ -227,7 +228,7 @@ body {
 }
 
 .home .tag .paragraph .show .paragraphData .data .delete {
-          margin-left: 600px;
+          margin-left: 85%;
 }
 
 .home .tag .paragraph .show .paragraphData .data .delete i {

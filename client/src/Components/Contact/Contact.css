@@ -156,7 +156,7 @@ body {
           margin-top: 200px;
           /* margin-left: 250px; */
           margin: 0 auto;
-          width: 700px;
+          width: 70%;
           background-color: #fff;
           border-radius: 10px;
           transition: 0.3s;
@@ -171,7 +171,7 @@ body {
 .contact .container .anyQuestion h1 {
           color: rgb(212, 55, 87);
           padding-top: 50px;
-          padding-left: 100px;
+          padding-left: 18%;
           word-spacing: 40px;
           transition: 0.3s;
 }
@@ -184,13 +184,13 @@ body {
 .contact .container .anyQuestion p {
           color: red;
           margin-top: 20px;
-          margin-left: 100px;
+          margin-left: 18%;
           padding-bottom: 40px;
 }
 
 .contact .container .anyQuestion .form {
           margin-top: 20px;
-          margin-left: 100px;
+          margin-left: 18%;
 }
 
 .contact .container .anyQuestion .form label {
@@ -200,7 +200,7 @@ body {
 .contact .container .anyQuestion .form input {
           font-size: 30px;
           border-radius: 10px;
-          width: 470px;
+          width: 72%;
           padding-left: 10px;
           border-top: none;
           background-color: #f5f5f5;
@@ -213,7 +213,7 @@ body {
 .contact .container .anyQuestion .form textarea {
           font-size: 30px;
           border-radius: 10px;
-          width: 470px;
+          width: 72%;
           padding-left: 10px;
           border-top: none;
           background-color: #f5f5f5;
@@ -224,7 +224,7 @@ body {
 }
 
 .contact .container .anyQuestion .form button {
-          width: 470px;
+          width: 72%;
           font-size: 35px;
           margin-bottom: 50px;
           margin-top: 50px;

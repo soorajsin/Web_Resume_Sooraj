@@ -9,9 +9,9 @@ body {
 
 .register {
           margin-top: 140px;
-          margin-left: 300px;
+          margin-left: 20%;
           margin-bottom: 100px;
-          width: 700px;
+          width: 60%;
           background-color: #fff;
           border-radius: 10px;
           transition: 0.3s;
@@ -24,7 +24,7 @@ body {
 }
 
 .register h1 {
-          margin-left: 150px;
+          margin-left: 20%;
           padding-top: 50px;
           padding-bottom: 50px;
           font-size: 30px;
@@ -39,7 +39,7 @@ body {
 }
 
 .register .form {
-          margin-left: 150px;
+          margin-left: 20%;
           margin-bottom: 20px;
 }
 

@@ -61,7 +61,7 @@ body {
 }
 
 .about .container .left h3 .show .showData .data .delete {
-          margin-left: 90%;
+          margin-left: 85%;
 }
 
 .about .container .left h3 .show .showData .data .delete i {
@@ -142,7 +142,7 @@ body {
 }
 
 .about .container .left .paragraphAbout .show .data .delete {
-          margin-left: 90%;
+          margin-left: 85%;
 }
 
 .about .container .left .paragraphAbout .show .data .delete i {
@@ -169,7 +169,7 @@ body {
 }
 
 .about .container .right .skill .addSkill button {
-          width: 400px;
+          width: 300px;
           border-radius: 10px;
           border: none;
           background-color: #0d6efd;
@@ -195,7 +195,7 @@ body {
 }
 
 .about .container .right .skill .showSkill .skillCSSHandle {
-          width: 539px;
+          width: 100%;
           border-radius: 10px;
           cursor: pointer;
           padding-top: 10px;
@@ -217,12 +217,12 @@ body {
           word-wrap: break-word;
           white-space: pre-wrap;
           padding-right: 30px;
-          width: 539px;
+          width: 100%;
 }
 
 .about .container .right .skill .showSkill .skillCSSHandle i {
           display: none;
-          margin-left: 80%;
+          margin-left: 85%;
           transition: 0.3s;
 }
 
@@ -286,7 +286,7 @@ body {
 }
 
 .about .container .personalInfo .showInfo .showInfo-data {
-          width: 600px;
+          width: 50%;
           border-radius: 10px;
           padding-left: 10px;
           padding-top: 10px;
@@ -334,14 +334,14 @@ body {
 }
 
 .about .container .education .education-part .show-education .education-data {
-          width: 600px;
+          width: 50%;
           border-radius: 10px;
           margin-bottom: 30px;
           transition: 0.3s;
 }
 
 .about .container .education .education-part .show-education .education-data p {
-          width: 550px;
+          width: 100%;
           margin-left: 20px;
           padding-top: 10px;
           padding-bottom: 10px;
@@ -387,7 +387,8 @@ body {
 }
 
 .about .container .experience .experience-content .edit-experience button {
-          width: 400px;
+          padding-left: 20px;
+          padding-right: 20px;
           font-size: 30px;
           border-radius: 10px;
           background-color: #0d6efd;
@@ -401,11 +402,11 @@ body {
 }
 
 .about .container .experience .experience-content .show-experience {
-          width: 550px;
+          width: 100%;
 }
 
 .about .container .experience .experience-content .show-experience .show-data {
-          width: 550px;
+          width: 100%;
           border-radius: 10px;
           margin-bottom: 30px;
           padding-left: 20px;
@@ -432,7 +433,7 @@ body {
 }
 
 .about .container .experience .experience-content .show-experience .show-data .icon {
-          margin-left: 430px;
+          margin-left: 85%;
           font-size: 25px;
 }
 
