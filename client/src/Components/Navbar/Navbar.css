@@ -35,7 +35,7 @@
 
 .appbar .navbar .containerNavbar .tab:first-child a img {
           width: 60px;
-          height: 60px;
+          height: 59px;
           transition: 0.3s;
           cursor: pointer;
 }
@@ -114,8 +114,17 @@
           box-shadow: 0 0 10px;
 }
 
-.appbar .navbar .containerNavbar .avatar-manu .avatarManu {
-          cursor: pointer;
+.appbar .navbar .containerNavbar .avatar-manu .avatarEmail {
+          font-size: 30px;
+          padding-bottom: 20px;
+          text-align: center;
+          color: rgb(187, 71, 71);
+          word-wrap: break-word;
+}
+
+
+.appbar .navbar .containerNavbar .avatar-manu .avatarManu .avatarEmail {
+          font-size: 25px;
 }
 
 .appbar .navbar .containerNavbar .avatar-manu .avatarManu .item {

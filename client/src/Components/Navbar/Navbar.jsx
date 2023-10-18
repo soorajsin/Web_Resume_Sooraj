@@ -86,8 +86,8 @@ const Navbar = () => {
     if (res.status === 205) {
       // console.log(res);
       localStorage.removeItem("userDataToken");
-      // history("/login");
       history("/login");
+      window.location.reload();
     } else {
       console.log("not removed token");
     }
@@ -204,6 +204,9 @@ const Navbar = () => {
               {userdata ? (
                 userdata && (
                   <div className="avatarManu">
+                    <div className="avatarEmail">
+                      {userdata ? userdata.getData.email : ""}
+                    </div>
                     <MenuItem onClick={() => history("/home")} className="item">
                       Home
                     </MenuItem>
