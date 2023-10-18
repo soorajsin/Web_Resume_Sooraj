@@ -56,15 +56,15 @@ const Navbar = () => {
     avatarForFetchData();
   });
 
-  const [anchorEl, setAnchorEl] = useState(null);
+  // const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleAvatarClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  // const handleAvatarClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   const handleSignOut = async () => {
     const token = await localStorage.getItem("userDataToken");
@@ -93,166 +93,298 @@ const Navbar = () => {
     }
   };
 
-  return (
-    <>
-      <div className="navbar">
-        <AppBar className="appbar">
-          <Toolbar>
-            <div className="containerNavbar">
-              <div className="tab">
-                <a href="/home">
-                  <img src={SoorajLogo} alt="logo" />
-                </a>
-              </div>
-              <div
-                className={`tab ${activeTab === "home" ? "active" : ""}`}
-                onClick={() => setActiveTab("home")}
-              >
-                <NavLink
-                  to={"/home"}
-                  style={{
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "25px",
-                  }}
-                >
-                  Home
-                </NavLink>
-              </div>
-              <div
-                className={`tab ${activeTab === "about" ? "active" : ""}`}
-                onClick={() => setActiveTab("about")}
-              >
-                <NavLink
-                  to={"/about"}
-                  style={{
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "25px",
-                  }}
-                >
-                  About
-                </NavLink>
-              </div>
-              <div
-                className={`tab ${activeTab === "service" ? "active" : ""}`}
-                onClick={() => setActiveTab("service")}
-              >
-                <NavLink
-                  to={"/service"}
-                  style={{
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "25px",
-                  }}
-                >
-                  Service
-                </NavLink>
-              </div>
-              <div
-                className={`tab ${activeTab === "portfolio" ? "active" : ""}`}
-                onClick={() => setActiveTab("portfolio")}
-              >
-                <NavLink
-                  to={"/portfolio"}
-                  style={{
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "25px",
-                  }}
-                >
-                  Portfolio
-                </NavLink>
-              </div>
-              <div
-                className={`tab ${activeTab === "contact" ? "active" : ""}`}
-                onClick={() => setActiveTab("contact")}
-              >
-                <NavLink
-                  to={"/contact"}
-                  style={{
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "25px",
-                  }}
-                >
-                  Contact
-                </NavLink>
-              </div>
-              <div
-                className={`tab ${activeTab === "login" ? "active" : ""}`}
-                onClick={() => setActiveTab("login")}
-              >
-                <NavLink
-                  to={"/login"}
-                  style={{
-                    color: "#fff",
-                    textDecoration: "none",
-                    fontSize: "25px",
-                  }}
-                >
-                  Login
-                </NavLink>
-              </div>
-              <div className="avatar">
-                <Avatar className="avatar-main" onClick={handleAvatarClick}>
-                  {userdata ? (
-                    userdata.getData.email.charAt(0).toUpperCase()
-                  ) : (
-                    <Avatar />
-                  )}
-                </Avatar>
-                {userdata ? (
-                  userdata && (
-                    <div
-                      id="manu"
-                      className="loginAvatarManu"
-                      anchorEl={anchorEl}
-                      open={Boolean(anchorEl)}
-                      onClose={handleClose}
+  const ifUserValid = () => {
+    return (
+      <>
+        <div className="containerNavbar">
+          <div className="tab">
+            <a href="/home">
+              <img src={SoorajLogo} alt="logo" />
+            </a>
+          </div>
+          <div
+            className={`tab ${activeTab === "home" ? "active" : ""}`}
+            onClick={() => setActiveTab("home")}
+          >
+            <NavLink
+              to={"/home"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Home
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "about" ? "active" : ""}`}
+            onClick={() => setActiveTab("about")}
+          >
+            <NavLink
+              to={"/about"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              About
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "service" ? "active" : ""}`}
+            onClick={() => setActiveTab("service")}
+          >
+            <NavLink
+              to={"/service"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Service
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "portfolio" ? "active" : ""}`}
+            onClick={() => setActiveTab("portfolio")}
+          >
+            <NavLink
+              to={"/portfolio"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Portfolio
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "contact" ? "active" : ""}`}
+            onClick={() => setActiveTab("contact")}
+          >
+            <NavLink
+              to={"/contact"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Contact
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "login" ? "active" : ""}`}
+            onClick={() => setActiveTab("login")}
+          >
+            <NavLink
+              to={"/login"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Login
+            </NavLink>
+          </div>
+          <div className="avatar">
+            <Avatar className="avatar-main">
+              {userdata ? (
+                userdata.getData.email.charAt(0).toUpperCase()
+              ) : (
+                <Avatar />
+              )}
+            </Avatar>
+            <div className="avatar-manu">
+              {userdata ? (
+                userdata && (
+                  <div className="avatarManu">
+                    <MenuItem onClick={() => history("/home")} className="item">
+                      Home
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/about")}
+                      className="item"
                     >
-                      <MenuItem
-                        onClick={() => history("/home")}
-                        className="item"
-                      >
-                        Home
-                      </MenuItem>
-                      <MenuItem
-                        onClick={() => history("/about")}
-                        className="item"
-                      >
-                        About
-                      </MenuItem>
-                      <MenuItem
-                        onClick={() => history("/service")}
-                        className="item"
-                      >
-                        Service
-                      </MenuItem>
-                      <MenuItem
-                        onClick={() => history("/portfolio")}
-                        className="item"
-                      >
-                        Portfolio
-                      </MenuItem>
-                      <MenuItem
-                        onClick={() => history("/contact")}
-                        className="item"
-                      >
-                        Contact
-                      </MenuItem>
-                      <MenuItem onClick={handleSignOut} className="item">
-                        Sign Out
-                      </MenuItem>
-                    </div>
-                  )
-                ) : (
-                  <div
-                    className="avatarManu"
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
+                      About
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/service")}
+                      className="item"
+                    >
+                      Service
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/portfolio")}
+                      className="item"
+                    >
+                      Portfolio
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/contact")}
+                      className="item"
+                    >
+                      Contact
+                    </MenuItem>
+                    <MenuItem onClick={handleSignOut} className="item">
+                      Sign Out
+                    </MenuItem>
+                  </div>
+                )
+              ) : (
+                <div className="avatarManu">
+                  <MenuItem
+                    onClick={() => history("/contact")}
+                    className="item"
                   >
+                    Contact
+                  </MenuItem>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  const elseUserValid = () => {
+    return (
+      <>
+        <div className="containerNavbar">
+          <div className="tab">
+            <a href="/home">
+              <img src={SoorajLogo} alt="logo" />
+            </a>
+          </div>
+          <div
+            className={`tab ${activeTab === "home" ? "active" : ""}`}
+            onClick={() => setActiveTab("home")}
+          >
+            <NavLink
+              to={"/home"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Home
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "about" ? "active" : ""}`}
+            onClick={() => setActiveTab("about")}
+          >
+            <NavLink
+              to={"/about"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              About
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "service" ? "active" : ""}`}
+            onClick={() => setActiveTab("service")}
+          >
+            <NavLink
+              to={"/service"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Service
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "portfolio" ? "active" : ""}`}
+            onClick={() => setActiveTab("portfolio")}
+          >
+            <NavLink
+              to={"/portfolio"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Portfolio
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "contact" ? "active" : ""}`}
+            onClick={() => setActiveTab("contact")}
+          >
+            <NavLink
+              to={"/contact"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Contact
+            </NavLink>
+          </div>
+          <div
+            className={`tab ${activeTab === "login" ? "active" : ""}`}
+            onClick={() => setActiveTab("login")}
+          >
+            <NavLink
+              to={"/login"}
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: "25px",
+              }}
+            >
+              Login
+            </NavLink>
+          </div>
+          <div className="avatar">
+            <Avatar className="avatar-main">
+              {userdata ? (
+                userdata.getData.email.charAt(0).toUpperCase()
+              ) : (
+                <Avatar />
+              )}
+            </Avatar>
+            <div className="avatar-manu">
+              {userdata ? (
+                userdata && (
+                  <div className="avatarManu">
+                    <MenuItem onClick={() => history("/home")} className="item">
+                      Home
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/about")}
+                      className="item"
+                    >
+                      About
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/service")}
+                      className="item"
+                    >
+                      Service
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => history("/portfolio")}
+                      className="item"
+                    >
+                      Portfolio
+                    </MenuItem>
                     <MenuItem
                       onClick={() => history("/contact")}
                       className="item"
@@ -260,12 +392,33 @@ const Navbar = () => {
                       Contact
                     </MenuItem>
                   </div>
-                )}
-              </div>
+                )
+              ) : (
+                <div className="avatarManu">
+                  <MenuItem
+                    onClick={() => history("/contact")}
+                    className="item"
+                  >
+                    Contact
+                  </MenuItem>
+                </div>
+              )}
             </div>
-          </Toolbar>
-        </AppBar>
-      </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  return (
+    <>
+      <AppBar className="appbar">
+        <Toolbar>
+          <div className="navbar">
+            {userdata ? ifUserValid() : elseUserValid()}
+          </div>
+        </Toolbar>
+      </AppBar>
     </>
   );
 };

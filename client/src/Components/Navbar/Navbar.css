@@ -4,17 +4,21 @@
 }
 
 .navbar {
-          background-color: black;
+          max-width: 1200px;
+          margin: 0 auto;
 }
 
-.navbar .appbar {
+
+
+.appbar .navbar {
           background-color: #fff;
           background-color: #1976d2;
-          height: 62px;
-          width: 100%;
+          /* background-color: red; */
+          height: 67px;
+          max-width: 1200px;
 }
 
-.navbar .appbar .containerNavbar {
+.appbar .navbar .containerNavbar {
           max-width: 1200px;
           margin: 0 auto;
           /* background-color: red; */
@@ -24,40 +28,40 @@
           align-items: center;
 }
 
-.navbar .appbar .containerNavbar .tab:first-child {
+.appbar .navbar .containerNavbar .tab:first-child {
           margin-left: 0;
           font-size: 30px;
 }
 
-.navbar .appbar .containerNavbar .tab:first-child a img {
+.appbar .navbar .containerNavbar .tab:first-child a img {
           width: 60px;
           height: 60px;
           transition: 0.3s;
           cursor: pointer;
 }
 
-.navbar .appbar .containerNavbar .tab:first-child a img:hover {
+.appbar .navbar .containerNavbar .tab:first-child a img:hover {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
 }
 
-.navbar .appbar .containerNavbar .tab:not(:first-child) {
+.appbar .navbar .containerNavbar .tab:not(:first-child) {
           margin-left: 60px;
           transition: 0.3s;
           position: relative;
 }
 
-.navbar .appbar .containerNavbar .tab.active {
+.appbar .navbar .containerNavbar .tab.active {
           transform: scale(1.1);
           text-shadow: 0 0 10px;
 }
 
-.navbar .appbar .containerNavbar .tab:hover {
+.appbar .navbar .containerNavbar .tab:hover {
           transform: scale(1.1);
           text-shadow: 0 0 10px;
 }
 
-.navbar .appbar .containerNavbar .tab.active::before {
+.appbar .navbar .containerNavbar .tab.active::before {
           content: "";
           position: absolute;
           width: 100%;
@@ -68,7 +72,7 @@
           transition: width 0.3s;
 }
 
-.navbar .appbar .containerNavbar .tab.active:hover::before {
+.appbar .navbar .containerNavbar .tab.active:hover::before {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
           text-decoration: underline 2px solid red;
@@ -76,101 +80,69 @@
 }
 
 
-.navbar .appbar .containerNavbar .avatar {
+.appbar .navbar .containerNavbar .avatar {
           margin-left: 200px;
 }
 
-.navbar .appbar .containerNavbar .avatar .avatar-main {
+.appbar .navbar .containerNavbar .avatar .avatar-main {
           background-color: blue;
           color: #fff;
           font-size: 30px;
           cursor: pointer;
 }
 
-/* @media (max-width:320px) {
-          .navbar .tab {
-                    display: none;
-          }
 
-          .navbar .avatar {
-                    margin-left: 20px;
-          }
 
-          #manu {
-                    width: 500px;
-                    height: 500px;
-          }
-}
-
-@media (max-width:500px) {
-          .navbar .tab {
-                    display: none;
-          }
-} */
-
-.navbar .avatar .avatarManu {
-          display: none;
-          position: absolute;
+.appbar .navbar .containerNavbar .avatar-manu {
+          width: 300px;
           background-color: #fff;
           color: black;
-          width: 300px;
-          top: 50px;
-          right: 10px;
-          cursor: pointer;
-          border-radius: 10px;
-}
-
-.navbar .avatar .avatarManu .item {
-          font-size: 25px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-}
-
-.navbar .avatar .avatarManu .item:hover {
-          color: rgb(241, 71, 71);
-}
-
-.navbar .avatar:hover .avatarManu {
-          display: block;
-}
-
-.navbar .avatar .loginAvatarManu {
-          display: none;
           position: absolute;
-          background-color: #fff;
-          color: black;
-          width: 300px;
-          top: 50px;
-          right: 10px;
+          right: 0px;
+          border-radius: 10px;
+          padding-left: 20px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          padding-right: 20px;
+          display: none;
+          transition: 0.3s;
+}
+
+.appbar .navbar .containerNavbar .avatar:hover .avatar-manu {
+          display: block;
+          transform: scale(1.06);
+          box-shadow: 0 0 10px;
+}
+
+.appbar .navbar .containerNavbar .avatar-manu .avatarManu {
           cursor: pointer;
+}
+
+.appbar .navbar .containerNavbar .avatar-manu .avatarManu .item {
+          font-size: 30px;
+          word-wrap: break-word;
+          transition: 0.3s;
+          cursor: pointer;
+          padding-bottom: 20px;
+}
+
+.appbar .navbar .containerNavbar .avatar-manu .avatarManu .item:hover {
+          color: rgb(233, 78, 78);
+          transform: scale(1.06);
+          text-shadow: 0 0 10px;
           border-radius: 10px;
 }
-
-.navbar .avatar .loginAvatarManu .item {
-          font-size: 25px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-}
-
-.navbar .avatar .loginAvatarManu .item:hover {
-          color: rgb(241, 71, 71);
-}
-
-.navbar .avatar:hover .loginAvatarManu {
-          display: block;
-}
-
 
 
 /* media */
 @media (max-width:1050px) {
-          .navbar .appbar .containerNavbar .tab:not(:first-child) {
+          .appbar .navbar .containerNavbar .tab:not(:first-child) {
                     margin-left: 50px;
                     transition: 0.3s;
                     position: relative;
           }
 
-          .navbar .appbar .containerNavbar .avatar {
+          .appbar .navbar .containerNavbar .avatar {
                     margin-left: 70px;
           }
 }
