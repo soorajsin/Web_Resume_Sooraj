@@ -24,7 +24,7 @@ body {
 }
 
 .register h1 {
-          margin-left: 100px;
+          margin-left: 150px;
           padding-top: 50px;
           padding-bottom: 50px;
           font-size: 30px;
@@ -36,10 +36,11 @@ body {
 .register:hover h1 {
           transform: scale(1.06);
           text-shadow: 0 0 10px;
+          margin-left: 160px;
 }
 
 .register .form {
-          margin-left: 100px;
+          margin-left: 150px;
           margin-bottom: 20px;
 }
 
