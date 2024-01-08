@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Avatar from "@mui/material/Avatar";
@@ -10,8 +10,6 @@ import "./Navbar.css";
 import { ContextNavigate } from "../ContextProvider/Context";
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("");
-
   const history = useNavigate();
   const { userdata, setUserData } = useContext(ContextNavigate);
   // console.log(userdata);
@@ -56,16 +54,6 @@ const Navbar = () => {
     avatarForFetchData();
   });
 
-  // const [anchorEl, setAnchorEl] = useState(null);
-
-  // const handleAvatarClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
-
   const handleSignOut = async () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
@@ -102,10 +90,7 @@ const Navbar = () => {
               <img src={SoorajLogo} alt="logo" />
             </a>
           </div>
-          <div
-            className={`tab ${activeTab === "home" ? "active" : ""}`}
-            onClick={() => setActiveTab("home")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/home"}
               style={{
@@ -117,10 +102,7 @@ const Navbar = () => {
               Home
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "about" ? "active" : ""}`}
-            onClick={() => setActiveTab("about")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/about"}
               style={{
@@ -132,10 +114,7 @@ const Navbar = () => {
               About
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "service" ? "active" : ""}`}
-            onClick={() => setActiveTab("service")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/service"}
               style={{
@@ -147,10 +126,7 @@ const Navbar = () => {
               Service
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "portfolio" ? "active" : ""}`}
-            onClick={() => setActiveTab("portfolio")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/portfolio"}
               style={{
@@ -162,10 +138,7 @@ const Navbar = () => {
               Portfolio
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "contact" ? "active" : ""}`}
-            onClick={() => setActiveTab("contact")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/contact"}
               style={{
@@ -177,10 +150,7 @@ const Navbar = () => {
               Contact
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "login" ? "active" : ""}`}
-            onClick={() => setActiveTab("login")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/login"}
               style={{
@@ -192,7 +162,7 @@ const Navbar = () => {
               Login
             </NavLink>
           </div>
-          <div className="avatar">
+          <div className="tab">
             <Avatar className="avatar-main">
               {userdata ? (
                 userdata.getData.email.charAt(0).toUpperCase()
@@ -207,36 +177,24 @@ const Navbar = () => {
                     <div className="avatarEmail">
                       {userdata ? userdata.getData.email : ""}
                     </div>
-                    <MenuItem onClick={() => history("/home")} className="item">
-                      Home
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => history("/about")}
-                      className="item"
-                    >
-                      About
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => history("/service")}
-                      className="item"
-                    >
-                      Service
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => history("/portfolio")}
-                      className="item"
-                    >
-                      Portfolio
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => history("/contact")}
-                      className="item"
-                    >
-                      Contact
-                    </MenuItem>
-                    <MenuItem onClick={handleSignOut} className="item">
+                    <div className="avatarEmail">
+                      <NavLink to={"/home"} className={"avatarDec"}>Home</NavLink>
+                    </div>
+                    <div className="avatarEmail">
+                      <NavLink to={"/about"}>About</NavLink>
+                    </div>
+                    <div className="avatarEmail">
+                      <NavLink to={"/service"}>Service</NavLink>
+                    </div>
+                    <div className="avatarEmail">
+                      <NavLink to={"/portfolio"}>Portfolio</NavLink>
+                    </div>
+                    <div className="avatarEmail">
+                      <NavLink to={"/contact"}>Contact</NavLink>
+                    </div>
+                    <div className="avatarEmail" onClick={handleSignOut}>
                       Sign Out
-                    </MenuItem>
+                    </div>
                   </div>
                 )
               ) : (
@@ -265,10 +223,7 @@ const Navbar = () => {
               <img src={SoorajLogo} alt="logo" />
             </a>
           </div>
-          <div
-            className={`tab ${activeTab === "home" ? "active" : ""}`}
-            onClick={() => setActiveTab("home")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/home"}
               style={{
@@ -280,10 +235,7 @@ const Navbar = () => {
               Home
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "about" ? "active" : ""}`}
-            onClick={() => setActiveTab("about")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/about"}
               style={{
@@ -295,10 +247,7 @@ const Navbar = () => {
               About
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "service" ? "active" : ""}`}
-            onClick={() => setActiveTab("service")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/service"}
               style={{
@@ -310,10 +259,7 @@ const Navbar = () => {
               Service
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "portfolio" ? "active" : ""}`}
-            onClick={() => setActiveTab("portfolio")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/portfolio"}
               style={{
@@ -325,10 +271,7 @@ const Navbar = () => {
               Portfolio
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "contact" ? "active" : ""}`}
-            onClick={() => setActiveTab("contact")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/contact"}
               style={{
@@ -340,10 +283,7 @@ const Navbar = () => {
               Contact
             </NavLink>
           </div>
-          <div
-            className={`tab ${activeTab === "login" ? "active" : ""}`}
-            onClick={() => setActiveTab("login")}
-          >
+          <div className={"tab"}>
             <NavLink
               to={"/login"}
               style={{
@@ -415,7 +355,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar className="appbar">
+      <AppBar>
         <Toolbar>
           <div className="navbar">
             {userdata ? ifUserValid() : elseUserValid()}
