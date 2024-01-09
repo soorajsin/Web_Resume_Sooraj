@@ -67,10 +67,10 @@ body {
           margin-top: 30px;
           font-size: 18px;
 }
-
+/* 
 .home .tag .paragraphDataId {
           margin-left: 0px;
-}
+} */
 
 .home .tag .paragraphDataId .showData {
           margin-bottom: 30px;
@@ -78,7 +78,7 @@ body {
 
 .home .tag .paragraphDataId .showData .paragraphDataItem .dataId {
           border-radius: 10px;
-          padding-left: 20px;
+          /* padding-left: 20px; */
           padding-top: 10px;
           padding-bottom: 10px;
           transition: 0.3s;
@@ -193,13 +193,13 @@ body {
           margin-bottom: 30px;
 }
 
-.home .tag .paragraph .edit button {
+/* .home .tag .paragraph .edit button {
           margin-left: 0px;
-}
+} */
 
 .home .tag .paragraph .show .paragraphData .data {
           border-radius: 10px;
-          padding-left: 10px;
+          /* padding-left: 10px; */
           padding-top: 10px;
           padding-bottom: 10px;
           padding-right: 10px;
