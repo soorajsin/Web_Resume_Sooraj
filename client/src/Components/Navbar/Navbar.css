@@ -6,10 +6,11 @@
 .navbar {
           height: 67px;
           margin: auto;
+          /* width: 1200px; */
 }
 
 .navbar .containerNavbar {
-          width: 1200px;
+          width: 1150px;
           margin: auto;
           display: flex;
           justify-content: space-between;
