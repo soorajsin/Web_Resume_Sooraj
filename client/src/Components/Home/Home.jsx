@@ -1,51 +1,21 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import { ContextNavigate } from "../ContextProvider/Context";
+import apiURL from "../config"
 
 const Home = () => {
-  const { userdata, setUserData } = useContext(ContextNavigate);
+  const url=apiURL.url;
+  const { userdata} = useContext(ContextNavigate);
   // console.log(userdata);
 
   const history = useNavigate();
-
-  const HomeFetchData = async () => {
-    const token = await localStorage.getItem("userDataToken");
-    // console.log(token);
-
-    const data = await fetch(
-      "https://web-resume-sooraj-server.vercel.app/validUser",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "Application/json",
-          Authorization: token,
-        },
-      }
-    );
-
-    const res = await data.json();
-    // console.log(res);
-
-    if (res.status === 205) {
-      // console.log(res);
-      setUserData(res);
-      // history("/home");
-    } else {
-      console.log("userData not found");
-      history("*");
-    }
-  };
-
-  useEffect(() => {
-    HomeFetchData();
-  });
 
   const deletePhoto = async (photoId, index) => {
     const token = await localStorage.getItem("userDataToken");
 
     const data = await fetch(
-      "https://web-resume-sooraj-server.vercel.app/deletePhoto",
+      `${url}/ldeletePhoto`,
       {
         method: "DELETE",
         headers: {
@@ -72,7 +42,7 @@ const Home = () => {
     // console.log(token);
 
     const data = await fetch(
-      "https://web-resume-sooraj-server.vercel.app/paragraphDelete",
+      `${url}/paragraphDelete`,
       {
         method: "DELETE",
         headers: {
