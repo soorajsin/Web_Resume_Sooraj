@@ -21,6 +21,7 @@
           font-size: 30px;
           cursor: pointer;
           position: relative;
+          word-wrap: break-word;
 }
 
 .navbar .containerNavbar .tab:hover {
