@@ -8,13 +8,16 @@ body {
 }
 
 .home {
-          width: 1200px;
+          /* width: 1200px; */
           margin: 80px auto;
+          background-color: red;
 }
 
 .home .container {
-          padding: 30px;
+          background-color: black;
+          /* padding: 30px; */
           margin: auto;
+          width: 1200px;
 }
 
 .home .tag {
