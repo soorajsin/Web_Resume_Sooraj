@@ -10,12 +10,9 @@ body {
 .home {
           width: 1200px;
           margin: 80px auto;
-          /* background-color: red; */
 }
 
 .home .container {
-          /* background-color: black; */
-          /* padding: 30px; */
           margin: auto;
           /* width: 1200px; */
 }
@@ -67,10 +64,7 @@ body {
           margin-top: 30px;
           font-size: 18px;
 }
-/* 
-.home .tag .paragraphDataId {
-          margin-left: 0px;
-} */
+
 
 .home .tag .paragraphDataId .showData {
           margin-bottom: 30px;
