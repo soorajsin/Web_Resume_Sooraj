@@ -1,12 +1,12 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import { ContextNavigate } from "../ContextProvider/Context";
-import apiURL from "../config"
+import apiURL from "../config";
 
 const Home = () => {
-  const url=apiURL.url;
-  const { userdata} = useContext(ContextNavigate);
+  const url = apiURL.url;
+  const { userdata } = useContext(ContextNavigate);
   // console.log(userdata);
 
   const history = useNavigate();
@@ -14,17 +14,14 @@ const Home = () => {
   const deletePhoto = async (photoId, index) => {
     const token = await localStorage.getItem("userDataToken");
 
-    const data = await fetch(
-      `${url}/ldeletePhoto`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ photoId }),
-      }
-    );
+    const data = await fetch(`${url}/ldeletePhoto`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({ photoId }),
+    });
 
     const res = await data.json();
     // console.log(res);
@@ -41,17 +38,14 @@ const Home = () => {
     const token = await localStorage.getItem("userDataToken");
     // console.log(token);
 
-    const data = await fetch(
-      `${url}/paragraphDelete`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify({ paragraphId }),
-      }
-    );
+    const data = await fetch(`${url}/paragraphDelete`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify({ paragraphId }),
+    });
 
     const res = await data.json();
     // console.log(res);

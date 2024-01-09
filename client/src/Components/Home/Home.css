@@ -8,23 +8,13 @@ body {
 }
 
 .home {
-          /* background-color: red; */
-          max-width: 1200px;
-          margin: 0 auto;
-          border-radius: 10px;
-          overflow: hidden;
-          margin-bottom: 30px;
+          width: 1200px;
+          margin: 80px auto;
 }
 
 .home .container {
-          padding-top: 50px;
-          padding-right: 50px;
-          max-width: 1100px;
-          margin: 0 auto;
-          /* background-color: black; */
-          margin-top: 50px;
-          padding: 10px;
-          margin-bottom: 50px;
+          padding: 30px;
+          margin: auto;
 }
 
 .home .tag {
@@ -35,12 +25,10 @@ body {
 .home .tag h3 {
           cursor: pointer;
           transition: 0.3s;
-          width: 95%;
           word-wrap: break-word;
           flex-wrap: wrap;
           border-radius: 10px;
-          padding-top: 10px;
-          padding-bottom: 10px;
+          padding: 10px;
 }
 
 .home .tag h3:hover {
@@ -90,7 +78,6 @@ body {
           padding-left: 20px;
           padding-top: 10px;
           padding-bottom: 10px;
-          width: 95%;
           transition: 0.3s;
           font-size: 25px;
 }
@@ -102,7 +89,9 @@ body {
 }
 
 .home .tag .paragraphDataId .showData .paragraphDataItem .dataId .delete i {
-          margin-left: 85%;
+          position: absolute;
+          right: 20px;
+          bottom: 10px;
           font-size: 25px;
           transition: 0.3;
           display: none;
@@ -206,7 +195,6 @@ body {
 }
 
 .home .tag .paragraph .show .paragraphData .data {
-          width: 95%;
           border-radius: 10px;
           padding-left: 10px;
           padding-top: 10px;
